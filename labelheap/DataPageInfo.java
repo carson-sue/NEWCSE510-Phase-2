@@ -1,9 +1,18 @@
 package labelheap;
 
+
+/** File DataPageInfo.java */
+
+
 import global.*;
 import java.io.*;
 
-public class DataPageInfo implements GlobalConst{
+/** DataPageInfo class : the type of records stored on a directory page.
+*
+* April 9, 1998
+*/
+
+class DataPageInfo implements GlobalConst{
 
 
 	  /** HFPage returns int for avail space, so we use int here */

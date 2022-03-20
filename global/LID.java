@@ -51,8 +51,17 @@ public class LID{
       Convert.setIntValue ( slotNo, offset, ary);
       Convert.setIntValue ( pageNo.pid, offset+4, ary);
     }
-  
-  
+
+  public EID returnEID() {
+    EID eid = new EID(this);
+    return eid;
+
+  }
+
+  public PID returnPID() {
+    PID pid = new PID(this);
+    return pid;
+  }
   /** Compares two LID object, i.e, this to the lid
    * @param lid LID object to be compared to
    * @return true is they are equal
@@ -67,23 +76,6 @@ public class LID{
       return false;
   }
 
-  /** Returns the corresponding EID
-   * @return EID
-   */
-  public EID returnEID() {
-  
-    EID eid = new EID(this);
-    return eid;
 
-  }
-  
-  /** Returns the corresponding PID
-   * @return PID
-   */
-  public PID returnPID() {
-  
-    PID pid = new PID(this);
-    return pid;
 
-  }
 }

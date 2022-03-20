@@ -1,12 +1,11 @@
 package tests;
 
-import diskmgr.*;
 import global.*;
 import java.io.*;
 import tripleheap.*;
 import java.lang.*;
 import labelheap.*;
-import tripleiterator.*;
+import iterator.*;
 
 public class RDFSortTest
 {
@@ -65,13 +64,13 @@ public class RDFSortTest
 			{
 				System.out.println("Confidence--> "+triple.getConfidence());
 				//System.out.println(triple.getSubjectID());
-				LabelHeapfile l1 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
 				Label subject = l1.getRecord(triple.getSubjectID().returnLID());
 				System.out.println("Subject--> "+subject.getLabelKey());
-				LabelHeapfile l2 = sysdef.JavabaseDB.getPredicateHandle();
+				LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
 				Label predicate = l2.getRecord(triple.getPredicateID().returnLID());
 				System.out.println("Predicate--> "+predicate.getLabelKey());
-				LabelHeapfile l3 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
 				Label object = l3.getRecord(triple.getObjectID().returnLID());
 				System.out.println("Object--> "+object.getLabelKey());
 				System.out.println("*****************************");

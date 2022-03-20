@@ -1,15 +1,23 @@
 package labelheap;
 
-import java.io.*;
+/** JAVA */
+/**
+ * Scan.java-  class Scan
+ *
+ */
 
+import java.io.*;
 import global.*;
 import bufmgr.*;
 import diskmgr.*;
 
-/**	
- * The LScan object is created to get an iterator over the heap file to get next records 
- * in the file.
- * An object of type LScan will always have pinned one directory page
+
+/**
+ * A Scan object is created ONLY through the function openScan
+ * of a HeapFile. It supports the getNext interface which will
+ * simply retrieve the next record in the heapfile.
+ *
+ * An object of type scan will always have pinned one directory page
  * of the heapfile.
  */
 public class LScan implements GlobalConst{
@@ -21,7 +29,7 @@ public class LScan implements GlobalConst{
      */
 
     /** The heapfile we are using. */
-    private LabelHeapfile  _hf;
+    private LabelHeapFile  _hf;
 
     /** PageId of current directory page (which is itself an HFPage) */
     private PageId dirpageId = new PageId();
@@ -56,8 +64,7 @@ public class LScan implements GlobalConst{
      *
      * @param hf A HeapFile object
      */
-    //needs to be changed to InvalidLabelSizeException
-  public LScan(LabelHeapfile hf) 
+  public LScan(LabelHeapFile hf)
     throws InvalidLabelSizeException,
 	   IOException
   {
@@ -74,8 +81,7 @@ public class LScan implements GlobalConst{
    * @param rid Record ID of the record
    * @return the Label of the retrieved record.
    */
-//needs to be changed to InvalidLabelSizeException
-  public Label getNext(LID lid) 
+  public Label getNext(LID lid)
     throws InvalidLabelSizeException,
 	   IOException
   {
@@ -181,8 +187,7 @@ public class LScan implements GlobalConst{
      *
      * @param hf A HeapFile object
      */
-  	//needs to be changed to InvalidLabelSizeException
-    private void init(LabelHeapfile hf) 
+    private void init(LabelHeapFile hf)
       throws InvalidLabelSizeException,
 	     IOException
   {
@@ -239,8 +244,7 @@ public class LScan implements GlobalConst{
    * @return true if successful
    *         false otherwise
    */
-  //needs to be changed to InvalidLabelSizeException
-  private boolean firstDataPage() 
+  private boolean firstDataPage()
     throws InvalidLabelSizeException,
 	   IOException
   {
@@ -267,8 +271,7 @@ public class LScan implements GlobalConst{
     /** now try to get a pointer to the first datapage */
 	 datapageRid = dirpage.firstRecord();
 	 
-    	if (datapageRid != null) 
-    	{
+    	if (datapageRid != null){
     /** there is a datapage record on the first directory page: */
 	
     		try {
@@ -279,7 +282,6 @@ public class LScan implements GlobalConst{
 	//	System.err.println("SCAN: Chain Error in Scan: " + e);
 		e.printStackTrace();
     		}		
-    		System.out.println("Reached till getting label for first record");		    
     		dpinfo = new DataPageInfo(label);
     		datapageId.pid = dpinfo.pageId.pid;
 
@@ -300,7 +302,6 @@ public class LScan implements GlobalConst{
     			try {
     				unpinPage(dirpageId, false);
     				dirpage = null;
-    				System.out.println("Unpinned the page");
     			}
 	
     			catch (Exception e) {
@@ -362,7 +363,6 @@ public class LScan implements GlobalConst{
     	}	
 	
 	datapage = null;
-	System.out.println("Trying to read next data page");
 	try{
          nextDataPage();
 	  }
@@ -394,8 +394,7 @@ public class LScan implements GlobalConst{
    * @return 		true if successful
    *			false if unsuccessful
    */
-//needs to be changed to InvalidLabelSizeException
-  private boolean nextDataPage() 
+  private boolean nextDataPage()
     throws InvalidLabelSizeException,
 	   IOException
   {
@@ -593,8 +592,7 @@ public class LScan implements GlobalConst{
   /** Move to the next record in a sequential scan.
    * Also returns the RID of the (new) current record.
    */
-//needs to be changed to InvalidLabelSizeException
-  private boolean mvNext(LID lid) 
+  private boolean mvNext(LID lid)
     throws InvalidLabelSizeException,
 	   IOException
   {

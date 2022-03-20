@@ -1,13 +1,11 @@
 package tests;
 
-import diskmgr.*;
 import global.*;
 
 import java.io.*;
 import tripleheap.*;
 import java.lang.*;
 import labelheap.*;
-import tripleiterator.*;
 
 public class Report
 {
@@ -58,8 +56,8 @@ public class Report
 		try
 		{
 			TripleHeapfile thf = SystemDefs.JavabaseDB.getTrpHandle();
-			LabelHeapfile elhf = SystemDefs.JavabaseDB.getEntityHandle();
-			LabelHeapfile plhf = SystemDefs.JavabaseDB.getPredicateHandle();
+			LabelHeapFile elhf = SystemDefs.JavabaseDB.getEntityHandle();
+			LabelHeapFile plhf = SystemDefs.JavabaseDB.getPredicateHandle();
 			System.out.println("\n\n\n******************** Report - RDF DB Statistics ******************");
 			System.out.println(" RDF Database Name		: " + dbname);
 			System.out.println(" DB Size 			: " + dbfile.length() + " bytes");

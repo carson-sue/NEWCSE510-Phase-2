@@ -6,7 +6,7 @@ package global;
  */
 
 public class TripleOrder {
-
+	//come back here &&&&&&&
 	public static final int SubjectPredicateObjectConfidence = 1;
 	public static final int PredicateSubjectObjectConfidence = 2;
 	public static final int SubjectConfidence = 3;
@@ -16,10 +16,10 @@ public class TripleOrder {
 
 	public int tripleOrder;
 
-	/** 
+	/**
 	 * TripleOrder Constructor
 	 * <br>
-	 * A triple ordering can be defined as 
+	 * A triple ordering can be defined as
 	 * <ul>
 	 * <li>   TripleOrder tripleOrder = new TripleOrder(TripleOrder.Confidence);
 	 * </ul>
@@ -28,7 +28,7 @@ public class TripleOrder {
 	 * <li>   if (tripleOrder.tripleOrder == TripleOrder.Confidence) ....
 	 * </ul>
 	 *
-	 * @param _tripleOrder The possible sorting orderType of the triples 
+	 * @param _tripleOrder The possible sorting orderType of the triples
 	 */
 
 	public TripleOrder (int _tripleOrder) 

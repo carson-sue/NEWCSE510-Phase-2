@@ -1,5 +1,5 @@
 JDKPATH = /usr
-LIBPATH = /home/mugdhako/CSE510/minjava/javaminibase/construction
+LIBPATH = .:..
 CLASSPATH = $(JDKPATH)/lib/classes.zip:.:..:$(LIBPATH)
 BINPATH = $(JDKPATH)/bin
 JAVAC = $(JDKPATH)/bin/javac -classpath $(CLASSPATH)
@@ -11,6 +11,5 @@ all: $(PROGS)
 
 together:*.java
 	$(JAVAC) *.java
-
 clean:
 	\rm -f *.class *~ \#* core 

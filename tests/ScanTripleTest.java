@@ -8,7 +8,7 @@ import java.io.*;
 import tripleheap.*;
 import java.lang.*;
 import labelheap.*;
-//import tripleiterator.*;
+//import iterator.*;
 
 public class ScanTripleTest
 {
@@ -67,13 +67,13 @@ public class ScanTripleTest
 				//Triple t2 = am.getNext(t1);
 				System.out.println(t2.getConfidence());
 				System.out.println(t2.getSubjectID());
-				LabelHeapfile l1 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
 				Label subject = l1.getRecord(t2.getSubjectID().returnLID());
 				System.out.println(subject.getLabelKey());
-				LabelHeapfile l2 = sysdef.JavabaseDB.getPredicateHandle();
+				LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
 				Label predicate = l2.getRecord(t2.getPredicateID().returnLID());
 				System.out.println(predicate.getLabelKey());
-				LabelHeapfile l3 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
 				Label object = l3.getRecord(t2.getObjectID().returnLID());
 				System.out.println(object.getLength());
 				System.out.println(object.getLabelKey());

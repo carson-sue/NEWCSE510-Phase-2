@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ARBIT_RUNS	basicpatterniterator/BPSort.java	/^  private static final int ARBIT_RUNS = 10;$/;"	f	class:BPSort	file:
 ARBIT_RUNS	iterator/Sort.java	/^  private static final int ARBIT_RUNS = 10;$/;"	f	class:Sort	file:
-ARBIT_RUNS	tripleiterator/TripleSort.java	/^  private static final int ARBIT_RUNS = 10;$/;"	f	class:TripleSort	file:
+ARBIT_RUNS	iterator/TripleSort.java	/^  private static final int ARBIT_RUNS = 10;$/;"	f	class:TripleSort	file:
 ASSIGN	Makefile	/^ASSIGN=.$/;"	m
 ATTRCATNAME	global/Catalogglobal.java	/^   final static String ATTRCATNAME = new String( "attrcat"); \/\/ name of attribute catalog$/;"	f	interface:Catalogglobal
 ATTRCATNAME	javadoc/global/Catalogglobal.html	/^<A NAME="ATTRCATNAME"><!-- --><\/A><H3>$/;"	a
@@ -46,7 +46,7 @@ BINPATH	iterator/Makefile	/^BINPATH = $(JDKPATH)\/bin$/;"	m
 BINPATH	labelheap/Makefile	/^BINPATH = $(JDKPATH)\/bin$/;"	m
 BINPATH	tests/Makefile	/^BINPATH = $(JDKPATH)\/bin$/;"	m
 BINPATH	tripleheap/Makefile	/^BINPATH = $(JDKPATH)\/bin$/;"	m
-BINPATH	tripleiterator/Makefile	/^BINPATH = $(JDKPATH)\/bin$/;"	m
+BINPATH	iterator/Makefile	/^BINPATH = $(JDKPATH)\/bin$/;"	m
 BMDriver	tests/BMTest.java	/^  public BMDriver () {$/;"	m	class:BMDriver
 BMDriver	tests/BMTest.java	/^class BMDriver extends TestDriver implements GlobalConst {$/;"	c
 BMTest	tests/BMTest.java	/^public class BMTest {$/;"	c
@@ -148,7 +148,7 @@ CLASSPATH	iterator/Makefile	/^CLASSPATH = $(JDKPATH)\/lib\/classes.zip:.:..:$(LI
 CLASSPATH	labelheap/Makefile	/^CLASSPATH = $(JDKPATH)\/lib\/classes.zip:.:..:$(LIBPATH)$/;"	m
 CLASSPATH	tests/Makefile	/^CLASSPATH = $(LIBPATH)$/;"	m
 CLASSPATH	tripleheap/Makefile	/^CLASSPATH = $(JDKPATH)\/lib\/classes.zip:.:..:$(LIBPATH)$/;"	m
-CLASSPATH	tripleiterator/Makefile	/^CLASSPATH = $(JDKPATH)\/lib\/classes.zip:.:..:$(LIBPATH)$/;"	m
+CLASSPATH	iterator/Makefile	/^CLASSPATH = $(JDKPATH)\/lib\/classes.zip:.:..:$(LIBPATH)$/;"	m
 CUR_PAGE	heap/HFPage.java	/^  public static final int CUR_PAGE = 16;$/;"	f	class:HFPage
 CUR_PAGE	javadoc/heap/HFPage.html	/^<A NAME="CUR_PAGE"><!-- --><\/A><H3>$/;"	a
 CUR_PAGE	javadoc/labelheap/LHFPage.html	/^<A NAME="CUR_PAGE"><!-- --><\/A><H3>$/;"	a
@@ -197,7 +197,7 @@ ChainException(java.lang.Exception, java.lang.String)	javadoc/chainexception/Cha
 Check	tests/QueryCheck.java	/^  public void Check(Tuple t) {$/;"	m	class:QueryCheck
 Clock	bufmgr/BufMgr.java	/^  public Clock(BufMgr javamgr)$/;"	m	class:Clock
 Clock	bufmgr/BufMgr.java	/^class Clock extends Replacer {$/;"	c
-CompareTripleWithTriple	tripleiterator/TripleUtils.java	/^  public static int CompareTripleWithTriple(TripleOrder orderType, Triple t1, Triple t2)$/;"	m	class:TripleUtils
+CompareTripleWithTriple	iterator/TripleUtils.java	/^  public static int CompareTripleWithTriple(TripleOrder orderType, Triple t1, Triple t2)$/;"	m	class:TripleUtils
 CompareTupleWithTuple	basicpatterniterator/BasicPatternUtils.java	/^  public static int CompareTupleWithTuple(AttrType fldType,$/;"	m	class:BasicPatternUtils
 CompareTupleWithTuple	iterator/TupleUtils.java	/^  public static int CompareTupleWithTuple(AttrType fldType,$/;"	m	class:TupleUtils
 CompareTupleWithTuple(global.AttrType, heap.Tuple, int, heap.Tuple, int)	javadoc/iterator/TupleUtils.html	/^<A NAME="CompareTupleWithTuple(global.AttrType, heap.Tuple, int, heap.Tuple, int)"><!-- --><\/A><H3>$/;"	a
@@ -354,7 +354,7 @@ EMPTY_SLOT	javadoc/tripleheap/THFPage.html	/^<A NAME="EMPTY_SLOT"><!-- --><\/A><
 EMPTY_SLOT	labelheap/LHFPage.java	/^  int EMPTY_SLOT = -1;$/;"	f	interface:ConstSlot
 EMPTY_SLOT	tripleheap/THFPage.java	/^  int EMPTY_SLOT = -1;$/;"	f	interface:ConstSlot
 Entity_BTree	diskmgr/rdfDB.java	/^	private LabelBTreeFile Entity_BTree;  		\/\/BTree Index file on Entity Heap file$/;"	f	class:rdfDB	file:
-Entity_HF	diskmgr/rdfDB.java	/^	private LabelHeapfile Entity_HF; 	  		\/\/Entity Heap file to store subjects\/objects$/;"	f	class:rdfDB	file:
+Entity_HF	diskmgr/rdfDB.java	/^	private LabelHeapFile Entity_HF; 	  		\/\/Entity Heap file to store subjects\/objects$/;"	f	class:rdfDB	file:
 Equal	iterator/TupleUtils.java	/^  public static boolean Equal(Tuple t1, Tuple t2, AttrType types[], int len)$/;"	m	class:TupleUtils
 Equal(heap.Tuple, heap.Tuple, global.AttrType[], int)	javadoc/iterator/TupleUtils.html	/^<A NAME="Equal(heap.Tuple, heap.Tuple, global.AttrType[], int)"><!-- --><\/A><H3>$/;"	a
 Eval	iterator/PredEval.java	/^  public static boolean Eval(CondExpr p[], Tuple t1, Tuple t2, AttrType in1[], $/;"	m	class:PredEval
@@ -433,7 +433,7 @@ FileScanException	iterator/FileScanException.java	/^public class FileScanExcepti
 FileScanException(java.lang.Exception, java.lang.String)	javadoc/iterator/FileScanException.html	/^<A NAME="FileScanException(java.lang.Exception, java.lang.String)"><!-- --><\/A><H3>$/;"	a
 FileScanException(java.lang.String)	javadoc/iterator/FileScanException.html	/^<A NAME="FileScanException(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 Filetype	heap/Heapfile.java	/^interface  Filetype {$/;"	i
-Filetype	labelheap/LabelHeapfile.java	/^interface  Filetype {$/;"	i
+Filetype	labelheap/LabelHeapFile.java	/^interface  Filetype {$/;"	i
 Filetype	tripleheap/TripleHeapfile.java	/^interface  Filetype {$/;"	i
 Flags	global/Flags.java	/^public interface Flags {$/;"	i
 FldSpec	iterator/FldSpec.java	/^  public  FldSpec(RelSpec _relation, int _offset)$/;"	m	class:FldSpec
@@ -454,7 +454,7 @@ FullDelete	btree/TripleBTreeFile.java	/^  private boolean FullDelete (KeyClass k
 G_O_flag	tests/QueryCheck.java	/^  private int      G_O_flag;     \/\/ error flag for group order wrong$/;"	f	class:QueryCheck	file:
 Get	iterator/IoBuf.java	/^  public Tuple Get(Tuple  buf)$/;"	m	class:IoBuf
 Get	iterator/SpoofIbuf.java	/^  public  Tuple Get(Tuple  buf)throws IOException, Exception$/;"	m	class:SpoofIbuf
-Get	tripleiterator/TripleSpoofIbuf.java	/^	public  Triple Get(Triple  buf)throws IOException, Exception$/;"	m	class:TripleSpoofIbuf
+Get	iterator/TripleSpoofIbuf.java	/^	public  Triple Get(Triple  buf)throws IOException, Exception$/;"	m	class:TripleSpoofIbuf
 Get(heap.Tuple)	javadoc/iterator/IoBuf.html	/^<A NAME="Get(heap.Tuple)"><!-- --><\/A><H3>$/;"	a
 Get(heap.Tuple)	javadoc/iterator/SpoofIbuf.html	/^<A NAME="Get(heap.Tuple)"><!-- --><\/A><H3>$/;"	a
 GetEID	diskmgr/Stream.java	/^	public static LID GetEID(String filter) throws GetFileEntryException, PinPageException, ConstructPageException$/;"	m	class:Stream
@@ -709,7 +709,7 @@ JAVA	iterator/Makefile	/^JAVA  = $(JDKPATH)\/bin\/java  -classpath $(CLASSPATH)$
 JAVA	labelheap/Makefile	/^JAVA  = $(JDKPATH)\/bin\/java  -classpath $(CLASSPATH)$/;"	m
 JAVA	tests/Makefile	/^JAVA  = $(JDKPATH)\/bin\/java  -classpath $(CLASSPATH)$/;"	m
 JAVA	tripleheap/Makefile	/^JAVA  = $(JDKPATH)\/bin\/java  -classpath $(CLASSPATH)$/;"	m
-JAVA	tripleiterator/Makefile	/^JAVA  = $(JDKPATH)\/bin\/java  -classpath $(CLASSPATH)$/;"	m
+JAVA	iterator/Makefile	/^JAVA  = $(JDKPATH)\/bin\/java  -classpath $(CLASSPATH)$/;"	m
 JAVAC	Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
 JAVAC	basicpattern/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
 JAVAC	basicpatterniterator/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
@@ -725,7 +725,7 @@ JAVAC	iterator/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)
 JAVAC	labelheap/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
 JAVAC	tests/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
 JAVAC	tripleheap/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
-JAVAC	tripleiterator/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
+JAVAC	iterator/Makefile	/^JAVAC = $(JDKPATH)\/bin\/javac -classpath $(CLASSPATH)$/;"	m
 JAVADOC	Makefile	/^JAVADOC=javadoc -public -d $(PACKAGEINDEX)$/;"	m
 JDKPATH	Makefile	/^JDKPATH = \/usr$/;"	m
 JDKPATH	basicpattern/Makefile	/^JDKPATH = \/usr$/;"	m
@@ -742,7 +742,7 @@ JDKPATH	iterator/Makefile	/^JDKPATH = \/usr$/;"	m
 JDKPATH	labelheap/Makefile	/^JDKPATH = \/usr$/;"	m
 JDKPATH	tests/Makefile	/^JDKPATH = \/usr$/;"	m
 JDKPATH	tripleheap/Makefile	/^JDKPATH = \/usr$/;"	m
-JDKPATH	tripleiterator/Makefile	/^JDKPATH = \/usr$/;"	m
+JDKPATH	iterator/Makefile	/^JDKPATH = \/usr$/;"	m
 JavabaseBM	global/SystemDefs.java	/^	public static BufMgr	JavabaseBM;$/;"	f	class:SystemDefs
 JavabaseBM	javadoc/global/SystemDefs.html	/^<A NAME="JavabaseBM"><!-- --><\/A><H3>$/;"	a
 JavabaseCatalog	global/SystemDefs.java	/^	public static Catalog	JavabaseCatalog;$/;"	f	class:SystemDefs
@@ -760,9 +760,9 @@ Join(heap.Tuple, global.AttrType[], heap.Tuple, global.AttrType[], heap.Tuple, i
 JoinLowMemory	iterator/JoinLowMemory.java	/^  public JoinLowMemory(Exception prev, String s){super(prev,s);}$/;"	m	class:JoinLowMemory
 JoinLowMemory	iterator/JoinLowMemory.java	/^  public JoinLowMemory(String s){super(null,s);}$/;"	m	class:JoinLowMemory
 JoinLowMemory	iterator/JoinLowMemory.java	/^public class JoinLowMemory extends ChainException {$/;"	c
-JoinLowMemory	tripleiterator/JoinLowMemory.java	/^  public JoinLowMemory(Exception prev, String s){super(prev,s);}$/;"	m	class:JoinLowMemory
-JoinLowMemory	tripleiterator/JoinLowMemory.java	/^  public JoinLowMemory(String s){super(null,s);}$/;"	m	class:JoinLowMemory
-JoinLowMemory	tripleiterator/JoinLowMemory.java	/^public class JoinLowMemory extends ChainException {$/;"	c
+JoinLowMemory	iterator/JoinLowMemory.java	/^  public JoinLowMemory(Exception prev, String s){super(prev,s);}$/;"	m	class:JoinLowMemory
+JoinLowMemory	iterator/JoinLowMemory.java	/^  public JoinLowMemory(String s){super(null,s);}$/;"	m	class:JoinLowMemory
+JoinLowMemory	iterator/JoinLowMemory.java	/^public class JoinLowMemory extends ChainException {$/;"	c
 JoinLowMemory(java.lang.Exception, java.lang.String)	javadoc/iterator/JoinLowMemory.html	/^<A NAME="JoinLowMemory(java.lang.Exception, java.lang.String)"><!-- --><\/A><H3>$/;"	a
 JoinLowMemory(java.lang.String)	javadoc/iterator/JoinLowMemory.html	/^<A NAME="JoinLowMemory(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 JoinNewFailed	iterator/JoinNewFailed.java	/^  public JoinNewFailed(Exception prev, String s){super(prev,s);}$/;"	m	class:JoinNewFailed
@@ -865,7 +865,7 @@ LIBPATH	iterator/Makefile	/^LIBPATH = \/home\/mugdhako\/CSE510\/minjava\/javamin
 LIBPATH	labelheap/Makefile	/^LIBPATH = .:..$/;"	m
 LIBPATH	tests/Makefile	/^LIBPATH = .:..$/;"	m
 LIBPATH	tripleheap/Makefile	/^LIBPATH = \/home\/mugdhako\/CSE510\/minjava\/javaminibase\/construction$/;"	m
-LIBPATH	tripleiterator/Makefile	/^LIBPATH = .:..$/;"	m
+LIBPATH	iterator/Makefile	/^LIBPATH = .:..$/;"	m
 LID	global/LID.java	/^  public LID () { }$/;"	m	class:LID
 LID	global/LID.java	/^  public LID (PageId pageno, int slotno)$/;"	m	class:LID
 LID	global/LID.java	/^public class LID{$/;"	c
@@ -873,9 +873,9 @@ LID()	javadoc/global/LID.html	/^<A NAME="LID()"><!-- --><\/A><H3>$/;"	a
 LID(global.PageId, int)	javadoc/global/LID.html	/^<A NAME="LID(global.PageId, int)"><!-- --><\/A><H3>$/;"	a
 LRU	bufmgr/LRU.java	/^    public LRU(BufMgr mgrArg)$/;"	m	class:LRU
 LRU	bufmgr/LRU.java	/^class LRU extends  Replacer {$/;"	c
-LScan	labelheap/LScan.java	/^  public LScan(LabelHeapfile hf) $/;"	m	class:LScan
+LScan	labelheap/LScan.java	/^  public LScan(LabelHeapFile hf) $/;"	m	class:LScan
 LScan	labelheap/LScan.java	/^public class LScan implements GlobalConst{$/;"	c
-LScan(labelheap.LabelHeapfile)	javadoc/labelheap/LScan.html	/^<A NAME="LScan(labelheap.LabelHeapfile)"><!-- --><\/A><H3>$/;"	a
+LScan(labelheap.LabelHeapFile)	javadoc/labelheap/LScan.html	/^<A NAME="LScan(labelheap.LabelHeapFile)"><!-- --><\/A><H3>$/;"	a
 Label	labelheap/Label.java	/^	   public Label(Label fromLabel)$/;"	m	class:Label
 Label	labelheap/Label.java	/^	   public Label(byte [] atuple, int offset, int length)$/;"	m	class:Label
 Label	labelheap/Label.java	/^	  public  Label()$/;"	m	class:Label
@@ -921,9 +921,9 @@ LabelBTreeHeaderPage	btree/LabelBTreeHeaderPage.java	/^  public LabelBTreeHeader
 LabelBTreeHeaderPage	btree/LabelBTreeHeaderPage.java	/^class LabelBTreeHeaderPage extends LHFPage {$/;"	c
 LabelCopy	labelheap/Label.java	/^	   public void LabelCopy(Label fromLabel)$/;"	m	class:Label
 LabelCopy(labelheap.Label)	javadoc/labelheap/Label.html	/^<A NAME="LabelCopy(labelheap.Label)"><!-- --><\/A><H3>$/;"	a
-LabelHeapfile	labelheap/LabelHeapfile.java	/^	  public  LabelHeapfile(String name) $/;"	m	class:LabelHeapfile
-LabelHeapfile	labelheap/LabelHeapfile.java	/^public class LabelHeapfile implements Filetype,  GlobalConst {$/;"	c
-LabelHeapfile(java.lang.String)	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="LabelHeapfile(java.lang.String)"><!-- --><\/A><H3>$/;"	a
+LabelHeapFile	labelheap/LabelHeapFile.java	/^	  public  LabelHeapFile(String name) $/;"	m	class:LabelHeapFile
+LabelHeapFile	labelheap/LabelHeapFile.java	/^public class LabelHeapFile implements Filetype,  GlobalConst {$/;"	c
+LabelHeapFile(java.lang.String)	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="LabelHeapFile(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 LabelIndexFile	btree/LabelIndexFile.java	/^public abstract class LabelIndexFile $/;"	c
 LabelIndexFile()	javadoc/btree/LabelIndexFile.html	/^<A NAME="LabelIndexFile()"><!-- --><\/A><H3>$/;"	a
 LabelInit	labelheap/Label.java	/^	   public void LabelInit(byte [] atuple, int offset, int length)$/;"	m	class:Label
@@ -961,9 +961,9 @@ LogicalOperator(int)	javadoc/global/LogicalOperator.html	/^<A NAME="LogicalOpera
 LowMemException	iterator/LowMemException.java	/^  public LowMemException(Exception e,String s) {super(e,s);}$/;"	m	class:LowMemException
 LowMemException	iterator/LowMemException.java	/^  public LowMemException(String s) {super(null,s);}$/;"	m	class:LowMemException
 LowMemException	iterator/LowMemException.java	/^public class LowMemException extends ChainException $/;"	c
-LowMemException	tripleiterator/LowMemException.java	/^  public LowMemException(Exception e,String s) {super(e,s);}$/;"	m	class:LowMemException
-LowMemException	tripleiterator/LowMemException.java	/^  public LowMemException(String s) {super(null,s);}$/;"	m	class:LowMemException
-LowMemException	tripleiterator/LowMemException.java	/^public class LowMemException extends ChainException $/;"	c
+LowMemException	iterator/LowMemException.java	/^  public LowMemException(Exception e,String s) {super(e,s);}$/;"	m	class:LowMemException
+LowMemException	iterator/LowMemException.java	/^  public LowMemException(String s) {super(null,s);}$/;"	m	class:LowMemException
+LowMemException	iterator/LowMemException.java	/^public class LowMemException extends ChainException $/;"	c
 LowMemException(java.lang.Exception, java.lang.String)	javadoc/iterator/LowMemException.html	/^<A NAME="LowMemException(java.lang.Exception, java.lang.String)"><!-- --><\/A><H3>$/;"	a
 LowMemException(java.lang.String)	javadoc/iterator/LowMemException.html	/^<A NAME="LowMemException(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 MAGIC0	btree/BTreeFile.java	/^  private final static int MAGIC0=1989;$/;"	f	class:BTreeFile	file:
@@ -1062,9 +1062,9 @@ NestedLoopsJoins(global.AttrType[], int, short[], global.AttrType[], int, short[
 NoOutputBuffer	iterator/NoOutputBuffer.java	/^  public NoOutputBuffer(Exception prev, String s){super(prev,s);}$/;"	m	class:NoOutputBuffer
 NoOutputBuffer	iterator/NoOutputBuffer.java	/^  public NoOutputBuffer(String s){super(null,s);}$/;"	m	class:NoOutputBuffer
 NoOutputBuffer	iterator/NoOutputBuffer.java	/^public class NoOutputBuffer extends ChainException {$/;"	c
-NoOutputBuffer	tripleiterator/NoOutputBuffer.java	/^  public NoOutputBuffer(Exception prev, String s){super(prev,s);}$/;"	m	class:NoOutputBuffer
-NoOutputBuffer	tripleiterator/NoOutputBuffer.java	/^  public NoOutputBuffer(String s){super(null,s);}$/;"	m	class:NoOutputBuffer
-NoOutputBuffer	tripleiterator/NoOutputBuffer.java	/^public class NoOutputBuffer extends ChainException {$/;"	c
+NoOutputBuffer	iterator/NoOutputBuffer.java	/^  public NoOutputBuffer(Exception prev, String s){super(prev,s);}$/;"	m	class:NoOutputBuffer
+NoOutputBuffer	iterator/NoOutputBuffer.java	/^  public NoOutputBuffer(String s){super(null,s);}$/;"	m	class:NoOutputBuffer
+NoOutputBuffer	iterator/NoOutputBuffer.java	/^public class NoOutputBuffer extends ChainException {$/;"	c
 NoOutputBuffer(java.lang.Exception, java.lang.String)	javadoc/iterator/NoOutputBuffer.html	/^<A NAME="NoOutputBuffer(java.lang.Exception, java.lang.String)"><!-- --><\/A><H3>$/;"	a
 NoOutputBuffer(java.lang.String)	javadoc/iterator/NoOutputBuffer.html	/^<A NAME="NoOutputBuffer(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 NodeNotMatchException	btree/NodeNotMatchException.java	/^  public NodeNotMatchException() {super();}$/;"	m	class:NodeNotMatchException
@@ -1080,7 +1080,7 @@ None	global/IndexType.java	/^  public static final int None    = 0;$/;"	f	class:
 None	javadoc/global/IndexType.html	/^<A NAME="None"><!-- --><\/A><H3>$/;"	a
 Nruns	basicpatterniterator/BPSort.java	/^  private int         Nruns;$/;"	f	class:BPSort	file:
 Nruns	iterator/Sort.java	/^  private int         Nruns;$/;"	f	class:Sort	file:
-Nruns	tripleiterator/TripleSort.java	/^  private int         Nruns;$/;"	f	class:TripleSort	file:
+Nruns	iterator/TripleSort.java	/^  private int         Nruns;$/;"	f	class:TripleSort	file:
 OBuf	iterator/OBuf.java	/^  public OBuf(){}     $/;"	m	class:OBuf
 OBuf	iterator/OBuf.java	/^public class OBuf implements GlobalConst{$/;"	c
 OBuf()	javadoc/iterator/OBuf.html	/^<A NAME="OBuf()"><!-- --><\/A><H3>$/;"	a
@@ -1091,9 +1091,9 @@ OK	tests/JoinTest.java	/^  private boolean OK = true;$/;"	f	class:JoinsDriver	fi
 OK	tests/TestDriver.java	/^  public final static boolean OK   = true; $/;"	f	class:TestDriver
 ORDINARY	heap/Heapfile.java	/^  int ORDINARY = 1;$/;"	f	interface:Filetype
 ORDINARY	javadoc/heap/Heapfile.html	/^<A NAME="ORDINARY"><!-- --><\/A><H3>$/;"	a
-ORDINARY	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="ORDINARY"><!-- --><\/A><H3>$/;"	a
+ORDINARY	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="ORDINARY"><!-- --><\/A><H3>$/;"	a
 ORDINARY	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="ORDINARY"><!-- --><\/A><H3>$/;"	a
-ORDINARY	labelheap/LabelHeapfile.java	/^	  int ORDINARY = 1;$/;"	f	interface:Filetype
+ORDINARY	labelheap/LabelHeapFile.java	/^	  int ORDINARY = 1;$/;"	f	interface:Filetype
 ORDINARY	tripleheap/TripleHeapfile.java	/^  int ORDINARY = 1;$/;"	f	interface:Filetype
 Object	tests/QueryProgram.java	/^	static String Object = null;$/;"	f	class:QueryProgram
 Object	tests/QueryProgramJoin.java	/^	static String Object = null;$/;"	f	class:QueryProgramJoin
@@ -1138,7 +1138,7 @@ PROGS	index/Makefile	/^PROGS = together$/;"	m
 PROGS	iterator/Makefile	/^PROGS = together$/;"	m
 PROGS	labelheap/Makefile	/^PROGS = together$/;"	m
 PROGS	tripleheap/Makefile	/^PROGS = together$/;"	m
-PROGS	tripleiterator/Makefile	/^PROGS = together$/;"	m
+PROGS	iterator/Makefile	/^PROGS = together$/;"	m
 Page	diskmgr/Page.java	/^  public Page()  $/;"	m	class:Page
 Page	diskmgr/Page.java	/^  public Page(byte [] apage)$/;"	m	class:Page
 Page	diskmgr/Page.java	/^public class Page implements GlobalConst{$/;"	c
@@ -1183,19 +1183,19 @@ Predicate	tripleheap/Triple.java	/^  private PID Predicate; \/\/8 bytes$/;"	f	cl
 PredicateConfidence	global/TripleOrder.java	/^	public static final int PredicateConfidence = 4;$/;"	f	class:TripleOrder
 PredicateSubjectObjectConfidence	global/TripleOrder.java	/^	public static final int PredicateSubjectObjectConfidence = 2;$/;"	f	class:TripleOrder
 Predicate_BTree	diskmgr/rdfDB.java	/^	private LabelBTreeFile Predicate_BTree; 	\/\/BTree Predicate file on Predicate Heap file$/;"	f	class:rdfDB	file:
-Predicate_HF	diskmgr/rdfDB.java	/^	private LabelHeapfile Predicate_HF;   		\/\/Predicates Heap file to store predicates$/;"	f	class:rdfDB	file:
+Predicate_HF	diskmgr/rdfDB.java	/^	private LabelHeapFile Predicate_HF;   		\/\/Predicates Heap file to store predicates$/;"	f	class:rdfDB	file:
 Project	iterator/Projection.java	/^  public static void Project(Tuple  t1, AttrType type1[], $/;"	m	class:Projection
 Project(heap.Tuple, global.AttrType[], heap.Tuple, iterator.FldSpec[], int)	javadoc/iterator/Projection.html	/^<A NAME="Project(heap.Tuple, global.AttrType[], heap.Tuple, iterator.FldSpec[], int)"><!-- --><\/A><H3>$/;"	a
 Projection	iterator/Projection.java	/^public class Projection$/;"	c
 Projection()	javadoc/iterator/Projection.html	/^<A NAME="Projection()"><!-- --><\/A><H3>$/;"	a
 Put	iterator/IoBuf.java	/^  public void Put(Tuple buf)$/;"	m	class:IoBuf
 Put	iterator/OBuf.java	/^  public Tuple  Put(Tuple buf)$/;"	m	class:OBuf
-Put	tripleiterator/TripleOBuf.java	/^  public Triple Put(Triple buf)$/;"	m	class:TripleOBuf
+Put	iterator/TripleOBuf.java	/^  public Triple Put(Triple buf)$/;"	m	class:TripleOBuf
 Put(heap.Tuple)	javadoc/iterator/IoBuf.html	/^<A NAME="Put(heap.Tuple)"><!-- --><\/A><H3>$/;"	a
 Put(heap.Tuple)	javadoc/iterator/OBuf.html	/^<A NAME="Put(heap.Tuple)"><!-- --><\/A><H3>$/;"	a
 Q	basicpatterniterator/BPSort.java	/^  private pnodeSplayPQ Q;$/;"	f	class:BPSort	file:
 Q	iterator/Sort.java	/^  private pnodeSplayPQ Q;$/;"	f	class:Sort	file:
-Q	tripleiterator/TripleSort.java	/^  private TriplepnodeSplayPQ Q;$/;"	f	class:TripleSort	file:
+Q	iterator/TripleSort.java	/^  private TriplepnodeSplayPQ Q;$/;"	f	class:TripleSort	file:
 Q1result	tests/QueryCheck.java	/^  Vector Q1result = new Vector();$/;"	f	class:QueryCheck
 Q2result	tests/QueryCheck.java	/^  Vector Q2result = new Vector();$/;"	f	class:QueryCheck
 Q3result	tests/QueryCheck.java	/^  Vector Q3result = new Vector();$/;"	f	class:QueryCheck
@@ -1222,7 +1222,7 @@ RDFSortTest	tests/RDFSortTest.java	/^public class RDFSortTest$/;"	c
 RDF_TRIPLE_SIZE	global/GlobalConst.java	/^  public static final int RDF_TRIPLE_SIZE = 32;$/;"	f	interface:GlobalConst
 READ_BUFFER	iterator/IoBuf.java	/^  public static final int READ_BUFFER  =1;$/;"	f	class:IoBuf
 READ_BUFFER	javadoc/iterator/IoBuf.html	/^<A NAME="READ_BUFFER"><!-- --><\/A><H3>$/;"	a
-READ_BUFFER	tripleiterator/TripleIoBuf.java	/^  public static final int READ_BUFFER  =1;$/;"	f	class:TripleIoBuf
+READ_BUFFER	iterator/TripleIoBuf.java	/^  public static final int READ_BUFFER  =1;$/;"	f	class:TripleIoBuf
 REC_LEN1	tests/IndexTest.java	/^  private static short REC_LEN1 = 32; $/;"	f	class:IndexDriver	file:
 REC_LEN1	tests/SortTest.java	/^  private static short REC_LEN1 = 32; $/;"	f	class:SORTDriver	file:
 REC_LEN2	tests/IndexTest.java	/^  private static short REC_LEN2 = 160; $/;"	f	class:IndexDriver	file:
@@ -1347,7 +1347,7 @@ SelectType(int)	javadoc/global/SelectType.html	/^<A NAME="SelectType(int)"><!-- 
 SetBasicPatternArray	basicpattern/BasicPattern.java	/^   public void SetBasicPatternArray(byte[] recordarray)$/;"	m	class:BasicPattern
 SetValue	basicpatterniterator/BasicPatternUtils.java	/^  public static void SetValue(Tuple value, Tuple  tuple, int fld_no, AttrType fldType)$/;"	m	class:BasicPatternUtils
 SetValue	iterator/TupleUtils.java	/^  public static void SetValue(Tuple value, Tuple  tuple, int fld_no, AttrType fldType)$/;"	m	class:TupleUtils
-SetValue	tripleiterator/TripleUtils.java	/^  public static void SetValue(Triple value, Triple  triple)$/;"	m	class:TripleUtils
+SetValue	iterator/TripleUtils.java	/^  public static void SetValue(Triple value, Triple  triple)$/;"	m	class:TripleUtils
 SetValue(heap.Tuple, heap.Tuple, int, global.AttrType)	javadoc/iterator/TupleUtils.html	/^<A NAME="SetValue(heap.Tuple, heap.Tuple, int, global.AttrType)"><!-- --><\/A><H3>$/;"	a
 Sort	iterator/Sort.java	/^  public Sort(AttrType[] in,         $/;"	m	class:Sort
 Sort	iterator/Sort.java	/^public class Sort extends Iterator implements GlobalConst$/;"	c
@@ -1400,17 +1400,17 @@ SystemDefs(java.lang.String, int, int, java.lang.String)	javadoc/global/SystemDe
 SystemDefs(java.lang.String, int, int, java.lang.String, int)	javadoc/global/SystemDefs.html	/^<A NAME="SystemDefs(java.lang.String, int, int, java.lang.String, int)"><!-- --><\/A><H3>$/;"	a
 TEMP	heap/Heapfile.java	/^  int TEMP = 0;$/;"	f	interface:Filetype
 TEMP	javadoc/heap/Heapfile.html	/^<A NAME="TEMP"><!-- --><\/A><H3>$/;"	a
-TEMP	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="TEMP"><!-- --><\/A><H3>$/;"	a
+TEMP	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="TEMP"><!-- --><\/A><H3>$/;"	a
 TEMP	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="TEMP"><!-- --><\/A><H3>$/;"	a
-TEMP	labelheap/LabelHeapfile.java	/^	  int TEMP = 0;$/;"	f	interface:Filetype
+TEMP	labelheap/LabelHeapFile.java	/^	  int TEMP = 0;$/;"	f	interface:Filetype
 TEMP	tripleheap/TripleHeapfile.java	/^  int TEMP = 0;$/;"	f	interface:Filetype
 TEMP_Triple_HF	diskmgr/rdfDB.java	/^	private TripleHeapfile TEMP_Triple_HF;		\/\/TEMPORARY HEAP FILE FOR SORTING$/;"	f	class:rdfDB	file:
 TEST	global/Flags.java	/^    public static final boolean TEST  = false;$/;"	f	interface:Flags
 TEST	javadoc/global/Flags.html	/^<A NAME="TEST"><!-- --><\/A><H3>$/;"	a
 TEST_fd	iterator/SpoofIbuf.java	/^  private  int   TEST_fd;$/;"	f	class:SpoofIbuf	file:
-TEST_fd	tripleiterator/TripleSpoofIbuf.java	/^	private  int   TEST_fd;$/;"	f	class:TripleSpoofIbuf	file:
+TEST_fd	iterator/TripleSpoofIbuf.java	/^	private  int   TEST_fd;$/;"	f	class:TripleSpoofIbuf	file:
 TEST_temp_fd	iterator/OBuf.java	/^  private  int  TEST_temp_fd;                        \/\/ fd of a temporary file$/;"	f	class:OBuf	file:
-TEST_temp_fd	tripleiterator/TripleOBuf.java	/^  private  int  TEST_temp_fd;           \/\/ fd of a temporary file$/;"	f	class:TripleOBuf	file:
+TEST_temp_fd	iterator/TripleOBuf.java	/^  private  int  TEST_temp_fd;           \/\/ fd of a temporary file$/;"	f	class:TripleOBuf	file:
 THFBufMgrException	tripleheap/THFBufMgrException.java	/^	  public THFBufMgrException()$/;"	m	class:THFBufMgrException
 THFBufMgrException	tripleheap/THFBufMgrException.java	/^	  public THFBufMgrException(Exception ex, String name)$/;"	m	class:THFBufMgrException
 THFBufMgrException	tripleheap/THFBufMgrException.java	/^public class THFBufMgrException extends ChainException{$/;"	c
@@ -1484,57 +1484,57 @@ TripleBTreeHeaderPage	btree/TripleBTreeHeaderPage.java	/^  public TripleBTreeHea
 TripleBTreeHeaderPage	btree/TripleBTreeHeaderPage.java	/^  public TripleBTreeHeaderPage(Page page) {$/;"	m	class:TripleBTreeHeaderPage
 TripleBTreeHeaderPage	btree/TripleBTreeHeaderPage.java	/^  public TripleBTreeHeaderPage(PageId pageno) $/;"	m	class:TripleBTreeHeaderPage
 TripleBTreeHeaderPage	btree/TripleBTreeHeaderPage.java	/^class TripleBTreeHeaderPage extends THFPage {$/;"	c
-TripleGet	tripleiterator/TripleIoBuf.java	/^  public Triple TripleGet(Triple buf)$/;"	m	class:TripleIoBuf
+TripleGet	iterator/TripleIoBuf.java	/^  public Triple TripleGet(Triple buf)$/;"	m	class:TripleIoBuf
 TripleHeapfile	tripleheap/TripleHeapfile.java	/^  public  TripleHeapfile(String name) $/;"	m	class:TripleHeapfile
 TripleHeapfile	tripleheap/TripleHeapfile.java	/^public class TripleHeapfile implements Filetype,  GlobalConst {$/;"	c
 TripleHeapfile(java.lang.String)	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="TripleHeapfile(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 TripleIndexFile	btree/TripleIndexFile.java	/^public abstract class TripleIndexFile $/;"	c
-TripleIoBuf	tripleiterator/TripleIoBuf.java	/^  public void TripleIoBuf(){}             $/;"	m	class:TripleIoBuf
-TripleIoBuf	tripleiterator/TripleIoBuf.java	/^public class TripleIoBuf implements GlobalConst{$/;"	c
-TripleIterator	tripleiterator/TripleIterator.java	/^public abstract class TripleIterator implements Flags {$/;"	c
-TripleIteratorBMException	tripleiterator/TripleIteratorBMException.java	/^  public TripleIteratorBMException(Exception prev, String s){ super(prev,s);}$/;"	m	class:TripleIteratorBMException
-TripleIteratorBMException	tripleiterator/TripleIteratorBMException.java	/^  public TripleIteratorBMException(String s){super(null,s);}$/;"	m	class:TripleIteratorBMException
-TripleIteratorBMException	tripleiterator/TripleIteratorBMException.java	/^public class TripleIteratorBMException extends ChainException $/;"	c
+TripleIoBuf	iterator/TripleIoBuf.java	/^  public void TripleIoBuf(){}             $/;"	m	class:TripleIoBuf
+TripleIoBuf	iterator/TripleIoBuf.java	/^public class TripleIoBuf implements GlobalConst{$/;"	c
+TripleIterator	iterator/TripleIterator.java	/^public abstract class TripleIterator implements Flags {$/;"	c
+TripleIteratorBMException	iterator/TripleIteratorBMException.java	/^  public TripleIteratorBMException(Exception prev, String s){ super(prev,s);}$/;"	m	class:TripleIteratorBMException
+TripleIteratorBMException	iterator/TripleIteratorBMException.java	/^  public TripleIteratorBMException(String s){super(null,s);}$/;"	m	class:TripleIteratorBMException
+TripleIteratorBMException	iterator/TripleIteratorBMException.java	/^public class TripleIteratorBMException extends ChainException $/;"	c
 TripleLeafData	btree/TripleLeafData.java	/^  public TripleLeafData(TID tid) {myTid= new TID(tid.pageNo, tid.slotNo);};  $/;"	m	class:TripleLeafData
 TripleLeafData	btree/TripleLeafData.java	/^public class TripleLeafData extends DataClass {$/;"	c
-TripleOBuf	tripleiterator/TripleOBuf.java	/^  public TripleOBuf(){}     $/;"	m	class:TripleOBuf
-TripleOBuf	tripleiterator/TripleOBuf.java	/^public class TripleOBuf implements GlobalConst$/;"	c
+TripleOBuf	iterator/TripleOBuf.java	/^  public TripleOBuf(){}     $/;"	m	class:TripleOBuf
+TripleOBuf	iterator/TripleOBuf.java	/^public class TripleOBuf implements GlobalConst$/;"	c
 TripleOrder	global/TripleOrder.java	/^	public TripleOrder (int _tripleOrder) $/;"	m	class:TripleOrder
 TripleOrder	global/TripleOrder.java	/^public class TripleOrder {$/;"	c
-TriplePut	tripleiterator/TripleIoBuf.java	/^  public void TriplePut(Triple buf)$/;"	m	class:TripleIoBuf
-TripleSort	tripleiterator/TripleSort.java	/^  public TripleSort(TScan am, TripleOrder sort_order, int n_pages) $/;"	m	class:TripleSort
-TripleSort	tripleiterator/TripleSort.java	/^public class TripleSort extends TripleIterator implements GlobalConst$/;"	c
-TripleSortException	tripleiterator/TripleSortException.java	/^  public TripleSortException(Exception e, String s) {super(e,s);}$/;"	m	class:TripleSortException
-TripleSortException	tripleiterator/TripleSortException.java	/^  public TripleSortException(String s) {super(null,s);}$/;"	m	class:TripleSortException
-TripleSortException	tripleiterator/TripleSortException.java	/^public class TripleSortException extends ChainException $/;"	c
-TripleSpoofIbuf	tripleiterator/TripleSpoofIbuf.java	/^	public void TripleSpoofIbuf()$/;"	m	class:TripleSpoofIbuf
-TripleSpoofIbuf	tripleiterator/TripleSpoofIbuf.java	/^public class TripleSpoofIbuf implements GlobalConst  {$/;"	c
+TriplePut	iterator/TripleIoBuf.java	/^  public void TriplePut(Triple buf)$/;"	m	class:TripleIoBuf
+TripleSort	iterator/TripleSort.java	/^  public TripleSort(TScan am, TripleOrder sort_order, int n_pages) $/;"	m	class:TripleSort
+TripleSort	iterator/TripleSort.java	/^public class TripleSort extends TripleIterator implements GlobalConst$/;"	c
+TripleSortException	iterator/TripleSortException.java	/^  public TripleSortException(Exception e, String s) {super(e,s);}$/;"	m	class:TripleSortException
+TripleSortException	iterator/TripleSortException.java	/^  public TripleSortException(String s) {super(null,s);}$/;"	m	class:TripleSortException
+TripleSortException	iterator/TripleSortException.java	/^public class TripleSortException extends ChainException $/;"	c
+TripleSpoofIbuf	iterator/TripleSpoofIbuf.java	/^	public void TripleSpoofIbuf()$/;"	m	class:TripleSpoofIbuf
+TripleSpoofIbuf	iterator/TripleSpoofIbuf.java	/^public class TripleSpoofIbuf implements GlobalConst  {$/;"	c
 TripleTest	tests/TripleTest.java	/^public class TripleTest$/;"	c
-TripleUtils	tripleiterator/TripleUtils.java	/^public class TripleUtils$/;"	c
-TripleUtilsException	tripleiterator/TripleUtilsException.java	/^  public TripleUtilsException(Exception prev, String s){ super(prev,s);}$/;"	m	class:TripleUtilsException
-TripleUtilsException	tripleiterator/TripleUtilsException.java	/^  public TripleUtilsException(String s){super(null,s);}$/;"	m	class:TripleUtilsException
-TripleUtilsException	tripleiterator/TripleUtilsException.java	/^public class TripleUtilsException extends ChainException {$/;"	c
+TripleUtils	iterator/TripleUtils.java	/^public class TripleUtils$/;"	c
+TripleUtilsException	iterator/TripleUtilsException.java	/^  public TripleUtilsException(Exception prev, String s){ super(prev,s);}$/;"	m	class:TripleUtilsException
+TripleUtilsException	iterator/TripleUtilsException.java	/^  public TripleUtilsException(String s){super(null,s);}$/;"	m	class:TripleUtilsException
+TripleUtilsException	iterator/TripleUtilsException.java	/^public class TripleUtilsException extends ChainException {$/;"	c
 Triple_BTree	diskmgr/rdfDB.java	/^	private TripleBTreeFile Triple_BTree; 		\/\/BTree Predicate file on Predicate Heap file$/;"	f	class:rdfDB	file:
 Triple_BTreeIndex	diskmgr/rdfDB.java	/^	private TripleBTreeFile Triple_BTreeIndex; 	\/\/BTree file for the index options given$/;"	f	class:rdfDB	file:
 Triple_HF	basicpatterniterator/BP_Triple_Join.java	/^	TripleHeapfile Triple_HF;$/;"	f	class:BP_Triple_Join
 Triple_HF	diskmgr/rdfDB.java	/^	private TripleHeapfile Triple_HF; 	  		\/\/Triples Heap file to store triples$/;"	f	class:rdfDB	file:
-Tripledeq	tripleiterator/TriplepnodePQ.java	/^  abstract public Triplepnode Tripledeq();$/;"	m	class:TriplepnodePQ
-Tripledeq	tripleiterator/TriplepnodeSplayPQ.java	/^	public Triplepnode Tripledeq() $/;"	m	class:TriplepnodeSplayPQ
-Tripleenq	tripleiterator/TriplepnodePQ.java	/^  abstract public void  Tripleenq(Triplepnode  item)$/;"	m	class:TriplepnodePQ
-Tripleenq	tripleiterator/TriplepnodeSplayPQ.java	/^	public void Tripleenq(Triplepnode item) throws$/;"	m	class:TriplepnodeSplayPQ
-Triplepnode	tripleiterator/Triplepnode.java	/^  public Triplepnode()$/;"	m	class:Triplepnode
-Triplepnode	tripleiterator/Triplepnode.java	/^  public Triplepnode(int runNum, Triple t) $/;"	m	class:Triplepnode
-Triplepnode	tripleiterator/Triplepnode.java	/^public class Triplepnode $/;"	c
-TriplepnodeCMP	tripleiterator/TriplepnodePQ.java	/^  public int TriplepnodeCMP(Triplepnode a, Triplepnode b) $/;"	m	class:TriplepnodePQ
-TriplepnodeEQ	tripleiterator/TriplepnodePQ.java	/^  public boolean TriplepnodeEQ(Triplepnode a, Triplepnode b) $/;"	m	class:TriplepnodePQ
-TriplepnodePQ	tripleiterator/TriplepnodePQ.java	/^  public TriplepnodePQ() { count = 0; } $/;"	m	class:TriplepnodePQ
-TriplepnodePQ	tripleiterator/TriplepnodePQ.java	/^public abstract class TriplepnodePQ$/;"	c
-TriplepnodeSplayNode	tripleiterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode(Triplepnode h) $/;"	m	class:TriplepnodeSplayNode
-TriplepnodeSplayNode	tripleiterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode(Triplepnode h, TriplepnodeSplayNode l, TriplepnodeSplayNode r) $/;"	m	class:TriplepnodeSplayNode
-TriplepnodeSplayNode	tripleiterator/TriplepnodeSplayNode.java	/^public class TriplepnodeSplayNode$/;"	c
-TriplepnodeSplayPQ	tripleiterator/TriplepnodeSplayPQ.java	/^	public TriplepnodeSplayPQ() $/;"	m	class:TriplepnodeSplayPQ
-TriplepnodeSplayPQ	tripleiterator/TriplepnodeSplayPQ.java	/^	public TriplepnodeSplayPQ(TripleOrder order)$/;"	m	class:TriplepnodeSplayPQ
-TriplepnodeSplayPQ	tripleiterator/TriplepnodeSplayPQ.java	/^public class TriplepnodeSplayPQ extends TriplepnodePQ$/;"	c
+Tripledeq	iterator/TriplepnodePQ.java	/^  abstract public Triplepnode Tripledeq();$/;"	m	class:TriplepnodePQ
+Tripledeq	iterator/TriplepnodeSplayPQ.java	/^	public Triplepnode Tripledeq() $/;"	m	class:TriplepnodeSplayPQ
+Tripleenq	iterator/TriplepnodePQ.java	/^  abstract public void  Tripleenq(Triplepnode  item)$/;"	m	class:TriplepnodePQ
+Tripleenq	iterator/TriplepnodeSplayPQ.java	/^	public void Tripleenq(Triplepnode item) throws$/;"	m	class:TriplepnodeSplayPQ
+Triplepnode	iterator/Triplepnode.java	/^  public Triplepnode()$/;"	m	class:Triplepnode
+Triplepnode	iterator/Triplepnode.java	/^  public Triplepnode(int runNum, Triple t) $/;"	m	class:Triplepnode
+Triplepnode	iterator/Triplepnode.java	/^public class Triplepnode $/;"	c
+TriplepnodeCMP	iterator/TriplepnodePQ.java	/^  public int TriplepnodeCMP(Triplepnode a, Triplepnode b) $/;"	m	class:TriplepnodePQ
+TriplepnodeEQ	iterator/TriplepnodePQ.java	/^  public boolean TriplepnodeEQ(Triplepnode a, Triplepnode b) $/;"	m	class:TriplepnodePQ
+TriplepnodePQ	iterator/TriplepnodePQ.java	/^  public TriplepnodePQ() { count = 0; } $/;"	m	class:TriplepnodePQ
+TriplepnodePQ	iterator/TriplepnodePQ.java	/^public abstract class TriplepnodePQ$/;"	c
+TriplepnodeSplayNode	iterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode(Triplepnode h) $/;"	m	class:TriplepnodeSplayNode
+TriplepnodeSplayNode	iterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode(Triplepnode h, TriplepnodeSplayNode l, TriplepnodeSplayNode r) $/;"	m	class:TriplepnodeSplayNode
+TriplepnodeSplayNode	iterator/TriplepnodeSplayNode.java	/^public class TriplepnodeSplayNode$/;"	c
+TriplepnodeSplayPQ	iterator/TriplepnodeSplayPQ.java	/^	public TriplepnodeSplayPQ() $/;"	m	class:TriplepnodeSplayPQ
+TriplepnodeSplayPQ	iterator/TriplepnodeSplayPQ.java	/^	public TriplepnodeSplayPQ(TripleOrder order)$/;"	m	class:TriplepnodeSplayPQ
+TriplepnodeSplayPQ	iterator/TriplepnodeSplayPQ.java	/^public class TriplepnodeSplayPQ extends TriplepnodePQ$/;"	c
 Tuple	heap/Tuple.java	/^	public  Tuple()$/;"	m	class:Tuple
 Tuple	heap/Tuple.java	/^	public  Tuple(int size)$/;"	m	class:Tuple
 Tuple	heap/Tuple.java	/^	public Tuple(Tuple fromTuple)$/;"	m	class:Tuple
@@ -1569,9 +1569,9 @@ USED_PTR	tripleheap/THFPage.java	/^  public static final int USED_PTR = 2;$/;"	f
 UnknowAttrType	iterator/UnknowAttrType.java	/^  public UnknowAttrType(Exception prev, String s){super(prev,s);}$/;"	m	class:UnknowAttrType
 UnknowAttrType	iterator/UnknowAttrType.java	/^  public UnknowAttrType(String s){super(null,s);}$/;"	m	class:UnknowAttrType
 UnknowAttrType	iterator/UnknowAttrType.java	/^public class UnknowAttrType extends ChainException {$/;"	c
-UnknowAttrType	tripleiterator/UnknowAttrType.java	/^  public UnknowAttrType(Exception prev, String s){super(prev,s);}$/;"	m	class:UnknowAttrType
-UnknowAttrType	tripleiterator/UnknowAttrType.java	/^  public UnknowAttrType(String s){super(null,s);}$/;"	m	class:UnknowAttrType
-UnknowAttrType	tripleiterator/UnknowAttrType.java	/^public class UnknowAttrType extends ChainException {$/;"	c
+UnknowAttrType	iterator/UnknowAttrType.java	/^  public UnknowAttrType(Exception prev, String s){super(prev,s);}$/;"	m	class:UnknowAttrType
+UnknowAttrType	iterator/UnknowAttrType.java	/^  public UnknowAttrType(String s){super(null,s);}$/;"	m	class:UnknowAttrType
+UnknowAttrType	iterator/UnknowAttrType.java	/^public class UnknowAttrType extends ChainException {$/;"	c
 UnknowAttrType(java.lang.Exception, java.lang.String)	javadoc/iterator/UnknowAttrType.html	/^<A NAME="UnknowAttrType(java.lang.Exception, java.lang.String)"><!-- --><\/A><H3>$/;"	a
 UnknowAttrType(java.lang.String)	javadoc/iterator/UnknowAttrType.html	/^<A NAME="UnknowAttrType(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 UnknownIndexTypeException	index/UnknownIndexTypeException.java	/^  public UnknownIndexTypeException() {super();}$/;"	m	class:UnknownIndexTypeException
@@ -1585,10 +1585,10 @@ UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^  public Unknown
 UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException(Exception e, String s) {super(e,s);}$/;"	m	class:UnknownKeyTypeException
 UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException(String s) {super(null,s);}$/;"	m	class:UnknownKeyTypeException
 UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^public class UnknownKeyTypeException extends ChainException $/;"	c
-UnknownKeyTypeException	tripleiterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException() {super();}$/;"	m	class:UnknownKeyTypeException
-UnknownKeyTypeException	tripleiterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException(Exception e, String s) {super(e,s);}$/;"	m	class:UnknownKeyTypeException
-UnknownKeyTypeException	tripleiterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException(String s) {super(null,s);}$/;"	m	class:UnknownKeyTypeException
-UnknownKeyTypeException	tripleiterator/UnknownKeyTypeException.java	/^public class UnknownKeyTypeException extends ChainException $/;"	c
+UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException() {super();}$/;"	m	class:UnknownKeyTypeException
+UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException(Exception e, String s) {super(e,s);}$/;"	m	class:UnknownKeyTypeException
+UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^  public UnknownKeyTypeException(String s) {super(null,s);}$/;"	m	class:UnknownKeyTypeException
+UnknownKeyTypeException	iterator/UnknownKeyTypeException.java	/^public class UnknownKeyTypeException extends ChainException $/;"	c
 UnknownKeyTypeException()	javadoc/iterator/UnknownKeyTypeException.html	/^<A NAME="UnknownKeyTypeException()"><!-- --><\/A><H3>$/;"	a
 UnknownKeyTypeException(java.lang.Exception, java.lang.String)	javadoc/iterator/UnknownKeyTypeException.html	/^<A NAME="UnknownKeyTypeException(java.lang.Exception, java.lang.String)"><!-- --><\/A><H3>$/;"	a
 UnknownKeyTypeException(java.lang.String)	javadoc/iterator/UnknownKeyTypeException.html	/^<A NAME="UnknownKeyTypeException(java.lang.String)"><!-- --><\/A><H3>$/;"	a
@@ -1605,7 +1605,7 @@ Value	tripleheap/Triple.java	/^  private double Value; \/\/8 bytes$/;"	f	class:T
 Value(heap.Tuple, int)	javadoc/iterator/TupleUtils.html	/^<A NAME="Value(heap.Tuple, int)"><!-- --><\/A><H3>$/;"	a
 WRITE_BUFFER	iterator/IoBuf.java	/^  public static final int WRITE_BUFFER =0;$/;"	f	class:IoBuf
 WRITE_BUFFER	javadoc/iterator/IoBuf.html	/^<A NAME="WRITE_BUFFER"><!-- --><\/A><H3>$/;"	a
-WRITE_BUFFER	tripleiterator/TripleIoBuf.java	/^  public static final int WRITE_BUFFER =0;$/;"	f	class:TripleIoBuf
+WRITE_BUFFER	iterator/TripleIoBuf.java	/^  public static final int WRITE_BUFFER =0;$/;"	f	class:TripleIoBuf
 WrongPermat	iterator/WrongPermat.java	/^  public WrongPermat(Exception prev, String s){super(prev,s);}$/;"	m	class:WrongPermat
 WrongPermat	iterator/WrongPermat.java	/^  public WrongPermat(String s){super(null,s);}$/;"	m	class:WrongPermat
 WrongPermat	iterator/WrongPermat.java	/^public class WrongPermat extends ChainException {$/;"	c
@@ -1633,7 +1633,7 @@ _P_	javadoc/index-all.html	/^<A NAME="_P_"><!-- --><\/A><H2>$/;"	a
 _R_	javadoc/index-all.html	/^<A NAME="_R_"><!-- --><\/A><H2>$/;"	a
 _S_	javadoc/index-all.html	/^<A NAME="_S_"><!-- --><\/A><H2>$/;"	a
 _TEST_temp_fd	iterator/IoBuf.java	/^  private  int  _TEST_temp_fd;       \/\/ fd of a temporary file$/;"	f	class:IoBuf	file:
-_TEST_temp_fd	tripleiterator/TripleIoBuf.java	/^  private  int  _TEST_temp_fd;       \/\/ fd of a temporary file$/;"	f	class:TripleIoBuf	file:
+_TEST_temp_fd	iterator/TripleIoBuf.java	/^  private  int  _TEST_temp_fd;       \/\/ fd of a temporary file$/;"	f	class:TripleIoBuf	file:
 _T_	javadoc/index-all.html	/^<A NAME="_T_"><!-- --><\/A><H2>$/;"	a
 _U_	javadoc/index-all.html	/^<A NAME="_U_"><!-- --><\/A><H2>$/;"	a
 _V_	javadoc/index-all.html	/^<A NAME="_V_"><!-- --><\/A><H2>$/;"	a
@@ -1641,13 +1641,13 @@ _W_	javadoc/index-all.html	/^<A NAME="_W_"><!-- --><\/A><H2>$/;"	a
 _am	basicpatterniterator/BPSort.java	/^  private BasicPatternIterator   _am;$/;"	f	class:BPSort	file:
 _am	iterator/DuplElim.java	/^  private Iterator _am;$/;"	f	class:DuplElim	file:
 _am	iterator/Sort.java	/^  private Iterator    _am;$/;"	f	class:Sort	file:
-_am	tripleiterator/TripleSort.java	/^  private TScan       _am;$/;"	f	class:TripleSort	file:
+_am	iterator/TripleSort.java	/^  private TScan       _am;$/;"	f	class:TripleSort	file:
 _bufs	iterator/IoBuf.java	/^  private  byte _bufs[][];            \/\/ Array of pointers to buffer pages.$/;"	f	class:IoBuf	file:
 _bufs	iterator/OBuf.java	/^  private  byte[][]_bufs;                        \/\/ Array of pointers to buffer pages.$/;"	f	class:OBuf	file:
 _bufs	iterator/SpoofIbuf.java	/^  private  byte[][] _bufs;$/;"	f	class:SpoofIbuf	file:
-_bufs	tripleiterator/TripleIoBuf.java	/^  private  byte _bufs[][];           \/\/ Array of pointers to buffer pages.$/;"	f	class:TripleIoBuf	file:
-_bufs	tripleiterator/TripleOBuf.java	/^  private  byte[][]_bufs;               \/\/ Array of pointers to buffer pages.$/;"	f	class:TripleOBuf	file:
-_bufs	tripleiterator/TripleSpoofIbuf.java	/^	private  byte[][] _bufs;$/;"	f	class:TripleSpoofIbuf	file:
+_bufs	iterator/TripleIoBuf.java	/^  private  byte _bufs[][];           \/\/ Array of pointers to buffer pages.$/;"	f	class:TripleIoBuf	file:
+_bufs	iterator/TripleOBuf.java	/^  private  byte[][]_bufs;               \/\/ Array of pointers to buffer pages.$/;"	f	class:TripleOBuf	file:
+_bufs	iterator/TripleSpoofIbuf.java	/^	private  byte[][] _bufs;$/;"	f	class:TripleSpoofIbuf	file:
 _bufs1	iterator/SortMerge.java	/^  private  byte    _bufs1[][],_bufs2[][];$/;"	f	class:SortMerge	file:
 _bufs2	iterator/SortMerge.java	/^  private  byte    _bufs1[][],_bufs2[][];$/;"	f	class:SortMerge	file:
 _confidenceFilter	diskmgr/Stream.java	/^	public double _confidenceFilter;$/;"	f	class:Stream
@@ -1655,25 +1655,25 @@ _destroyFile	btree/BTreeFile.java	/^  private void  _destroyFile(PageId pageno) 
 _destroyFile	btree/LabelBTreeFile.java	/^  private void  _destroyFile(PageId pageno) $/;"	m	class:LabelBTreeFile	file:
 _destroyFile	btree/TripleBTreeFile.java	/^  private void  _destroyFile(PageId pageno) $/;"	m	class:TripleBTreeFile	file:
 _fd	iterator/SpoofIbuf.java	/^  private  Heapfile _fd;$/;"	f	class:SpoofIbuf	file:
-_fd	tripleiterator/TripleSpoofIbuf.java	/^	private  TripleHeapfile _fd;$/;"	f	class:TripleSpoofIbuf	file:
+_fd	iterator/TripleSpoofIbuf.java	/^	private  TripleHeapfile _fd;$/;"	f	class:TripleSpoofIbuf	file:
 _fileName	heap/Heapfile.java	/^  private     String 	 _fileName;$/;"	f	class:Heapfile	file:
-_fileName	labelheap/LabelHeapfile.java	/^	  private     String 	 _fileName;$/;"	f	class:LabelHeapfile	file:
+_fileName	labelheap/LabelHeapFile.java	/^	  private     String 	 _fileName;$/;"	f	class:LabelHeapFile	file:
 _fileName	tripleheap/TripleHeapfile.java	/^  private     String 	 _fileName;$/;"	f	class:TripleHeapfile	file:
 _file_deleted	heap/Heapfile.java	/^  private     boolean     _file_deleted;$/;"	f	class:Heapfile	file:
-_file_deleted	labelheap/LabelHeapfile.java	/^	  private     boolean     _file_deleted;$/;"	f	class:LabelHeapfile	file:
+_file_deleted	labelheap/LabelHeapFile.java	/^	  private     boolean     _file_deleted;$/;"	f	class:LabelHeapFile	file:
 _file_deleted	tripleheap/TripleHeapfile.java	/^  private     boolean     _file_deleted;$/;"	f	class:TripleHeapfile	file:
 _findDataPage	heap/Heapfile.java	/^  private boolean  _findDataPage( RID rid,$/;"	m	class:Heapfile	file:
-_findDataPage	labelheap/LabelHeapfile.java	/^	  private boolean  _findDataPage( LID lid,$/;"	m	class:LabelHeapfile	file:
+_findDataPage	labelheap/LabelHeapFile.java	/^	  private boolean  _findDataPage( LID lid,$/;"	m	class:LabelHeapFile	file:
 _findDataPage	tripleheap/TripleHeapfile.java	/^  private boolean  _findDataPage( TID rid,$/;"	m	class:TripleHeapfile	file:
 _firstDirPageId	heap/Heapfile.java	/^  PageId      _firstDirPageId;   \/\/ page number of header page$/;"	f	class:Heapfile
-_firstDirPageId	labelheap/LabelHeapfile.java	/^	  PageId      _firstDirPageId;   \/\/ page number of header page$/;"	f	class:LabelHeapfile
+_firstDirPageId	labelheap/LabelHeapFile.java	/^	  PageId      _firstDirPageId;   \/\/ page number of header page$/;"	f	class:LabelHeapFile
 _firstDirPageId	tripleheap/TripleHeapfile.java	/^  PageId      _firstDirPageId;   \/\/ page number of header page$/;"	f	class:TripleHeapfile
 _fldNum	index/IndexScan.java	/^  private int           _fldNum;       $/;"	f	class:IndexScan	file:
 _ftype	heap/Heapfile.java	/^  int         _ftype;$/;"	f	class:Heapfile
-_ftype	labelheap/LabelHeapfile.java	/^	  int         _ftype;$/;"	f	class:LabelHeapfile
+_ftype	labelheap/LabelHeapFile.java	/^	  int         _ftype;$/;"	f	class:LabelHeapFile
 _ftype	tripleheap/TripleHeapfile.java	/^  int         _ftype;$/;"	f	class:TripleHeapfile
 _hf	heap/Scan.java	/^    private Heapfile  _hf;$/;"	f	class:Scan	file:
-_hf	labelheap/LScan.java	/^    private LabelHeapfile  _hf;$/;"	f	class:LScan	file:
+_hf	labelheap/LScan.java	/^    private LabelHeapFile  _hf;$/;"	f	class:LScan	file:
 _hf	tripleheap/TScan.java	/^    private TripleHeapfile  _hf;$/;"	f	class:TScan	file:
 _in	basicpatterniterator/BPSort.java	/^  private AttrType[]  _in;         $/;"	f	class:BPSort	file:
 _in	iterator/DuplElim.java	/^  private AttrType[] _in;     \/\/ memory for array allocated by constructor$/;"	f	class:DuplElim	file:
@@ -1692,12 +1692,12 @@ _n_pages	iterator/OBuf.java	/^  private  int  _n_pages;                        \
 _n_pages	iterator/Sort.java	/^  private int         _n_pages;$/;"	f	class:Sort	file:
 _n_pages	iterator/SortMerge.java	/^  private  int        _n_pages; $/;"	f	class:SortMerge	file:
 _n_pages	iterator/SpoofIbuf.java	/^  private  int    _n_pages;$/;"	f	class:SpoofIbuf	file:
-_n_pages	tripleiterator/TripleIoBuf.java	/^  private  int  _n_pages;            \/\/ number of pages in array$/;"	f	class:TripleIoBuf	file:
-_n_pages	tripleiterator/TripleOBuf.java	/^  private  int  _n_pages;               \/\/ number of pages in array$/;"	f	class:TripleOBuf	file:
-_n_pages	tripleiterator/TripleSort.java	/^  private int         _n_pages;$/;"	f	class:TripleSort	file:
-_n_pages	tripleiterator/TripleSpoofIbuf.java	/^	private  int    _n_pages;$/;"	f	class:TripleSpoofIbuf	file:
+_n_pages	iterator/TripleIoBuf.java	/^  private  int  _n_pages;            \/\/ number of pages in array$/;"	f	class:TripleIoBuf	file:
+_n_pages	iterator/TripleOBuf.java	/^  private  int  _n_pages;               \/\/ number of pages in array$/;"	f	class:TripleOBuf	file:
+_n_pages	iterator/TripleSort.java	/^  private int         _n_pages;$/;"	f	class:TripleSort	file:
+_n_pages	iterator/TripleSpoofIbuf.java	/^	private  int    _n_pages;$/;"	f	class:TripleSpoofIbuf	file:
 _newDatapage	heap/Heapfile.java	/^  private HFPage _newDatapage(DataPageInfo dpinfop)$/;"	m	class:Heapfile	file:
-_newDatapage	labelheap/LabelHeapfile.java	/^	  private LHFPage _newDatapage(DataPageInfo dpinfop)$/;"	m	class:LabelHeapfile	file:
+_newDatapage	labelheap/LabelHeapFile.java	/^	  private LHFPage _newDatapage(DataPageInfo dpinfop)$/;"	m	class:LabelHeapFile	file:
 _newDatapage	tripleheap/TripleHeapfile.java	/^  private THFPage _newDatapage(DataPageInfo dpinfop)$/;"	m	class:TripleHeapfile	file:
 _noInFlds	index/IndexScan.java	/^  private int           _noInFlds;$/;"	f	class:IndexScan	file:
 _noOutFlds	index/IndexScan.java	/^  private int           _noOutFlds;$/;"	f	class:IndexScan	file:
@@ -1717,8 +1717,8 @@ _sort_fld	iterator/Sort.java	/^  private int         _sort_fld;$/;"	f	class:Sort
 _subjectFilter	diskmgr/Stream.java	/^	public String _subjectFilter;$/;"	f	class:Stream
 _temp_fd	iterator/IoBuf.java	/^  private  Heapfile _temp_fd;$/;"	f	class:IoBuf	file:
 _temp_fd	iterator/OBuf.java	/^  private  Heapfile _temp_fd;$/;"	f	class:OBuf	file:
-_temp_fd	tripleiterator/TripleIoBuf.java	/^  private  TripleHeapfile _temp_fd;$/;"	f	class:TripleIoBuf	file:
-_temp_fd	tripleiterator/TripleOBuf.java	/^  private  TripleHeapfile _temp_fd;$/;"	f	class:TripleOBuf	file:
+_temp_fd	iterator/TripleIoBuf.java	/^  private  TripleHeapfile _temp_fd;$/;"	f	class:TripleIoBuf	file:
+_temp_fd	iterator/TripleOBuf.java	/^  private  TripleHeapfile _temp_fd;$/;"	f	class:TripleOBuf	file:
 _types	index/IndexScan.java	/^  private AttrType[]    _types;$/;"	f	class:IndexScan	file:
 accessType	catalog/IndexDesc.java	/^	IndexType  accessType;                \/\/ access method$/;"	f	class:IndexDesc
 addIndex	catalog/AttrCatalog.java	/^  public void addIndex(String relation, String attrname,$/;"	m	class:AttrCatalog
@@ -1733,7 +1733,7 @@ add_file_entry	btree/LabelBTreeFile.java	/^  private void add_file_entry(String 
 add_file_entry	btree/TripleBTreeFile.java	/^  private void add_file_entry(String fileName, PageId pageno) $/;"	m	class:TripleBTreeFile	file:
 add_file_entry	diskmgr/DB.java	/^  public void add_file_entry(String fname, PageId start_page_num)$/;"	m	class:DB
 add_file_entry	heap/Heapfile.java	/^  private void add_file_entry(String filename, PageId pageno)$/;"	m	class:Heapfile	file:
-add_file_entry	labelheap/LabelHeapfile.java	/^	  private void add_file_entry(String filename, PageId pageno)$/;"	m	class:LabelHeapfile	file:
+add_file_entry	labelheap/LabelHeapFile.java	/^	  private void add_file_entry(String filename, PageId pageno)$/;"	m	class:LabelHeapFile	file:
 add_file_entry	tripleheap/TripleHeapfile.java	/^  private void add_file_entry(String filename, PageId pageno)$/;"	m	class:TripleHeapfile	file:
 add_file_entry(java.lang.String, global.PageId)	javadoc/diskmgr/DB.html	/^<A NAME="add_file_entry(java.lang.String, global.PageId)"><!-- --><\/A><H3>$/;"	a
 adjustKey	btree/BTIndexPage.java	/^  boolean adjustKey(KeyClass newKey, KeyClass oldKey) $/;"	m	class:BTIndexPage
@@ -1939,7 +1939,7 @@ btree.ScanIteratorException	javadoc/serialized-form.html	/^<A NAME="btree.ScanIt
 btree.UnpinPageException	javadoc/serialized-form.html	/^<A NAME="btree.UnpinPageException"><!-- --><\/A>$/;"	a
 bufPool	bufmgr/BufMgr.java	/^  private byte[][] bufPool;  \/\/ default = byte[NUMBUF][MAX_SPACE];$/;"	f	class:BufMgr	file:
 buffer_only	iterator/OBuf.java	/^  private  boolean buffer_only;$/;"	f	class:OBuf	file:
-buffer_only	tripleiterator/TripleOBuf.java	/^  private  boolean buffer_only;$/;"	f	class:TripleOBuf	file:
+buffer_only	iterator/TripleOBuf.java	/^  private  boolean buffer_only;$/;"	f	class:TripleOBuf	file:
 bufmgr	bufmgr/BufMgr.java	/^package bufmgr;$/;"	p
 bufmgr	bufmgr/BufMgrException.java	/^package bufmgr;$/;"	p
 bufmgr	bufmgr/BufferPoolExceededException.java	/^package bufmgr;$/;"	p
@@ -1968,10 +1968,10 @@ bufmgr.PageUnpinnedException	javadoc/serialized-form.html	/^<A NAME="bufmgr.Page
 bufmgr.ReplacerException	javadoc/serialized-form.html	/^<A NAME="bufmgr.ReplacerException"><!-- --><\/A>$/;"	a
 bufs	basicpatterniterator/BPSort.java	/^  private byte[][]    bufs;$/;"	f	class:BPSort	file:
 bufs	iterator/Sort.java	/^  private byte[][]    bufs;$/;"	f	class:Sort	file:
-bufs	tripleiterator/TripleSort.java	/^  private byte[][]    bufs;$/;"	f	class:TripleSort	file:
+bufs	iterator/TripleSort.java	/^  private byte[][]    bufs;$/;"	f	class:TripleSort	file:
 bufs_pids	basicpatterniterator/BPSort.java	/^  private PageId[]     bufs_pids;$/;"	f	class:BPSort	file:
 bufs_pids	iterator/Sort.java	/^  private PageId[]     bufs_pids;$/;"	f	class:Sort	file:
-bufs_pids	tripleiterator/TripleSort.java	/^  private PageId[]     bufs_pids;$/;"	f	class:TripleSort	file:
+bufs_pids	iterator/TripleSort.java	/^  private PageId[]     bufs_pids;$/;"	f	class:TripleSort	file:
 buildIndexName	catalog/IndexCatalog.java	/^  public String buildIndexName(String relation, String attrName,$/;"	m	class:IndexCatalog
 catalog	catalog/AttrCatalog.java	/^package catalog;$/;"	p
 catalog	catalog/AttrCatalogException.java	/^package  catalog;$/;"	p
@@ -2023,8 +2023,8 @@ close	iterator/Iterator.java	/^  public abstract void close() $/;"	m	class:Itera
 close	iterator/NestedLoopsJoins.java	/^  public void close() throws JoinsException, IOException,IndexException $/;"	m	class:NestedLoopsJoins
 close	iterator/Sort.java	/^  public void close() throws SortException, IOException$/;"	m	class:Sort
 close	iterator/SortMerge.java	/^  public void close() $/;"	m	class:SortMerge
-close	tripleiterator/TripleIterator.java	/^  public abstract void close() $/;"	m	class:TripleIterator
-close	tripleiterator/TripleSort.java	/^  public void close() throws $/;"	m	class:TripleSort
+close	iterator/TripleIterator.java	/^  public abstract void close() $/;"	m	class:TripleIterator
+close	iterator/TripleSort.java	/^  public void close() throws $/;"	m	class:TripleSort
 close()	javadoc/btree/BTreeFile.html	/^<A NAME="close()"><!-- --><\/A><H3>$/;"	a
 close()	javadoc/btree/LabelBTreeFile.html	/^<A NAME="close()"><!-- --><\/A><H3>$/;"	a
 close()	javadoc/index/IndexScan.html	/^<A NAME="close()"><!-- --><\/A><H3>$/;"	a
@@ -2039,7 +2039,7 @@ closeDB()	javadoc/diskmgr/DB.html	/^<A NAME="closeDB()"><!-- --><\/A><H3>$/;"	a
 closeFlag	basicpatterniterator/BasicPatternIterator.java	/^  public boolean closeFlag = false; \/\/ added by bingjie 5\/4\/98$/;"	f	class:BasicPatternIterator
 closeFlag	iterator/Iterator.java	/^  public boolean closeFlag = false; \/\/ added by bingjie 5\/4\/98$/;"	f	class:Iterator
 closeFlag	javadoc/iterator/Iterator.html	/^<A NAME="closeFlag"><!-- --><\/A><H3>$/;"	a
-closeFlag	tripleiterator/TripleIterator.java	/^  public boolean closeFlag = false; \/\/ added by bingjie 5\/4\/98$/;"	f	class:TripleIterator
+closeFlag	iterator/TripleIterator.java	/^  public boolean closeFlag = false; \/\/ added by bingjie 5\/4\/98$/;"	f	class:TripleIterator
 closeStream	diskmgr/Stream.java	/^	public void closeStream()$/;"	m	class:Stream
 closeStream()	javadoc/diskmgr/Stream.html	/^<A NAME="closeStream()"><!-- --><\/A><H3>$/;"	a
 closescan	heap/Scan.java	/^    public void closescan()$/;"	m	class:Scan
@@ -2054,10 +2054,10 @@ columnum	tests/QueryCheck.java	/^  private short    columnum;     \/\/ number of
 compact_slot_dir	heap/HFPage.java	/^  protected void compact_slot_dir()  $/;"	m	class:HFPage
 compact_slot_dir	labelheap/LHFPage.java	/^  protected void compact_slot_dir()  $/;"	m	class:LHFPage
 compact_slot_dir	tripleheap/THFPage.java	/^  protected void compact_slot_dir()  $/;"	m	class:THFPage
-compareConfidence	tripleiterator/TripleUtils.java	/^  private static int compareConfidence(Triple t1, Triple t2)$/;"	m	class:TripleUtils	file:
-compareObject	tripleiterator/TripleUtils.java	/^  private static int compareObject(Triple t1, Triple t2, LabelHeapfile Elhf)$/;"	m	class:TripleUtils	file:
-comparePredicate	tripleiterator/TripleUtils.java	/^  private static int comparePredicate(Triple t1, Triple t2, LabelHeapfile Plhf)$/;"	m	class:TripleUtils	file:
-compareSubject	tripleiterator/TripleUtils.java	/^  private static int compareSubject(Triple t1, Triple t2, LabelHeapfile Elhf)$/;"	m	class:TripleUtils	file:
+compareConfidence	iterator/TripleUtils.java	/^  private static int compareConfidence(Triple t1, Triple t2)$/;"	m	class:TripleUtils	file:
+compareObject	iterator/TripleUtils.java	/^  private static int compareObject(Triple t1, Triple t2, LabelHeapFile Elhf)$/;"	m	class:TripleUtils	file:
+comparePredicate	iterator/TripleUtils.java	/^  private static int comparePredicate(Triple t1, Triple t2, LabelHeapFile Plhf)$/;"	m	class:TripleUtils	file:
+compareSubject	iterator/TripleUtils.java	/^  private static int compareSubject(Triple t1, Triple t2, LabelHeapFile Elhf)$/;"	m	class:TripleUtils	file:
 confidence	tests/QueryProgram.java	/^	public static double confidence = -99.0;$/;"	f	class:QueryProgram
 confidence	tests/QueryProgramJoin.java	/^	public static double confidence = -99.0;$/;"	f	class:QueryProgramJoin
 confidence_null	diskmgr/Stream.java	/^	static boolean confidence_null = false;$/;"	f	class:Stream
@@ -2219,7 +2219,7 @@ constructor_detail	javadoc/labelheap/LHFException.html	/^<A NAME="constructor_de
 constructor_detail	javadoc/labelheap/LHFPage.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
 constructor_detail	javadoc/labelheap/LScan.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
 constructor_detail	javadoc/labelheap/Label.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
-constructor_detail	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
+constructor_detail	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
 constructor_detail	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
 constructor_detail	javadoc/tripleheap/THFPage.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
 constructor_detail	javadoc/tripleheap/TScan.html	/^<A NAME="constructor_detail"><!-- --><\/A>$/;"	a
@@ -2383,7 +2383,7 @@ constructor_summary	javadoc/labelheap/LHFException.html	/^<A NAME="constructor_s
 constructor_summary	javadoc/labelheap/LHFPage.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
 constructor_summary	javadoc/labelheap/LScan.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
 constructor_summary	javadoc/labelheap/Label.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
-constructor_summary	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
+constructor_summary	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
 constructor_summary	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
 constructor_summary	javadoc/tripleheap/THFPage.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
 constructor_summary	javadoc/tripleheap/TScan.html	/^<A NAME="constructor_summary"><!-- --><\/A>$/;"	a
@@ -2413,8 +2413,8 @@ copyTid	global/TID.java	/^  public void copyTid (TID rid)$/;"	m	class:TID
 copyTid(global.TID)	javadoc/global/TID.html	/^<A NAME="copyTid(global.TID)"><!-- --><\/A><H3>$/;"	a
 count	iterator/pnodePQ.java	/^  protected int                   count;$/;"	f	class:pnodePQ
 count	tests/QueryCheck.java	/^  int count;$/;"	f	class:Group
-count	tripleiterator/TriplepnodePQ.java	/^  protected int count;$/;"	f	class:TriplepnodePQ
-createDummyLastElement	tripleiterator/TripleSort.java	/^  private Triple createDummyLastElement()$/;"	m	class:TripleSort	file:
+count	iterator/TriplepnodePQ.java	/^  protected int count;$/;"	f	class:TriplepnodePQ
+createDummyLastElement	iterator/TripleSort.java	/^  private Triple createDummyLastElement()$/;"	m	class:TripleSort	file:
 createIndex	diskmgr/rdfDB.java	/^	public void createIndex(int type)$/;"	m	class:rdfDB
 createIndex1	diskmgr/rdfDB.java	/^    public void createIndex1()$/;"	m	class:rdfDB
 createIndex2	diskmgr/rdfDB.java	/^    public void createIndex2()$/;"	m	class:rdfDB
@@ -2434,9 +2434,9 @@ curr_dbname	diskmgr/rdfDB.java	/^	private String curr_dbname; 				\/\/RDF Databa
 curr_page	iterator/IoBuf.java	/^  private  int  curr_page;            \/\/ Current page being written to.$/;"	f	class:IoBuf	file:
 curr_page	iterator/OBuf.java	/^  private  int  curr_page;                        \/\/ Current page being written to.$/;"	f	class:OBuf	file:
 curr_page	iterator/SpoofIbuf.java	/^  private  int    t_rd_from_pg, curr_page;$/;"	f	class:SpoofIbuf	file:
-curr_page	tripleiterator/TripleIoBuf.java	/^  private  int  curr_page;           \/\/ Current page being written to.$/;"	f	class:TripleIoBuf	file:
-curr_page	tripleiterator/TripleOBuf.java	/^  private  int  curr_page;              \/\/ Current page being written to.$/;"	f	class:TripleOBuf	file:
-curr_page	tripleiterator/TripleSpoofIbuf.java	/^	private  int    t_rd_from_pg, curr_page;$/;"	f	class:TripleSpoofIbuf	file:
+curr_page	iterator/TripleIoBuf.java	/^  private  int  curr_page;           \/\/ Current page being written to.$/;"	f	class:TripleIoBuf	file:
+curr_page	iterator/TripleOBuf.java	/^  private  int  curr_page;              \/\/ Current page being written to.$/;"	f	class:TripleOBuf	file:
+curr_page	iterator/TripleSpoofIbuf.java	/^	private  int    t_rd_from_pg, curr_page;$/;"	f	class:TripleSpoofIbuf	file:
 data	basicpattern/BasicPattern.java	/^  private byte [] data;$/;"	f	class:BasicPattern	file:
 data	btree/KeyDataEntry.java	/^   public DataClass data;$/;"	f	class:KeyDataEntry
 data	diskmgr/DB.java	/^  protected byte [] data;$/;"	f	class:DBHeaderPage
@@ -2492,10 +2492,10 @@ delEntry(btree.KeyDataEntry)	javadoc/btree/LabelBTLeafPage.html	/^<A NAME="delEn
 deleteEntity	diskmgr/rdfDB.java	/^	public boolean deleteEntity(String EntityLabel)$/;"	m	class:rdfDB
 deleteFashion	tests/BTTest.java	/^  public int deleteFashion;$/;"	f	class:BTDriver
 deleteFile	heap/Heapfile.java	/^  public void deleteFile()  $/;"	m	class:Heapfile
-deleteFile	labelheap/LabelHeapfile.java	/^	  public void deleteFile()  $/;"	m	class:LabelHeapfile
+deleteFile	labelheap/LabelHeapFile.java	/^	  public void deleteFile()  $/;"	m	class:LabelHeapFile
 deleteFile	tripleheap/TripleHeapfile.java	/^  public void deleteFile()  $/;"	m	class:TripleHeapfile
 deleteFile()	javadoc/heap/Heapfile.html	/^<A NAME="deleteFile()"><!-- --><\/A><H3>$/;"	a
-deleteFile()	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="deleteFile()"><!-- --><\/A><H3>$/;"	a
+deleteFile()	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="deleteFile()"><!-- --><\/A><H3>$/;"	a
 deleteFile()	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="deleteFile()"><!-- --><\/A><H3>$/;"	a
 deleteKey	btree/BTIndexPage.java	/^  RID deleteKey(KeyClass key) $/;"	m	class:BTIndexPage
 deleteKey	btree/LabelBTIndexPage.java	/^  LID deleteKey(KeyClass key) $/;"	m	class:LabelBTIndexPage
@@ -2506,11 +2506,11 @@ deleteRecUT	catalog/Utility.java	/^ void deleteRecUT(String relation, attrNode i
 deleteRecord	heap/HFPage.java	/^  public void deleteRecord ( RID rid )$/;"	m	class:HFPage
 deleteRecord	heap/Heapfile.java	/^  public boolean deleteRecord(RID rid)  $/;"	m	class:Heapfile
 deleteRecord	labelheap/LHFPage.java	/^  public void deleteRecord ( LID lid )$/;"	m	class:LHFPage
-deleteRecord	labelheap/LabelHeapfile.java	/^	  public boolean deleteRecord(LID lid)  $/;"	m	class:LabelHeapfile
+deleteRecord	labelheap/LabelHeapFile.java	/^	  public boolean deleteRecord(LID lid)  $/;"	m	class:LabelHeapFile
 deleteRecord	tripleheap/THFPage.java	/^  public void deleteRecord ( TID rid )$/;"	m	class:THFPage
 deleteRecord	tripleheap/TripleHeapfile.java	/^  public boolean deleteRecord(TID rid)  $/;"	m	class:TripleHeapfile
 deleteRecord(global.LID)	javadoc/labelheap/LHFPage.html	/^<A NAME="deleteRecord(global.LID)"><!-- --><\/A><H3>$/;"	a
-deleteRecord(global.LID)	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="deleteRecord(global.LID)"><!-- --><\/A><H3>$/;"	a
+deleteRecord(global.LID)	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="deleteRecord(global.LID)"><!-- --><\/A><H3>$/;"	a
 deleteRecord(global.RID)	javadoc/heap/HFPage.html	/^<A NAME="deleteRecord(global.RID)"><!-- --><\/A><H3>$/;"	a
 deleteRecord(global.RID)	javadoc/heap/Heapfile.html	/^<A NAME="deleteRecord(global.RID)"><!-- --><\/A><H3>$/;"	a
 deleteRecord(global.TID)	javadoc/tripleheap/THFPage.html	/^<A NAME="deleteRecord(global.TID)"><!-- --><\/A><H3>$/;"	a
@@ -2535,12 +2535,12 @@ delete_file_entry	btree/LabelBTreeFile.java	/^  private void delete_file_entry(S
 delete_file_entry	btree/TripleBTreeFile.java	/^  private void delete_file_entry(String filename)$/;"	m	class:TripleBTreeFile	file:
 delete_file_entry	diskmgr/DB.java	/^  public void delete_file_entry(String fname)$/;"	m	class:DB
 delete_file_entry	heap/Heapfile.java	/^  private void delete_file_entry(String filename)$/;"	m	class:Heapfile	file:
-delete_file_entry	labelheap/LabelHeapfile.java	/^	  private void delete_file_entry(String filename)$/;"	m	class:LabelHeapfile	file:
+delete_file_entry	labelheap/LabelHeapFile.java	/^	  private void delete_file_entry(String filename)$/;"	m	class:LabelHeapFile	file:
 delete_file_entry	tripleheap/TripleHeapfile.java	/^  private void delete_file_entry(String filename)$/;"	m	class:TripleHeapfile	file:
 delete_file_entry(java.lang.String)	javadoc/diskmgr/DB.html	/^<A NAME="delete_file_entry(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 delete_min	basicpatterniterator/BPSort.java	/^  private Tuple delete_min() $/;"	m	class:BPSort	file:
 delete_min	iterator/Sort.java	/^  private Tuple delete_min() $/;"	m	class:Sort	file:
-delete_min	tripleiterator/TripleSort.java	/^  private Triple delete_min() $/;"	m	class:TripleSort	file:
+delete_min	iterator/TripleSort.java	/^  private Triple delete_min() $/;"	m	class:TripleSort	file:
 delete_test	tests/BatchInsert.java	/^	public static void delete_test()$/;"	m	class:BatchInsert
 deletedcurrent	btree/BTFileScan.java	/^  boolean deletedcurrent;  \/\/ true after deleteCurrent is called (read$/;"	f	class:BTFileScan
 deletedcurrent	btree/LabelBTFileScan.java	/^  boolean deletedcurrent;  \/\/ true after deleteCurrent is called (read$/;"	f	class:LabelBTFileScan
@@ -2574,8 +2574,8 @@ dirpageId	tripleheap/TScan.java	/^    private PageId dirpageId = new PageId();$/
 dirty	bufmgr/BufMgr.java	/^  public boolean dirty;     $/;"	f	class:FrameDesc
 dirty	iterator/IoBuf.java	/^  private  boolean dirty;              \/\/ Does this buffer contain dirty pages?$/;"	f	class:IoBuf	file:
 dirty	iterator/OBuf.java	/^  private boolean dirty;                                \/\/ Does this buffer contain dirty pages?$/;"	f	class:OBuf	file:
-dirty	tripleiterator/TripleIoBuf.java	/^  private  boolean dirty;            \/\/ Does this buffer contain dirty pages?$/;"	f	class:TripleIoBuf	file:
-dirty	tripleiterator/TripleOBuf.java	/^  private boolean dirty;           	\/\/ Does this buffer contain dirty pages?$/;"	f	class:TripleOBuf	file:
+dirty	iterator/TripleIoBuf.java	/^  private  boolean dirty;            \/\/ Does this buffer contain dirty pages?$/;"	f	class:TripleIoBuf	file:
+dirty	iterator/TripleOBuf.java	/^  private boolean dirty;           	\/\/ Does this buffer contain dirty pages?$/;"	f	class:TripleOBuf	file:
 diskmgr	diskmgr/DB.java	/^package diskmgr;$/;"	p
 diskmgr	diskmgr/DiskMgrException.java	/^package diskmgr;$/;"	p
 diskmgr	diskmgr/DuplicateEntryException.java	/^package diskmgr;$/;"	p
@@ -2605,8 +2605,8 @@ done	iterator/IoBuf.java	/^  private boolean done;$/;"	f	class:IoBuf	file:
 done	iterator/NestedLoopsJoins.java	/^  private   boolean        done,         \/\/ Is the join complete$/;"	f	class:NestedLoopsJoins	file:
 done	iterator/SortMerge.java	/^  private  boolean       done;$/;"	f	class:SortMerge	file:
 done	iterator/SpoofIbuf.java	/^  private  boolean   done;$/;"	f	class:SpoofIbuf	file:
-done	tripleiterator/TripleIoBuf.java	/^  private boolean done;$/;"	f	class:TripleIoBuf	file:
-done	tripleiterator/TripleSpoofIbuf.java	/^	private  boolean   done;$/;"	f	class:TripleSpoofIbuf	file:
+done	iterator/TripleIoBuf.java	/^  private boolean done;$/;"	f	class:TripleIoBuf	file:
+done	iterator/TripleSpoofIbuf.java	/^	private  boolean   done;$/;"	f	class:TripleSpoofIbuf	file:
 dropIndex	catalog/Catalog.java	/^  void dropIndex(String relation, String attrname,$/;"	m	class:Catalog
 dropIndex	catalog/IndexCatalog.java	/^  void dropIndex(String relation, String attrName,$/;"	m	class:IndexCatalog
 dropIndex	catalog/RelCatalog.java	/^  void dropIndex(String relation, String attrname, $/;"	m	class:RelCatalog
@@ -2614,7 +2614,7 @@ dropRelation	catalog/AttrCatalog.java	/^  public void dropRelation(String relati
 dropRelation	catalog/IndexCatalog.java	/^  void dropRelation(String relation){};$/;"	m	class:IndexCatalog
 dummy	iterator/pnodeSplayNode.java	/^  public static pnodeSplayNode dummy = new pnodeSplayNode(null);$/;"	f	class:pnodeSplayNode
 dummy	javadoc/iterator/pnodeSplayNode.html	/^<A NAME="dummy"><!-- --><\/A><H3>$/;"	a
-dummy	tripleiterator/TriplepnodeSplayNode.java	/^  public static TriplepnodeSplayNode dummy = new TriplepnodeSplayNode(null);$/;"	f	class:TriplepnodeSplayNode
+dummy	iterator/TriplepnodeSplayNode.java	/^  public static TriplepnodeSplayNode dummy = new TriplepnodeSplayNode(null);$/;"	f	class:TriplepnodeSplayNode
 dumpCatalog	catalog/Catalog.java	/^  void dumpCatalog(String filename)$/;"	m	class:Catalog
 dumpCatalog	catalog/RelCatalog.java	/^  void dumpCatalog(String filename){};$/;"	m	class:RelCatalog
 dumpPage	heap/HFPage.java	/^  public void dumpPage()     $/;"	m	class:HFPage
@@ -2632,8 +2632,8 @@ empty	iterator/SpoofIbuf.java	/^  public  boolean empty()$/;"	m	class:SpoofIbuf
 empty	iterator/pnodePQ.java	/^  public boolean   empty() { return count == 0; }$/;"	m	class:pnodePQ
 empty	labelheap/LHFPage.java	/^  public boolean empty() $/;"	m	class:LHFPage
 empty	tripleheap/THFPage.java	/^  public boolean empty() $/;"	m	class:THFPage
-empty	tripleiterator/TripleSpoofIbuf.java	/^	public  boolean empty()$/;"	m	class:TripleSpoofIbuf
-empty	tripleiterator/TriplepnodePQ.java	/^  public boolean empty() { return count == 0; }$/;"	m	class:TriplepnodePQ
+empty	iterator/TripleSpoofIbuf.java	/^	public  boolean empty()$/;"	m	class:TripleSpoofIbuf
+empty	iterator/TriplepnodePQ.java	/^  public boolean empty() { return count == 0; }$/;"	m	class:TriplepnodePQ
 empty()	javadoc/heap/HFPage.html	/^<A NAME="empty()"><!-- --><\/A><H3>$/;"	a
 empty()	javadoc/iterator/SpoofIbuf.html	/^<A NAME="empty()"><!-- --><\/A><H3>$/;"	a
 empty()	javadoc/iterator/pnodePQ.html	/^<A NAME="empty()"><!-- --><\/A><H3>$/;"	a
@@ -2720,7 +2720,7 @@ field_detail	javadoc/iterator/pnodeSplayNode.html	/^<A NAME="field_detail"><!-- 
 field_detail	javadoc/labelheap/DataPageInfo.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
 field_detail	javadoc/labelheap/LHFPage.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
 field_detail	javadoc/labelheap/Label.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
-field_detail	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
+field_detail	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
 field_detail	javadoc/tripleheap/THFPage.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
 field_detail	javadoc/tripleheap/Triple.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
 field_detail	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="field_detail"><!-- --><\/A>$/;"	a
@@ -2869,7 +2869,7 @@ field_summary	javadoc/labelheap/LHFException.html	/^<A NAME="field_summary"><!--
 field_summary	javadoc/labelheap/LHFPage.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
 field_summary	javadoc/labelheap/LScan.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
 field_summary	javadoc/labelheap/Label.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
-field_summary	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
+field_summary	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
 field_summary	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
 field_summary	javadoc/tripleheap/THFPage.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
 field_summary	javadoc/tripleheap/TScan.html	/^<A NAME="field_summary"><!-- --><\/A>$/;"	a
@@ -2995,7 +2995,7 @@ fields_inherited_from_class_global.GlobalConst	javadoc/labelheap/DataPageInfo.ht
 fields_inherited_from_class_global.GlobalConst	javadoc/labelheap/LHFPage.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
 fields_inherited_from_class_global.GlobalConst	javadoc/labelheap/LScan.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
 fields_inherited_from_class_global.GlobalConst	javadoc/labelheap/Label.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
-fields_inherited_from_class_global.GlobalConst	javadoc/labelheap/LabelHeapfile.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
+fields_inherited_from_class_global.GlobalConst	javadoc/labelheap/LabelHeapFile.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
 fields_inherited_from_class_global.GlobalConst	javadoc/tripleheap/THFPage.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
 fields_inherited_from_class_global.GlobalConst	javadoc/tripleheap/TScan.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
 fields_inherited_from_class_global.GlobalConst	javadoc/tripleheap/Triple.html	/^&nbsp;<A NAME="fields_inherited_from_class_global.GlobalConst"><!-- --><\/A>$/;"	a
@@ -3035,7 +3035,7 @@ firstRecord()	javadoc/labelheap/LHFPage.html	/^<A NAME="firstRecord()"><!-- --><
 firstRecord()	javadoc/tripleheap/THFPage.html	/^<A NAME="firstRecord()"><!-- --><\/A><H3>$/;"	a
 first_time	basicpatterniterator/BPSort.java	/^  private boolean     first_time;$/;"	f	class:BPSort	file:
 first_time	iterator/Sort.java	/^  private boolean     first_time;$/;"	f	class:Sort	file:
-first_time	tripleiterator/TripleSort.java	/^  private boolean     first_time;$/;"	f	class:TripleSort	file:
+first_time	iterator/TripleSort.java	/^  private boolean     first_time;$/;"	f	class:TripleSort	file:
 fldCnt	basicpattern/BasicPattern.java	/^  private short fldCnt;$/;"	f	class:BasicPattern	file:
 fldCnt	heap/Tuple.java	/^	private short fldCnt;$/;"	f	class:Tuple	file:
 fldCnt	labelheap/Label.java	/^	  private short fldCnt;$/;"	f	class:Label	file:
@@ -3049,8 +3049,8 @@ fld_type	iterator/pnodePQ.java	/^  protected AttrType              fld_type;$/;"
 floatVal	catalog/attrData.java	/^  public float floatVal= (float)0.0;$/;"	f	class:attrData
 flush	iterator/IoBuf.java	/^  public long flush()throws IOException, Exception $/;"	m	class:IoBuf
 flush	iterator/OBuf.java	/^  public   long flush()  throws IOException, Exception$/;"	m	class:OBuf
-flush	tripleiterator/TripleIoBuf.java	/^  public long flush()throws IOException, Exception $/;"	m	class:TripleIoBuf
-flush	tripleiterator/TripleOBuf.java	/^  public long flush() throws IOException, Exception$/;"	m	class:TripleOBuf
+flush	iterator/TripleIoBuf.java	/^  public long flush()throws IOException, Exception $/;"	m	class:TripleIoBuf
+flush	iterator/TripleOBuf.java	/^  public long flush() throws IOException, Exception$/;"	m	class:TripleOBuf
 flush()	javadoc/iterator/IoBuf.html	/^<A NAME="flush()"><!-- --><\/A><H3>$/;"	a
 flush()	javadoc/iterator/OBuf.html	/^<A NAME="flush()"><!-- --><\/A><H3>$/;"	a
 flushAllPages	bufmgr/BufMgr.java	/^  public void flushAllPages()$/;"	m	class:BufMgr
@@ -3062,7 +3062,7 @@ flushToLabel()	javadoc/labelheap/DataPageInfo.html	/^<A NAME="flushToLabel()"><!
 flushToTriple	tripleheap/DataPageInfo.java	/^  public void flushToTriple() throws IOException$/;"	m	class:DataPageInfo
 flushToTuple	heap/DataPageInfo.java	/^  public void flushToTuple() throws IOException$/;"	m	class:DataPageInfo
 flushed	iterator/IoBuf.java	/^  private  boolean  flushed;        \/\/ TRUE => buffer has been flushed.$/;"	f	class:IoBuf	file:
-flushed	tripleiterator/TripleIoBuf.java	/^  private  boolean  flushed;         \/\/ TRUE => buffer has been flushed.$/;"	f	class:TripleIoBuf	file:
+flushed	iterator/TripleIoBuf.java	/^  private  boolean  flushed;         \/\/ TRUE => buffer has been flushed.$/;"	f	class:TripleIoBuf	file:
 fos	btree/BTreeFile.java	/^  private static FileOutputStream fos;$/;"	f	class:BTreeFile	file:
 fos	btree/LabelBTreeFile.java	/^  private static FileOutputStream fos;$/;"	f	class:LabelBTreeFile	file:
 fos	btree/TripleBTreeFile.java	/^  private static FileOutputStream fos;$/;"	f	class:TripleBTreeFile	file:
@@ -3081,22 +3081,22 @@ freePage	btree/TripleBTreeFile.java	/^  private void freePage(PageId pageno) $/;
 freePage	bufmgr/BufMgr.java	/^  public void freePage(PageId globalPageId) $/;"	m	class:BufMgr
 freePage	heap/Heapfile.java	/^  private void freePage(PageId pageno)$/;"	m	class:Heapfile	file:
 freePage	iterator/Iterator.java	/^  private void freePage(PageId pageno)$/;"	m	class:Iterator	file:
-freePage	labelheap/LabelHeapfile.java	/^	  private void freePage(PageId pageno)$/;"	m	class:LabelHeapfile	file:
+freePage	labelheap/LabelHeapFile.java	/^	  private void freePage(PageId pageno)$/;"	m	class:LabelHeapFile	file:
 freePage	tripleheap/TripleHeapfile.java	/^  private void freePage(PageId pageno)$/;"	m	class:TripleHeapfile	file:
-freePage	tripleiterator/TripleIterator.java	/^  private void freePage(PageId pageno)$/;"	m	class:TripleIterator	file:
+freePage	iterator/TripleIterator.java	/^  private void freePage(PageId pageno)$/;"	m	class:TripleIterator	file:
 freePage(global.PageId)	javadoc/bufmgr/BufMgr.html	/^<A NAME="freePage(global.PageId)"><!-- --><\/A><H3>$/;"	a
 freeSpace	heap/HFPage.java	/^  private    short     freeSpace;  $/;"	f	class:HFPage	file:
 freeSpace	labelheap/LHFPage.java	/^  private    short     freeSpace;  $/;"	f	class:LHFPage	file:
 freeSpace	tripleheap/THFPage.java	/^  private    short     freeSpace;  $/;"	f	class:THFPage	file:
 free_buffer_pages	basicpatterniterator/BasicPatternIterator.java	/^  public void free_buffer_pages(int n_pages, PageId[] PageIds) $/;"	m	class:BasicPatternIterator
 free_buffer_pages	iterator/Iterator.java	/^  public void free_buffer_pages(int n_pages, PageId[] PageIds) $/;"	m	class:Iterator
-free_buffer_pages	tripleiterator/TripleIterator.java	/^  public void free_buffer_pages(int n_pages, PageId[] PageIds) $/;"	m	class:TripleIterator
+free_buffer_pages	iterator/TripleIterator.java	/^  public void free_buffer_pages(int n_pages, PageId[] PageIds) $/;"	m	class:TripleIterator
 free_buffer_pages(int, global.PageId[])	javadoc/iterator/Iterator.html	/^<A NAME="free_buffer_pages(int, global.PageId[])"><!-- --><\/A><H3>$/;"	a
 frmeTable	bufmgr/BufMgr.java	/^  private FrameDesc[] frmeTable;  \/\/ default = new FrameDesc[NUMBUF];$/;"	f	class:BufMgr	file:
 fval	tests/HFTest.java	/^  public float  fval;      $/;"	f	class:DummyRecord
 generate_runs	basicpatterniterator/BPSort.java	/^  private int generate_runs(int max_elems, AttrType sortFldType) $/;"	m	class:BPSort	file:
 generate_runs	iterator/Sort.java	/^  private int generate_runs(int max_elems, AttrType sortFldType, int sortFldLen) $/;"	m	class:Sort	file:
-generate_runs	tripleiterator/TripleSort.java	/^  private int generate_runs(int max_elems) $/;"	m	class:TripleSort	file:
+generate_runs	iterator/TripleSort.java	/^  private int generate_runs(int max_elems) $/;"	m	class:TripleSort	file:
 getAttrCat	catalog/Catalog.java	/^  public AttrCatalog getAttrCat()$/;"	m	class:Catalog
 getAttrIndexes	catalog/Catalog.java	/^  int getAttrIndexes(String relation, String attrName,$/;"	m	class:Catalog
 getAttrIndexes	catalog/IndexCatalog.java	/^  public int getAttrIndexes(String relation,$/;"	m	class:IndexCatalog
@@ -3141,7 +3141,7 @@ getDoubleFld	heap/Tuple.java	/^	public double getDoubleFld(int fldNo) $/;"	m	cla
 getDoubleValue	global/Convert.java	/^    public static double getDoubleValue (int position, byte []data)$/;"	m	class:Convert
 getEIDFld	basicpattern/BasicPattern.java	/^  public EID getEIDFld(int fldNo) $/;"	m	class:BasicPattern
 getEntityCnt	diskmgr/rdfDB.java	/^    public int getEntityCnt()$/;"	m	class:rdfDB
-getEntityHandle	diskmgr/rdfDB.java	/^	public LabelHeapfile getEntityHandle() {$/;"	m	class:rdfDB
+getEntityHandle	diskmgr/rdfDB.java	/^	public LabelHeapFile getEntityHandle() {$/;"	m	class:rdfDB
 getEntryFromBytes	btree/BT.java	/^      KeyDataEntry getEntryFromBytes( byte[] from, int offset,  $/;"	m	class:BT
 getEntryFromBytes	btree/LabelBT.java	/^      KeyDataEntry getEntryFromBytes( byte[] from, int offset,  $/;"	m	class:LabelBT
 getEntryFromBytes	btree/TripleBT.java	/^      KeyDataEntry getEntryFromBytes( byte[] from, int offset,  $/;"	m	class:TripleBT
@@ -3259,7 +3259,7 @@ getPageNoByKey	btree/LabelBTIndexPage.java	/^  PageId getPageNoByKey(KeyClass ke
 getPageNoByKey	btree/TripleBTIndexPage.java	/^  PageId getPageNoByKey(KeyClass key) $/;"	m	class:TripleBTIndexPage
 getPredicateCnt	diskmgr/rdfDB.java	/^	public int getPredicateCnt()$/;"	m	class:rdfDB
 getPredicateCnt()	javadoc/diskmgr/rdfDB.html	/^<A NAME="getPredicateCnt()"><!-- --><\/A><H3>$/;"	a
-getPredicateHandle	diskmgr/rdfDB.java	/^	public LabelHeapfile getPredicateHandle() {$/;"	m	class:rdfDB
+getPredicateHandle	diskmgr/rdfDB.java	/^	public LabelHeapFile getPredicateHandle() {$/;"	m	class:rdfDB
 getPredicateID	tripleheap/Triple.java	/^  public PID getPredicateID()$/;"	m	class:Triple
 getPredicateID()	javadoc/tripleheap/Triple.html	/^<A NAME="getPredicateID()"><!-- --><\/A><H3>$/;"	a
 getPrevPage	heap/HFPage.java	/^  public PageId getPrevPage()   $/;"	m	class:HFPage
@@ -3269,19 +3269,19 @@ getPrevPage()	javadoc/heap/HFPage.html	/^<A NAME="getPrevPage()"><!-- --><\/A><H
 getPrevPage()	javadoc/labelheap/LHFPage.html	/^<A NAME="getPrevPage()"><!-- --><\/A><H3>$/;"	a
 getPrevPage()	javadoc/tripleheap/THFPage.html	/^<A NAME="getPrevPage()"><!-- --><\/A><H3>$/;"	a
 getRecCnt	heap/Heapfile.java	/^  public int getRecCnt() $/;"	m	class:Heapfile
-getRecCnt	labelheap/LabelHeapfile.java	/^	  public int getRecCnt() $/;"	m	class:LabelHeapfile
+getRecCnt	labelheap/LabelHeapFile.java	/^	  public int getRecCnt() $/;"	m	class:LabelHeapFile
 getRecCnt	tripleheap/TripleHeapfile.java	/^  public int getRecCnt() $/;"	m	class:TripleHeapfile
 getRecCnt()	javadoc/heap/Heapfile.html	/^<A NAME="getRecCnt()"><!-- --><\/A><H3>$/;"	a
-getRecCnt()	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="getRecCnt()"><!-- --><\/A><H3>$/;"	a
+getRecCnt()	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="getRecCnt()"><!-- --><\/A><H3>$/;"	a
 getRecLength	tests/HFTest.java	/^  public int getRecLength () {$/;"	m	class:DummyRecord
 getRecord	heap/HFPage.java	/^  public Tuple getRecord ( RID rid ) $/;"	m	class:HFPage
 getRecord	heap/Heapfile.java	/^  public  Tuple getRecord(RID rid) $/;"	m	class:Heapfile
 getRecord	labelheap/LHFPage.java	/^  public Label getRecord ( LID lid ) $/;"	m	class:LHFPage
-getRecord	labelheap/LabelHeapfile.java	/^	  public  Label getRecord(LID lid) $/;"	m	class:LabelHeapfile
+getRecord	labelheap/LabelHeapFile.java	/^	  public  Label getRecord(LID lid) $/;"	m	class:LabelHeapFile
 getRecord	tripleheap/THFPage.java	/^  public Triple getRecord ( TID rid ) $/;"	m	class:THFPage
 getRecord	tripleheap/TripleHeapfile.java	/^  public  Triple getRecord(TID rid) $/;"	m	class:TripleHeapfile
 getRecord(global.LID)	javadoc/labelheap/LHFPage.html	/^<A NAME="getRecord(global.LID)"><!-- --><\/A><H3>$/;"	a
-getRecord(global.LID)	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="getRecord(global.LID)"><!-- --><\/A><H3>$/;"	a
+getRecord(global.LID)	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="getRecord(global.LID)"><!-- --><\/A><H3>$/;"	a
 getRecord(global.RID)	javadoc/heap/HFPage.html	/^<A NAME="getRecord(global.RID)"><!-- --><\/A><H3>$/;"	a
 getRecord(global.RID)	javadoc/heap/Heapfile.html	/^<A NAME="getRecord(global.RID)"><!-- --><\/A><H3>$/;"	a
 getRecord(global.TID)	javadoc/tripleheap/THFPage.html	/^<A NAME="getRecord(global.TID)"><!-- --><\/A><H3>$/;"	a
@@ -3350,7 +3350,7 @@ getType()	javadoc/tripleheap/THFPage.html	/^<A NAME="getType()"><!-- --><\/A><H3
 getValue	index/IndexUtils.java	/^  private static KeyClass getValue(CondExpr cd, AttrType type, int choice)$/;"	m	class:IndexUtils	file:
 get_buffer_pages	basicpatterniterator/BasicPatternIterator.java	/^  public void  get_buffer_pages(int n_pages, PageId[] PageIds, byte[][] bufs)$/;"	m	class:BasicPatternIterator
 get_buffer_pages	iterator/Iterator.java	/^  public void  get_buffer_pages(int n_pages, PageId[] PageIds, byte[][] bufs)$/;"	m	class:Iterator
-get_buffer_pages	tripleiterator/TripleIterator.java	/^  public void  get_buffer_pages(int n_pages, PageId[] PageIds, byte[][] bufs)$/;"	m	class:TripleIterator
+get_buffer_pages	iterator/TripleIterator.java	/^  public void  get_buffer_pages(int n_pages, PageId[] PageIds, byte[][] bufs)$/;"	m	class:TripleIterator
 get_buffer_pages(int, global.PageId[], byte[][])	javadoc/iterator/Iterator.html	/^<A NAME="get_buffer_pages(int, global.PageId[], byte[][])"><!-- --><\/A><H3>$/;"	a
 get_deleteFashion	btree/BTreeHeaderPage.java	/^  int get_deleteFashion() $/;"	m	class:BTreeHeaderPage
 get_deleteFashion	btree/LabelBTreeHeaderPage.java	/^  int get_deleteFashion() $/;"	m	class:LabelBTreeHeaderPage
@@ -3360,7 +3360,7 @@ get_file_entry	btree/LabelBTreeFile.java	/^  private PageId get_file_entry(Strin
 get_file_entry	btree/TripleBTreeFile.java	/^  private PageId get_file_entry(String filename)         $/;"	m	class:TripleBTreeFile	file:
 get_file_entry	diskmgr/DB.java	/^  public PageId get_file_entry(String name)$/;"	m	class:DB
 get_file_entry	heap/Heapfile.java	/^  private PageId get_file_entry(String filename)$/;"	m	class:Heapfile	file:
-get_file_entry	labelheap/LabelHeapfile.java	/^	  private PageId get_file_entry(String filename)$/;"	m	class:LabelHeapfile	file:
+get_file_entry	labelheap/LabelHeapFile.java	/^	  private PageId get_file_entry(String filename)$/;"	m	class:LabelHeapFile	file:
 get_file_entry	tripleheap/TripleHeapfile.java	/^  private PageId get_file_entry(String filename)$/;"	m	class:TripleHeapfile	file:
 get_file_entry(java.lang.String)	javadoc/diskmgr/DB.html	/^<A NAME="get_file_entry(java.lang.String)"><!-- --><\/A><H3>$/;"	a
 get_from_in1	iterator/SortMerge.java	/^  private  boolean      get_from_in1, get_from_in2;        \/\/ state variables for get_next$/;"	f	class:SortMerge	file:
@@ -3391,8 +3391,8 @@ get_next	iterator/Iterator.java	/^  public abstract Tuple get_next() $/;"	m	clas
 get_next	iterator/NestedLoopsJoins.java	/^  public Tuple get_next()$/;"	m	class:NestedLoopsJoins
 get_next	iterator/Sort.java	/^  public Tuple get_next() $/;"	m	class:Sort
 get_next	iterator/SortMerge.java	/^  public Tuple get_next() $/;"	m	class:SortMerge
-get_next	tripleiterator/TripleIterator.java	/^  public abstract Triple get_next()$/;"	m	class:TripleIterator
-get_next	tripleiterator/TripleSort.java	/^  public Triple get_next() $/;"	m	class:TripleSort
+get_next	iterator/TripleIterator.java	/^  public abstract Triple get_next()$/;"	m	class:TripleIterator
+get_next	iterator/TripleSort.java	/^  public Triple get_next() $/;"	m	class:TripleSort
 get_next()	javadoc/btree/BTFileScan.html	/^<A NAME="get_next()"><!-- --><\/A><H3>$/;"	a
 get_next()	javadoc/btree/IndexFileScan.html	/^<A NAME="get_next()"><!-- --><\/A><H3>$/;"	a
 get_next()	javadoc/btree/LabelBTFileScan.html	/^<A NAME="get_next()"><!-- --><\/A><H3>$/;"	a
@@ -3537,13 +3537,13 @@ heap.SpaceNotAvailableException	javadoc/serialized-form.html	/^<A NAME="heap.Spa
 heap.Tuple.max_size	javadoc/constant-values.html	/^<A NAME="heap.Tuple.max_size"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 hf	iterator/NestedLoopsJoins.java	/^  private   Heapfile  hf;$/;"	f	class:NestedLoopsJoins	file:
 hf_scan	iterator/SpoofIbuf.java	/^  private  Scan hf_scan;$/;"	f	class:SpoofIbuf	file:
-hf_scan	tripleiterator/TripleSpoofIbuf.java	/^	private  TScan hf_scan;$/;"	f	class:TripleSpoofIbuf	file:
+hf_scan	iterator/TripleSpoofIbuf.java	/^	private  TScan hf_scan;$/;"	f	class:TripleSpoofIbuf	file:
 ht	bufmgr/BufMgr.java	/^  private BufHTEntry ht[] = new BufHTEntry[HTSIZE];       $/;"	f	class:BufHashTbl	file:
 i_buf	basicpatterniterator/BPSort.java	/^  private SpoofIbuf[]  i_buf;$/;"	f	class:BPSort	file:
 i_buf	iterator/IoBuf.java	/^  private  SpoofIbuf i_buf;        \/\/ gets input from a temporary file$/;"	f	class:IoBuf	file:
 i_buf	iterator/Sort.java	/^  private SpoofIbuf[]  i_buf;$/;"	f	class:Sort	file:
-i_buf	tripleiterator/TripleIoBuf.java	/^  private  TripleSpoofIbuf i_buf;          \/\/ gets input from a temporary file$/;"	f	class:TripleIoBuf	file:
-i_buf	tripleiterator/TripleSort.java	/^  private TripleSpoofIbuf[]  i_buf;$/;"	f	class:TripleSort	file:
+i_buf	iterator/TripleIoBuf.java	/^  private  TripleSpoofIbuf i_buf;          \/\/ gets input from a temporary file$/;"	f	class:TripleIoBuf	file:
+i_buf	iterator/TripleSort.java	/^  private TripleSpoofIbuf[]  i_buf;$/;"	f	class:TripleSort	file:
 in1_len	iterator/FileScan.java	/^  private short in1_len;$/;"	f	class:FileScan	file:
 in1_len	iterator/NestedLoopsJoins.java	/^  private   int        in1_len, in2_len;$/;"	f	class:NestedLoopsJoins	file:
 in1_len	iterator/SortMerge.java	/^  private  int        in1_len, in2_len;$/;"	f	class:SortMerge	file:
@@ -3582,12 +3582,12 @@ init	iterator/IoBuf.java	/^  public void init(byte bufs[][], int n_pages, int tS
 init	iterator/OBuf.java	/^  public void init(byte[][] bufs, int n_pages, int tSize,$/;"	m	class:OBuf
 init	iterator/SpoofIbuf.java	/^  public  void init(Heapfile fd, byte bufs[][], int n_pages,$/;"	m	class:SpoofIbuf
 init	labelheap/LHFPage.java	/^  public void init(PageId pageNo, Page apage)$/;"	m	class:LHFPage
-init	labelheap/LScan.java	/^    private void init(LabelHeapfile hf) $/;"	m	class:LScan	file:
+init	labelheap/LScan.java	/^    private void init(LabelHeapFile hf) $/;"	m	class:LScan	file:
 init	tripleheap/THFPage.java	/^  public void init(PageId pageNo, Page apage)$/;"	m	class:THFPage
 init	tripleheap/TScan.java	/^    private void init(TripleHeapfile hf) $/;"	m	class:TScan	file:
-init	tripleiterator/TripleIoBuf.java	/^  public void init(byte bufs[][], int n_pages, TripleHeapfile temp_fd)$/;"	m	class:TripleIoBuf
-init	tripleiterator/TripleOBuf.java	/^  public void init(byte[][] bufs, int n_pages, TripleHeapfile temp_fd, boolean buffer)$/;"	m	class:TripleOBuf
-init	tripleiterator/TripleSpoofIbuf.java	/^	public  void init(TripleHeapfile fd, byte bufs[][], int n_pages, int Ntriples)$/;"	m	class:TripleSpoofIbuf
+init	iterator/TripleIoBuf.java	/^  public void init(byte bufs[][], int n_pages, TripleHeapfile temp_fd)$/;"	m	class:TripleIoBuf
+init	iterator/TripleOBuf.java	/^  public void init(byte[][] bufs, int n_pages, TripleHeapfile temp_fd, boolean buffer)$/;"	m	class:TripleOBuf
+init	iterator/TripleSpoofIbuf.java	/^	public  void init(TripleHeapfile fd, byte bufs[][], int n_pages, int Ntriples)$/;"	m	class:TripleSpoofIbuf
 init(byte[][], int, int, heap.Heapfile)	javadoc/iterator/IoBuf.html	/^<A NAME="init(byte[][], int, int, heap.Heapfile)"><!-- --><\/A><H3>$/;"	a
 init(byte[][], int, int, heap.Heapfile, boolean)	javadoc/iterator/OBuf.html	/^<A NAME="init(byte[][], int, int, heap.Heapfile, boolean)"><!-- --><\/A><H3>$/;"	a
 init(global.PageId, diskmgr.Page)	javadoc/heap/HFPage.html	/^<A NAME="init(global.PageId, diskmgr.Page)"><!-- --><\/A><H3>$/;"	a
@@ -3636,14 +3636,14 @@ insertRecord	btree/TripleBTSortedPage.java	/^   protected TID insertRecord( KeyD
 insertRecord	heap/HFPage.java	/^  public RID insertRecord ( byte [] record)		$/;"	m	class:HFPage
 insertRecord	heap/Heapfile.java	/^  public RID insertRecord(byte[] recPtr) $/;"	m	class:Heapfile
 insertRecord	labelheap/LHFPage.java	/^  public LID insertRecord ( byte [] record)		$/;"	m	class:LHFPage
-insertRecord	labelheap/LabelHeapfile.java	/^	  public LID insertRecord(byte[] recPtr) $/;"	m	class:LabelHeapfile
+insertRecord	labelheap/LabelHeapFile.java	/^	  public LID insertRecord(byte[] recPtr) $/;"	m	class:LabelHeapFile
 insertRecord	tripleheap/THFPage.java	/^  public TID insertRecord ( byte [] record)		$/;"	m	class:THFPage
 insertRecord(btree.KeyClass, global.LID)	javadoc/btree/LabelBTLeafPage.html	/^<A NAME="insertRecord(btree.KeyClass, global.LID)"><!-- --><\/A><H3>$/;"	a
 insertRecord(btree.KeyClass, global.RID)	javadoc/btree/BTLeafPage.html	/^<A NAME="insertRecord(btree.KeyClass, global.RID)"><!-- --><\/A><H3>$/;"	a
 insertRecord(byte[])	javadoc/heap/HFPage.html	/^<A NAME="insertRecord(byte[])"><!-- --><\/A><H3>$/;"	a
 insertRecord(byte[])	javadoc/heap/Heapfile.html	/^<A NAME="insertRecord(byte[])"><!-- --><\/A><H3>$/;"	a
 insertRecord(byte[])	javadoc/labelheap/LHFPage.html	/^<A NAME="insertRecord(byte[])"><!-- --><\/A><H3>$/;"	a
-insertRecord(byte[])	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="insertRecord(byte[])"><!-- --><\/A><H3>$/;"	a
+insertRecord(byte[])	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="insertRecord(byte[])"><!-- --><\/A><H3>$/;"	a
 insertRecord(byte[])	javadoc/tripleheap/THFPage.html	/^<A NAME="insertRecord(byte[])"><!-- --><\/A><H3>$/;"	a
 insertRecordUT	catalog/Utility.java	/^ public static void insertRecordUT(String relation, int attrCnt, attrNode [] attrList)$/;"	m	class:Utility
 insertTriple	diskmgr/rdfDB.java	/^	public TID insertTriple(byte[] triplePtr)$/;"	m	class:rdfDB
@@ -3658,7 +3658,7 @@ io_buf1	iterator/SortMerge.java	/^  private  IoBuf    io_buf1,  io_buf2;$/;"	f	c
 io_buf2	iterator/SortMerge.java	/^  private  IoBuf    io_buf1,  io_buf2;$/;"	f	class:SortMerge	file:
 item	iterator/pnodeSplayNode.java	/^  public pnode             item;$/;"	f	class:pnodeSplayNode
 item	javadoc/iterator/pnodeSplayNode.html	/^<A NAME="item"><!-- --><\/A><H3>$/;"	a
-item	tripleiterator/TriplepnodeSplayNode.java	/^  public Triplepnode       item;$/;"	f	class:TriplepnodeSplayNode
+item	iterator/TriplepnodeSplayNode.java	/^  public Triplepnode       item;$/;"	f	class:TriplepnodeSplayNode
 iterator	iterator/CondExpr.java	/^package iterator;$/;"	p
 iterator	iterator/DuplElim.java	/^package iterator;$/;"	p
 iterator	iterator/DuplElimException.java	/^package iterator;$/;"	p
@@ -3760,7 +3760,7 @@ labelheap	labelheap/LHFException.java	/^package labelheap;$/;"	p
 labelheap	labelheap/LHFPage.java	/^package labelheap;$/;"	p
 labelheap	labelheap/LScan.java	/^package labelheap;$/;"	p
 labelheap	labelheap/Label.java	/^package labelheap;$/;"	p
-labelheap	labelheap/LabelHeapfile.java	/^package labelheap;$/;"	p
+labelheap	labelheap/LabelHeapFile.java	/^package labelheap;$/;"	p
 labelheap	labelheap/SpaceNotAvailableException.java	/^package labelheap;$/;"	p
 labelheap.DataPageInfo.size	javadoc/constant-values.html	/^<A NAME="labelheap.DataPageInfo.size"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 labelheap.FieldNumberOutOfBoundException	javadoc/serialized-form.html	/^<A NAME="labelheap.FieldNumberOutOfBoundException"><!-- --><\/A>$/;"	a
@@ -3784,8 +3784,8 @@ labelheap.LHFPage.SLOT_CNT	javadoc/constant-values.html	/^<A NAME="labelheap.LHF
 labelheap.LHFPage.TYPE	javadoc/constant-values.html	/^<A NAME="labelheap.LHFPage.TYPE"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 labelheap.LHFPage.USED_PTR	javadoc/constant-values.html	/^<A NAME="labelheap.LHFPage.USED_PTR"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 labelheap.Label.max_size	javadoc/constant-values.html	/^<A NAME="labelheap.Label.max_size"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
-labelheap.LabelHeapfile.ORDINARY	javadoc/constant-values.html	/^<A NAME="labelheap.LabelHeapfile.ORDINARY"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
-labelheap.LabelHeapfile.TEMP	javadoc/constant-values.html	/^<A NAME="labelheap.LabelHeapfile.TEMP"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
+labelheap.LabelHeapFile.ORDINARY	javadoc/constant-values.html	/^<A NAME="labelheap.LabelHeapFile.ORDINARY"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
+labelheap.LabelHeapFile.TEMP	javadoc/constant-values.html	/^<A NAME="labelheap.LabelHeapFile.TEMP"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 labelheap.SpaceNotAvailableException	javadoc/serialized-form.html	/^<A NAME="labelheap.SpaceNotAvailableException"><!-- --><\/A>$/;"	a
 leafPage	btree/BTFileScan.java	/^  BTLeafPage leafPage;   \/\/ leaf page containing current record$/;"	f	class:BTFileScan
 leafPage	btree/LabelBTFileScan.java	/^  LabelBTLeafPage leafPage;   \/\/ leaf page containing current record$/;"	f	class:LabelBTFileScan
@@ -3794,7 +3794,7 @@ left_iter	basicpatterniterator/BP_Triple_Join.java	/^	BasicPatternIterator left_
 len	tests/QueryCheck.java	/^  int len;$/;"	f	class:Group
 length	basicpatterniterator/BPFileScan.java	/^  public int length;$/;"	f	class:BPFileScan
 length	iterator/pnodePQ.java	/^  public int       length(){ return count; }  $/;"	m	class:pnodePQ
-length	tripleiterator/TriplepnodePQ.java	/^  public int length(){ return count; }$/;"	m	class:TriplepnodePQ
+length	iterator/TriplepnodePQ.java	/^  public int length(){ return count; }$/;"	m	class:TriplepnodePQ
 length()	javadoc/iterator/pnodePQ.html	/^<A NAME="length()"><!-- --><\/A><H3>$/;"	a
 lineSep	btree/BTreeFile.java	/^  private final static String lineSep=System.getProperty("line.separator");$/;"	f	class:BTreeFile	file:
 lineSep	btree/LabelBTreeFile.java	/^  private final static String lineSep=System.getProperty("line.separator");$/;"	f	class:LabelBTreeFile	file:
@@ -3816,7 +3816,7 @@ lopOR	global/LogicalOperator.java	/^  public static final int lopOR   = 1;$/;"	f
 lopOR	javadoc/global/LogicalOperator.html	/^<A NAME="lopOR"><!-- --><\/A><H3>$/;"	a
 lt	iterator/pnodeSplayNode.java	/^  public pnodeSplayNode    lt;$/;"	f	class:pnodeSplayNode
 lt	javadoc/iterator/pnodeSplayNode.html	/^<A NAME="lt"><!-- --><\/A><H3>$/;"	a
-lt	tripleiterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode    lt;$/;"	f	class:TriplepnodeSplayNode
+lt	iterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode    lt;$/;"	f	class:TriplepnodeSplayNode
 main	tests/BMTest.java	/^   public static void main (String argv[]) {$/;"	m	class:BMTest
 main	tests/BTTest.java	/^  public static void main(String [] argvs) {$/;"	m	class:BTTest
 main	tests/BasicPatternTest.java	/^	public static void main(String argv[])$/;"	m	class:BasicPatternTest
@@ -3843,7 +3843,7 @@ maxKeysize	btree/TripleBTFileScan.java	/^  int maxKeysize;$/;"	f	class:TripleBTF
 maxVal	catalog/AttrDesc.java	/^	attrData maxVal;$/;"	f	class:AttrDesc
 max_elems_in_heap	basicpatterniterator/BPSort.java	/^  private int         max_elems_in_heap;$/;"	f	class:BPSort	file:
 max_elems_in_heap	iterator/Sort.java	/^  private int         max_elems_in_heap;$/;"	f	class:Sort	file:
-max_elems_in_heap	tripleiterator/TripleSort.java	/^  private int         max_elems_in_heap;$/;"	f	class:TripleSort	file:
+max_elems_in_heap	iterator/TripleSort.java	/^  private int         max_elems_in_heap;$/;"	f	class:TripleSort	file:
 max_size	basicpattern/BasicPattern.java	/^  public static final int max_size = MINIBASE_PAGESIZE;$/;"	f	class:BasicPattern
 max_size	heap/Tuple.java	/^	public static final int max_size = MINIBASE_PAGESIZE;$/;"	f	class:Tuple
 max_size	javadoc/heap/Tuple.html	/^<A NAME="max_size"><!-- --><\/A><H3>$/;"	a
@@ -3919,7 +3919,7 @@ method_detail	javadoc/labelheap/DataPageInfo.html	/^<A NAME="method_detail"><!--
 method_detail	javadoc/labelheap/LHFPage.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
 method_detail	javadoc/labelheap/LScan.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
 method_detail	javadoc/labelheap/Label.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
-method_detail	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
+method_detail	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
 method_detail	javadoc/tripleheap/THFPage.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
 method_detail	javadoc/tripleheap/TScan.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
 method_detail	javadoc/tripleheap/Triple.html	/^<A NAME="method_detail"><!-- --><\/A>$/;"	a
@@ -4084,7 +4084,7 @@ method_summary	javadoc/labelheap/LHFException.html	/^<A NAME="method_summary"><!
 method_summary	javadoc/labelheap/LHFPage.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
 method_summary	javadoc/labelheap/LScan.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
 method_summary	javadoc/labelheap/Label.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
-method_summary	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
+method_summary	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
 method_summary	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
 method_summary	javadoc/tripleheap/THFPage.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
 method_summary	javadoc/tripleheap/TScan.html	/^<A NAME="method_summary"><!-- --><\/A>$/;"	a
@@ -4359,7 +4359,7 @@ methods_inherited_from_class_java.lang.Object	javadoc/labelheap/LHFException.htm
 methods_inherited_from_class_java.lang.Object	javadoc/labelheap/LHFPage.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
 methods_inherited_from_class_java.lang.Object	javadoc/labelheap/LScan.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
 methods_inherited_from_class_java.lang.Object	javadoc/labelheap/Label.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
-methods_inherited_from_class_java.lang.Object	javadoc/labelheap/LabelHeapfile.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
+methods_inherited_from_class_java.lang.Object	javadoc/labelheap/LabelHeapFile.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
 methods_inherited_from_class_java.lang.Object	javadoc/labelheap/SpaceNotAvailableException.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
 methods_inherited_from_class_java.lang.Object	javadoc/tripleheap/THFPage.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
 methods_inherited_from_class_java.lang.Object	javadoc/tripleheap/TScan.html	/^&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --><\/A>$/;"	a
@@ -4457,7 +4457,7 @@ mgr	bufmgr/Replacer.java	/^  protected BufMgr mgr;$/;"	f	class:Replacer
 minVal	catalog/AttrDesc.java	/^	attrData minVal;                      \/\/ min max key values$/;"	f	class:AttrDesc
 missing	tests/QueryCheck.java	/^  private TupleList missing;$/;"	f	class:QueryCheck	file:
 mode	iterator/IoBuf.java	/^  private  int  mode;$/;"	f	class:IoBuf	file:
-mode	tripleiterator/TripleIoBuf.java	/^  private  int  mode;$/;"	f	class:TripleIoBuf	file:
+mode	iterator/TripleIoBuf.java	/^  private  int  mode;$/;"	f	class:TripleIoBuf	file:
 mvNext	heap/Scan.java	/^  private boolean mvNext(RID rid) $/;"	m	class:Scan	file:
 mvNext	labelheap/LScan.java	/^  private boolean mvNext(LID lid) $/;"	m	class:LScan	file:
 mvNext	tripleheap/TScan.java	/^  private boolean mvNext(TID rid) $/;"	m	class:TScan	file:
@@ -4474,12 +4474,12 @@ n_cols	basicpatterniterator/BPSort.java	/^  private short       n_cols;$/;"	f	cl
 n_cols	iterator/Sort.java	/^  private short       n_cols;$/;"	f	class:Sort	file:
 n_runs	basicpatterniterator/BPSort.java	/^  private int          n_runs;$/;"	f	class:BPSort	file:
 n_runs	iterator/Sort.java	/^  private int          n_runs;$/;"	f	class:Sort	file:
-n_runs	tripleiterator/TripleSort.java	/^  private int          n_runs;$/;"	f	class:TripleSort	file:
+n_runs	iterator/TripleSort.java	/^  private int          n_runs;$/;"	f	class:TripleSort	file:
 n_tempfiles	basicpatterniterator/BPSort.java	/^  private int          n_tempfiles;$/;"	f	class:BPSort	file:
 n_tempfiles	iterator/Sort.java	/^  private int          n_tempfiles;$/;"	f	class:Sort	file:
-n_tempfiles	tripleiterator/TripleSort.java	/^  private int          n_tempfiles;$/;"	f	class:TripleSort	file:
-n_triples	tripleiterator/TripleSort.java	/^  private int[]        n_triples;$/;"	f	class:TripleSort	file:
-n_triples	tripleiterator/TripleSpoofIbuf.java	/^	private  int    n_triples;$/;"	f	class:TripleSpoofIbuf	file:
+n_tempfiles	iterator/TripleSort.java	/^  private int          n_tempfiles;$/;"	f	class:TripleSort	file:
+n_triples	iterator/TripleSort.java	/^  private int[]        n_triples;$/;"	f	class:TripleSort	file:
+n_triples	iterator/TripleSpoofIbuf.java	/^	private  int    n_triples;$/;"	f	class:TripleSpoofIbuf	file:
 n_tuples	basicpatterniterator/BPSort.java	/^  private int[]        n_tuples;$/;"	f	class:BPSort	file:
 n_tuples	iterator/Sort.java	/^  private int[]        n_tuples;$/;"	f	class:Sort	file:
 n_tuples	iterator/SpoofIbuf.java	/^  private  int    n_tuples;$/;"	f	class:SpoofIbuf	file:
@@ -4672,7 +4672,7 @@ navbar_bottom	javadoc/labelheap/LHFException.html	/^<A NAME="navbar_bottom"><!--
 navbar_bottom	javadoc/labelheap/LHFPage.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
 navbar_bottom	javadoc/labelheap/LScan.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
 navbar_bottom	javadoc/labelheap/Label.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
-navbar_bottom	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
+navbar_bottom	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
 navbar_bottom	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
 navbar_bottom	javadoc/labelheap/package-summary.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
 navbar_bottom	javadoc/labelheap/package-tree.html	/^<A NAME="navbar_bottom"><!-- --><\/A>$/;"	a
@@ -4868,7 +4868,7 @@ navbar_bottom_firstrow	javadoc/labelheap/LHFException.html	/^<A NAME="navbar_bot
 navbar_bottom_firstrow	javadoc/labelheap/LHFPage.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
 navbar_bottom_firstrow	javadoc/labelheap/LScan.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
 navbar_bottom_firstrow	javadoc/labelheap/Label.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
-navbar_bottom_firstrow	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
+navbar_bottom_firstrow	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
 navbar_bottom_firstrow	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
 navbar_bottom_firstrow	javadoc/labelheap/package-summary.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
 navbar_bottom_firstrow	javadoc/labelheap/package-tree.html	/^<A NAME="navbar_bottom_firstrow"><!-- --><\/A>$/;"	a
@@ -5064,7 +5064,7 @@ navbar_top	javadoc/labelheap/LHFException.html	/^<A NAME="navbar_top"><!-- --><\
 navbar_top	javadoc/labelheap/LHFPage.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
 navbar_top	javadoc/labelheap/LScan.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
 navbar_top	javadoc/labelheap/Label.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
-navbar_top	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
+navbar_top	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
 navbar_top	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
 navbar_top	javadoc/labelheap/package-summary.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
 navbar_top	javadoc/labelheap/package-tree.html	/^<A NAME="navbar_top"><!-- --><\/A>$/;"	a
@@ -5260,7 +5260,7 @@ navbar_top_firstrow	javadoc/labelheap/LHFException.html	/^<A NAME="navbar_top_fi
 navbar_top_firstrow	javadoc/labelheap/LHFPage.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
 navbar_top_firstrow	javadoc/labelheap/LScan.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
 navbar_top_firstrow	javadoc/labelheap/Label.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
-navbar_top_firstrow	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
+navbar_top_firstrow	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
 navbar_top_firstrow	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
 navbar_top_firstrow	javadoc/labelheap/package-summary.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
 navbar_top_firstrow	javadoc/labelheap/package-tree.html	/^<A NAME="navbar_top_firstrow"><!-- --><\/A>$/;"	a
@@ -5277,9 +5277,9 @@ newPage	basicpatterniterator/BasicPatternIterator.java	/^  private PageId newPag
 newPage	bufmgr/BufMgr.java	/^  public PageId newPage(Page firstpage, int howmany)$/;"	m	class:BufMgr
 newPage	heap/Heapfile.java	/^  private PageId newPage(Page page, int num)$/;"	m	class:Heapfile	file:
 newPage	iterator/Iterator.java	/^  private PageId newPage(Page page, int num)$/;"	m	class:Iterator	file:
-newPage	labelheap/LabelHeapfile.java	/^	  private PageId newPage(Page page, int num)$/;"	m	class:LabelHeapfile	file:
+newPage	labelheap/LabelHeapFile.java	/^	  private PageId newPage(Page page, int num)$/;"	m	class:LabelHeapFile	file:
 newPage	tripleheap/TripleHeapfile.java	/^  private PageId newPage(Page page, int num)$/;"	m	class:TripleHeapfile	file:
-newPage	tripleiterator/TripleIterator.java	/^  private PageId newPage(Page page, int num)$/;"	m	class:TripleIterator	file:
+newPage	iterator/TripleIterator.java	/^  private PageId newPage(Page page, int num)$/;"	m	class:TripleIterator	file:
 newPage(diskmgr.Page, int)	javadoc/bufmgr/BufMgr.html	/^<A NAME="newPage(diskmgr.Page, int)"><!-- --><\/A><H3>$/;"	a
 new_scan	btree/BTreeFile.java	/^  public BTFileScan new_scan(KeyClass lo_key, KeyClass hi_key)$/;"	m	class:BTreeFile
 new_scan	btree/LabelBTreeFile.java	/^  public LabelBTFileScan new_scan(KeyClass lo_key, KeyClass hi_key)$/;"	m	class:LabelBTreeFile
@@ -5326,7 +5326,7 @@ numberOfRecords	btree/LabelBTSortedPage.java	/^  protected int numberOfRecords()
 numberOfRecords	btree/TripleBTSortedPage.java	/^  protected int numberOfRecords() $/;"	m	class:TripleBTSortedPage
 o_buf	basicpatterniterator/BPSort.java	/^  private OBuf         o_buf;$/;"	f	class:BPSort	file:
 o_buf	iterator/Sort.java	/^  private OBuf         o_buf;$/;"	f	class:Sort	file:
-o_buf	tripleiterator/TripleSort.java	/^  private TripleOBuf   o_buf;$/;"	f	class:TripleSort	file:
+o_buf	iterator/TripleSort.java	/^  private TripleOBuf   o_buf;$/;"	f	class:TripleSort	file:
 object_null	diskmgr/Stream.java	/^	static boolean object_null = false;$/;"	f	class:Stream
 offset	heap/DataPageInfo.java	/^  private int offset;$/;"	f	class:DataPageInfo	file:
 offset	iterator/FldSpec.java	/^  public  int offset;$/;"	f	class:FldSpec
@@ -5339,7 +5339,7 @@ opRANGE	global/AttrOperator.java	/^  public static final int opRANGE = 8; \/\/de
 opRANGE	javadoc/global/AttrOperator.html	/^<A NAME="opRANGE"><!-- --><\/A><H3>$/;"	a
 op_buf	basicpatterniterator/BPSort.java	/^  private Tuple        op_buf;$/;"	f	class:BPSort	file:
 op_buf	iterator/Sort.java	/^  private Tuple        op_buf;$/;"	f	class:Sort	file:
-op_buf	tripleiterator/TripleSort.java	/^  private Triple       op_buf;$/;"	f	class:TripleSort	file:
+op_buf	iterator/TripleSort.java	/^  private Triple       op_buf;$/;"	f	class:TripleSort	file:
 openDB	diskmgr/DB.java	/^  public void openDB( String fname)$/;"	m	class:DB
 openDB	diskmgr/DB.java	/^  public void openDB( String fname, int num_pgs)$/;"	m	class:DB
 openDB(java.lang.String)	javadoc/diskmgr/DB.html	/^<A NAME="openDB(java.lang.String)"><!-- --><\/A><H3>$/;"	a
@@ -5352,10 +5352,10 @@ openHFpage(diskmgr.Page)	javadoc/tripleheap/THFPage.html	/^<A NAME="openHFpage(d
 openPage	diskmgr/DB.java	/^  public void openPage(Page page)$/;"	m	class:DBDirectoryPage
 openPage	diskmgr/DB.java	/^  public void openPage(Page page)$/;"	m	class:DBFirstPage
 openScan	heap/Heapfile.java	/^  public Scan openScan() $/;"	m	class:Heapfile
-openScan	labelheap/LabelHeapfile.java	/^	  public LScan openScan() $/;"	m	class:LabelHeapfile
+openScan	labelheap/LabelHeapFile.java	/^	  public LScan openScan() $/;"	m	class:LabelHeapFile
 openScan	tripleheap/TripleHeapfile.java	/^  public TScan openScan() $/;"	m	class:TripleHeapfile
 openScan()	javadoc/heap/Heapfile.html	/^<A NAME="openScan()"><!-- --><\/A><H3>$/;"	a
-openScan()	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="openScan()"><!-- --><\/A><H3>$/;"	a
+openScan()	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="openScan()"><!-- --><\/A><H3>$/;"	a
 openScan()	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="openScan()"><!-- --><\/A><H3>$/;"	a
 openStream	diskmgr/rdfDB.java	/^	public Stream openStream(String dbname,int orderType, String subjectFilter, String predicateFilter, String objectFilter, double confidenceFilter)$/;"	m	class:rdfDB
 openStream(int, java.lang.String, java.lang.String, java.lang.String, double)	javadoc/diskmgr/rdfDB.html	/^<A NAME="openStream(int, java.lang.String, java.lang.String, java.lang.String, double)"><!-- --><\/A><H3>$/;"	a
@@ -5373,13 +5373,13 @@ order	catalog/IndexDesc.java	/^	TupleOrder order;                     \/\/ order
 order	iterator/Sort.java	/^  private TupleOrder  order;$/;"	f	class:Sort	file:
 order	tests/QueryCheck.java	/^  Order order;$/;"	f	class:Group
 order	tests/QueryCheck.java	/^  int order;$/;"	f	class:Order
-order	tripleiterator/TripleSort.java	/^  private TripleOrder order;$/;"	f	class:TripleSort	file:
+order	iterator/TripleSort.java	/^  private TripleOrder order;$/;"	f	class:TripleSort	file:
 outer	iterator/NestedLoopsJoins.java	/^  private   Iterator  outer;$/;"	f	class:NestedLoopsJoins	file:
 outer	iterator/RelSpec.java	/^  public final static int outer = 0;$/;"	f	class:RelSpec
 outer	javadoc/iterator/RelSpec.html	/^<A NAME="outer"><!-- --><\/A><H3>$/;"	a
 outer_tuple	basicpatterniterator/BP_Triple_Join.java	/^	private   BasicPattern  outer_tuple;$/;"	f	class:BP_Triple_Join	file:
 outer_tuple	iterator/NestedLoopsJoins.java	/^  private   Tuple     outer_tuple, inner_tuple;$/;"	f	class:NestedLoopsJoins	file:
-output_triple	tripleiterator/TripleSort.java	/^  private Triple       output_triple;  $/;"	f	class:TripleSort	file:
+output_triple	iterator/TripleSort.java	/^  private Triple       output_triple;  $/;"	f	class:TripleSort	file:
 output_tuple	basicpatterniterator/BPSort.java	/^  private Tuple        output_tuple;  $/;"	f	class:BPSort	file:
 output_tuple	iterator/Sort.java	/^  private Tuple        output_tuple;  $/;"	f	class:Sort	file:
 p_i1	iterator/SortMerge.java	/^  private  Iterator  p_i1,        \/\/ pointers to the two iterators. If the$/;"	f	class:SortMerge	file:
@@ -5406,7 +5406,7 @@ pageNo	javadoc/global/TID.html	/^<A NAME="pageNo"><!-- --><\/A><H3>$/;"	a
 page_id	bufmgr/BufMgr.java	/^  public int page_id;$/;"	f	class:victim_data
 par	iterator/pnodeSplayNode.java	/^  public pnodeSplayNode    par;$/;"	f	class:pnodeSplayNode
 par	javadoc/iterator/pnodeSplayNode.html	/^<A NAME="par"><!-- --><\/A><H3>$/;"	a
-par	tripleiterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode    par;$/;"	f	class:TriplepnodeSplayNode
+par	iterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode    par;$/;"	f	class:TriplepnodeSplayNode
 parse_query_file	tests/QueryProgramJoin.java	/^	public static void parse_query_file() throws IOException$/;"	m	class:QueryProgramJoin
 peekNext	heap/Scan.java	/^  private boolean peekNext(RID rid) {$/;"	m	class:Scan	file:
 peekNext	labelheap/LScan.java	/^  private boolean peekNext(LID lid) {$/;"	m	class:LScan	file:
@@ -5435,7 +5435,7 @@ pinPage	diskmgr/DB.java	/^  private void pinPage(PageId pageno, Page page, boole
 pinPage	heap/Heapfile.java	/^  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:Heapfile	file:
 pinPage	heap/Scan.java	/^  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:Scan	file:
 pinPage	labelheap/LScan.java	/^  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:LScan	file:
-pinPage	labelheap/LabelHeapfile.java	/^	  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:LabelHeapfile	file:
+pinPage	labelheap/LabelHeapFile.java	/^	  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:LabelHeapFile	file:
 pinPage	tripleheap/TScan.java	/^  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:TScan	file:
 pinPage	tripleheap/TripleHeapfile.java	/^  private void pinPage(PageId pageno, Page page, boolean emptyPage)$/;"	m	class:TripleHeapfile	file:
 pinPage(global.PageId, diskmgr.Page, boolean)	javadoc/bufmgr/BufMgr.html	/^<A NAME="pinPage(global.PageId, diskmgr.Page, boolean)"><!-- --><\/A><H3>$/;"	a
@@ -5525,7 +5525,7 @@ read_tuple	catalog/AttrCatalog.java	/^  public void read_tuple(Tuple tuple, Attr
 read_tuple	catalog/IndexCatalog.java	/^  void read_tuple(Tuple tuple, IndexDesc record)$/;"	m	class:IndexCatalog
 read_tuple	catalog/RelCatalog.java	/^  public void read_tuple(Tuple tuple, RelDesc record)$/;"	m	class:RelCatalog
 readin	iterator/SpoofIbuf.java	/^  private int readin()throws IOException,InvalidTupleSizeException$/;"	m	class:SpoofIbuf	file:
-readin	tripleiterator/TripleSpoofIbuf.java	/^	private int readin()throws IOException,InvalidTripleSizeException$/;"	m	class:TripleSpoofIbuf	file:
+readin	iterator/TripleSpoofIbuf.java	/^	private int readin()throws IOException,InvalidTripleSizeException$/;"	m	class:TripleSpoofIbuf	file:
 real	iterator/Operand.java	/^  public  float    real;$/;"	f	class:Operand
 real	javadoc/iterator/Operand.html	/^<A NAME="real"><!-- --><\/A><H3>$/;"	a
 recct	heap/DataPageInfo.java	/^  int    recct;    $/;"	f	class:DataPageInfo
@@ -5552,7 +5552,7 @@ removeInfo	catalog/RelCatalog.java	/^  public void removeInfo(String relation)$/
 replacer	bufmgr/BufMgr.java	/^  private Replacer replacer;$/;"	f	class:BufMgr	file:
 report	tests/QueryCheck.java	/^  public void report(int querynum) {$/;"	m	class:QueryCheck
 reread	iterator/IoBuf.java	/^  public void reread()$/;"	m	class:IoBuf
-reread	tripleiterator/TripleIoBuf.java	/^  public void reread()$/;"	m	class:TripleIoBuf
+reread	iterator/TripleIoBuf.java	/^  public void reread()$/;"	m	class:TripleIoBuf
 reread()	javadoc/iterator/IoBuf.html	/^<A NAME="reread()"><!-- --><\/A><H3>$/;"	a
 reserves	tests/JoinTest.java	/^  private Vector reserves;$/;"	f	class:JoinsDriver	file:
 reset	heap/Scan.java	/^    private void reset()$/;"	m	class:Scan	file:
@@ -5584,10 +5584,10 @@ returnTripleByteArray()	javadoc/tripleheap/Triple.html	/^<A NAME="returnTripleBy
 returnTupleByteArray	heap/Tuple.java	/^	public byte [] returnTupleByteArray()$/;"	m	class:Tuple
 returnTupleByteArray()	javadoc/heap/Tuple.html	/^<A NAME="returnTupleByteArray()"><!-- --><\/A><H3>$/;"	a
 root	iterator/pnodeSplayPQ.java	/^  protected pnodeSplayNode   root;$/;"	f	class:pnodeSplayPQ
-root	tripleiterator/TriplepnodeSplayPQ.java	/^	protected TriplepnodeSplayNode   root;$/;"	f	class:TriplepnodeSplayPQ
+root	iterator/TriplepnodeSplayPQ.java	/^	protected TriplepnodeSplayNode   root;$/;"	f	class:TriplepnodeSplayPQ
 rt	iterator/pnodeSplayNode.java	/^  public pnodeSplayNode    rt;$/;"	f	class:pnodeSplayNode
 rt	javadoc/iterator/pnodeSplayNode.html	/^<A NAME="rt"><!-- --><\/A><H3>$/;"	a
-rt	tripleiterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode    rt;$/;"	f	class:TriplepnodeSplayNode
+rt	iterator/TriplepnodeSplayNode.java	/^  public TriplepnodeSplayNode    rt;$/;"	f	class:TriplepnodeSplayNode
 runAllTests	tests/BMTest.java	/^  protected boolean runAllTests (){$/;"	m	class:BMDriver
 runAllTests	tests/BTTest.java	/^  protected void runAllTests (){$/;"	m	class:BTDriver
 runAllTests	tests/DBTest.java	/^  protected boolean runAllTests (){$/;"	m	class:DBDriver
@@ -5608,7 +5608,7 @@ runTests	tests/TestDriver.java	/^  public boolean runTests ()  {$/;"	m	class:Tes
 runTests	tests/TripleTest.java	/^	public boolean runTests ()  {$/;"	m	class:TRIPLEDriver
 run_num	iterator/pnode.java	/^  public int     run_num;$/;"	f	class:pnode
 run_num	javadoc/iterator/pnode.html	/^<A NAME="run_num"><!-- --><\/A><H3>$/;"	a
-run_num	tripleiterator/Triplepnode.java	/^  public int     run_num;$/;"	f	class:Triplepnode
+run_num	iterator/Triplepnode.java	/^  public int     run_num;$/;"	f	class:Triplepnode
 s_sizes	basicpatterniterator/BPFileScan.java	/^  public short[] s_sizes;$/;"	f	class:BPFileScan
 s_sizes	iterator/FileScan.java	/^  private short[] s_sizes; $/;"	f	class:FileScan	file:
 sailors	tests/JoinTest.java	/^  private Vector sailors;$/;"	f	class:JoinsDriver	file:
@@ -5750,7 +5750,7 @@ setpage	diskmgr/Page.java	/^  public void setpage(byte [] array)$/;"	m	class:Pag
 setpage(byte[])	javadoc/diskmgr/Page.html	/^<A NAME="setpage(byte[])"><!-- --><\/A><H3>$/;"	a
 setup_for_merge	basicpatterniterator/BPSort.java	/^  private void setup_for_merge(int tuple_size, int n_R_runs)$/;"	m	class:BPSort	file:
 setup_for_merge	iterator/Sort.java	/^  private void setup_for_merge(int tuple_size, int n_R_runs)$/;"	m	class:Sort	file:
-setup_for_merge	tripleiterator/TripleSort.java	/^  private void setup_for_merge(int n_R_runs)$/;"	m	class:TripleSort	file:
+setup_for_merge	iterator/TripleSort.java	/^  private void setup_for_merge(int n_R_runs)$/;"	m	class:TripleSort	file:
 setup_op_tuple	iterator/TupleUtils.java	/^  public static short[] setup_op_tuple(Tuple Jtuple, AttrType res_attrs[],$/;"	m	class:TupleUtils
 setup_op_tuple	iterator/TupleUtils.java	/^  public static short[] setup_op_tuple(Tuple Jtuple, AttrType[] res_attrs,$/;"	m	class:TupleUtils
 setup_op_tuple(heap.Tuple, global.AttrType[], global.AttrType[], int, global.AttrType[], int, short[], short[], iterator.FldSpec[], int)	javadoc/iterator/TupleUtils.html	/^<A NAME="setup_op_tuple(heap.Tuple, global.AttrType[], global.AttrType[], int, global.AttrType[], int, short[], short[], iterator.FldSpec[], int)"><!-- --><\/A><H3>$/;"	a
@@ -5954,7 +5954,7 @@ skip-navbar_bottom	javadoc/labelheap/LHFException.html	/^<A NAME="skip-navbar_bo
 skip-navbar_bottom	javadoc/labelheap/LHFPage.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
 skip-navbar_bottom	javadoc/labelheap/LScan.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
 skip-navbar_bottom	javadoc/labelheap/Label.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
-skip-navbar_bottom	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
+skip-navbar_bottom	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
 skip-navbar_bottom	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
 skip-navbar_bottom	javadoc/labelheap/package-summary.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
 skip-navbar_bottom	javadoc/labelheap/package-tree.html	/^<A NAME="skip-navbar_bottom"><\/A>$/;"	a
@@ -6150,7 +6150,7 @@ skip-navbar_top	javadoc/labelheap/LHFException.html	/^<A NAME="skip-navbar_top">
 skip-navbar_top	javadoc/labelheap/LHFPage.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
 skip-navbar_top	javadoc/labelheap/LScan.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
 skip-navbar_top	javadoc/labelheap/Label.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
-skip-navbar_top	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
+skip-navbar_top	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
 skip-navbar_top	javadoc/labelheap/SpaceNotAvailableException.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
 skip-navbar_top	javadoc/labelheap/package-summary.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
 skip-navbar_top	javadoc/labelheap/package-tree.html	/^<A NAME="skip-navbar_top"><\/A>$/;"	a
@@ -6186,7 +6186,7 @@ sortFldType	iterator/DuplElim.java	/^  private AttrType  sortFldType;$/;"	f	clas
 sortFldType	iterator/SortMerge.java	/^  private  AttrType   sortFldType;$/;"	f	class:SortMerge	file:
 sort_init	basicpatterniterator/BPSort.java	/^  public sort_init(AttrType[] in,short len_in, short[] str_sizes) $/;"	m	class:BPSort
 sort_order	iterator/pnodePQ.java	/^  protected TupleOrder            sort_order;$/;"	f	class:pnodePQ
-sort_order	tripleiterator/TriplepnodePQ.java	/^  protected TripleOrder  sort_order;$/;"	f	class:TriplepnodePQ
+sort_order	iterator/TriplepnodePQ.java	/^  protected TripleOrder  sort_order;$/;"	f	class:TriplepnodePQ
 sort_temporary_heap_file	tests/BatchInsert.java	/^	private static void sort_temporary_heap_file(String dbname,int indexoption) $/;"	m	class:BatchInsert	file:
 sortoption	diskmgr/Stream.java	/^	public static int sortoption = 1;    \/\/Index option$/;"	f	class:Stream
 state	bufmgr/Replacer.java	/^    int state; $/;"	f	class:STATE
@@ -6219,46 +6219,46 @@ t2_str_sizescopy	iterator/NestedLoopsJoins.java	/^  private   short t2_str_sizes
 t_in_buf	iterator/IoBuf.java	/^    t_in_buf;                        \/\/ # of tuples that fit in the buffer$/;"	f	class:IoBuf	file:
 t_in_buf	iterator/OBuf.java	/^    t_in_buf;                        \/\/ # of tuples that fit in the buffer$/;"	f	class:OBuf	file:
 t_in_buf	iterator/SpoofIbuf.java	/^  private  int    t_proc, t_in_buf;$/;"	f	class:SpoofIbuf	file:
-t_in_buf	tripleiterator/TripleIoBuf.java	/^    t_in_buf;                        \/\/ # of triples that fit in the buffer$/;"	f	class:TripleIoBuf	file:
-t_in_buf	tripleiterator/TripleOBuf.java	/^                t_in_buf;               \/\/ # of triples that fit in the buffer$/;"	f	class:TripleOBuf	file:
-t_in_buf	tripleiterator/TripleSpoofIbuf.java	/^	private  int    t_proc, t_in_buf;$/;"	f	class:TripleSpoofIbuf	file:
+t_in_buf	iterator/TripleIoBuf.java	/^    t_in_buf;                        \/\/ # of triples that fit in the buffer$/;"	f	class:TripleIoBuf	file:
+t_in_buf	iterator/TripleOBuf.java	/^                t_in_buf;               \/\/ # of triples that fit in the buffer$/;"	f	class:TripleOBuf	file:
+t_in_buf	iterator/TripleSpoofIbuf.java	/^	private  int    t_proc, t_in_buf;$/;"	f	class:TripleSpoofIbuf	file:
 t_per_pg	iterator/IoBuf.java	/^  private  int  t_per_pg,              \/\/ # of tuples that fit in 1 page$/;"	f	class:IoBuf	file:
 t_per_pg	iterator/OBuf.java	/^  private  int  t_per_pg,                        \/\/ # of tuples that fit in 1 page$/;"	f	class:OBuf	file:
 t_per_pg	iterator/SpoofIbuf.java	/^  private  int    t_per_pg;$/;"	f	class:SpoofIbuf	file:
-t_per_pg	tripleiterator/TripleIoBuf.java	/^  private  int  t_per_pg,            \/\/ # of triples that fit in 1 page$/;"	f	class:TripleIoBuf	file:
-t_per_pg	tripleiterator/TripleOBuf.java	/^  private  int  t_per_pg,               \/\/ # of triples that fit in 1 page$/;"	f	class:TripleOBuf	file:
-t_per_pg	tripleiterator/TripleSpoofIbuf.java	/^	private  int    t_per_pg;$/;"	f	class:TripleSpoofIbuf	file:
+t_per_pg	iterator/TripleIoBuf.java	/^  private  int  t_per_pg,            \/\/ # of triples that fit in 1 page$/;"	f	class:TripleIoBuf	file:
+t_per_pg	iterator/TripleOBuf.java	/^  private  int  t_per_pg,               \/\/ # of triples that fit in 1 page$/;"	f	class:TripleOBuf	file:
+t_per_pg	iterator/TripleSpoofIbuf.java	/^	private  int    t_per_pg;$/;"	f	class:TripleSpoofIbuf	file:
 t_proc	iterator/SpoofIbuf.java	/^  private  int    t_proc, t_in_buf;$/;"	f	class:SpoofIbuf	file:
-t_proc	tripleiterator/TripleSpoofIbuf.java	/^	private  int    t_proc, t_in_buf;$/;"	f	class:TripleSpoofIbuf	file:
+t_proc	iterator/TripleSpoofIbuf.java	/^	private  int    t_proc, t_in_buf;$/;"	f	class:TripleSpoofIbuf	file:
 t_rd_from_pg	iterator/IoBuf.java	/^  private  int  t_rd_from_pg;      \/\/ # of tuples read from current page$/;"	f	class:IoBuf	file:
 t_rd_from_pg	iterator/SpoofIbuf.java	/^  private  int    t_rd_from_pg, curr_page;$/;"	f	class:SpoofIbuf	file:
-t_rd_from_pg	tripleiterator/TripleIoBuf.java	/^  private  int  t_rd_from_pg;        \/\/ # of triples read from current page$/;"	f	class:TripleIoBuf	file:
-t_rd_from_pg	tripleiterator/TripleSpoofIbuf.java	/^	private  int    t_rd_from_pg, curr_page;$/;"	f	class:TripleSpoofIbuf	file:
+t_rd_from_pg	iterator/TripleIoBuf.java	/^  private  int  t_rd_from_pg;        \/\/ # of triples read from current page$/;"	f	class:TripleIoBuf	file:
+t_rd_from_pg	iterator/TripleSpoofIbuf.java	/^	private  int    t_rd_from_pg, curr_page;$/;"	f	class:TripleSpoofIbuf	file:
 t_size	iterator/IoBuf.java	/^  private  int  t_size;               \/\/ Size of a tuple$/;"	f	class:IoBuf	file:
 t_size	iterator/OBuf.java	/^  private  int  t_size;                                \/\/ Size of a tuple$/;"	f	class:OBuf	file:
 t_size	iterator/SpoofIbuf.java	/^  private  int    t_size;$/;"	f	class:SpoofIbuf	file:
-t_size	tripleiterator/TripleIoBuf.java	/^  private  int  t_size;              \/\/ Size of a triple$/;"	f	class:TripleIoBuf	file:
-t_size	tripleiterator/TripleOBuf.java	/^  private  int  t_size;                 \/\/ Size of a triple$/;"	f	class:TripleOBuf	file:
-t_size	tripleiterator/TripleSpoofIbuf.java	/^	private  int    t_size;$/;"	f	class:TripleSpoofIbuf	file:
+t_size	iterator/TripleIoBuf.java	/^  private  int  t_size;              \/\/ Size of a triple$/;"	f	class:TripleIoBuf	file:
+t_size	iterator/TripleOBuf.java	/^  private  int  t_size;                 \/\/ Size of a triple$/;"	f	class:TripleOBuf	file:
+t_size	iterator/TripleSpoofIbuf.java	/^	private  int    t_size;$/;"	f	class:TripleSpoofIbuf	file:
 t_wr_to_buf	iterator/IoBuf.java	/^    t_wr_to_buf;                      \/\/ # of tuples written to buffer.$/;"	f	class:IoBuf	file:
 t_wr_to_buf	iterator/OBuf.java	/^    t_wr_to_buf;                        \/\/ # of tuples written to buffer.$/;"	f	class:OBuf	file:
-t_wr_to_buf	tripleiterator/TripleIoBuf.java	/^    t_wr_to_buf;                     \/\/ # of triples written to buffer.$/;"	f	class:TripleIoBuf	file:
-t_wr_to_buf	tripleiterator/TripleOBuf.java	/^    		t_wr_to_buf;            \/\/ # of triples written to buffer.$/;"	f	class:TripleOBuf	file:
+t_wr_to_buf	iterator/TripleIoBuf.java	/^    t_wr_to_buf;                     \/\/ # of triples written to buffer.$/;"	f	class:TripleIoBuf	file:
+t_wr_to_buf	iterator/TripleOBuf.java	/^    		t_wr_to_buf;            \/\/ # of triples written to buffer.$/;"	f	class:TripleOBuf	file:
 t_wr_to_pg	iterator/IoBuf.java	/^  private  int  t_wr_to_pg,          \/\/ # of tuples written to current page$/;"	f	class:IoBuf	file:
 t_wr_to_pg	iterator/OBuf.java	/^  private  int  t_wr_to_pg,                        \/\/ # of tuples written to current page$/;"	f	class:OBuf	file:
-t_wr_to_pg	tripleiterator/TripleIoBuf.java	/^  private  int  t_wr_to_pg,          \/\/ # of triples written to current page$/;"	f	class:TripleIoBuf	file:
-t_wr_to_pg	tripleiterator/TripleOBuf.java	/^  private  int  t_wr_to_pg,             \/\/ # of triples written to current page$/;"	f	class:TripleOBuf	file:
+t_wr_to_pg	iterator/TripleIoBuf.java	/^  private  int  t_wr_to_pg,          \/\/ # of triples written to current page$/;"	f	class:TripleIoBuf	file:
+t_wr_to_pg	iterator/TripleOBuf.java	/^  private  int  t_wr_to_pg,             \/\/ # of triples written to current page$/;"	f	class:TripleOBuf	file:
 t_written	iterator/IoBuf.java	/^  private  long t_written;           \/\/ # of tuples written so far$/;"	f	class:IoBuf	file:
 t_written	iterator/OBuf.java	/^  private  long t_written;                        \/\/ # of tuples written so far.$/;"	f	class:OBuf	file:
-t_written	tripleiterator/TripleIoBuf.java	/^  private  long t_written;           \/\/ # of triples written so far$/;"	f	class:TripleIoBuf	file:
-t_written	tripleiterator/TripleOBuf.java	/^  private  long t_written;              \/\/ # of triples written so far.$/;"	f	class:TripleOBuf	file:
+t_written	iterator/TripleIoBuf.java	/^  private  long t_written;           \/\/ # of triples written so far$/;"	f	class:TripleIoBuf	file:
+t_written	iterator/TripleOBuf.java	/^  private  long t_written;              \/\/ # of triples written so far.$/;"	f	class:TripleOBuf	file:
 temp_file_fd1	iterator/SortMerge.java	/^  private  Heapfile temp_file_fd1, temp_file_fd2;$/;"	f	class:SortMerge	file:
 temp_file_fd2	iterator/SortMerge.java	/^  private  Heapfile temp_file_fd1, temp_file_fd2;$/;"	f	class:SortMerge	file:
 temp_files	basicpatterniterator/BPSort.java	/^  private Heapfile[]   temp_files; $/;"	f	class:BPSort	file:
 temp_files	iterator/Sort.java	/^  private Heapfile[]   temp_files; $/;"	f	class:Sort	file:
-temp_files	tripleiterator/TripleSort.java	/^  private TripleHeapfile[]   temp_files; $/;"	f	class:TripleSort	file:
+temp_files	iterator/TripleSort.java	/^  private TripleHeapfile[]   temp_files; $/;"	f	class:TripleSort	file:
 tempfilecount	heap/Heapfile.java	/^  private static int tempfilecount = 0;$/;"	f	class:Heapfile	file:
-tempfilecount	labelheap/LabelHeapfile.java	/^	  private static int tempfilecount = 0;$/;"	f	class:LabelHeapfile	file:
+tempfilecount	labelheap/LabelHeapFile.java	/^	  private static int tempfilecount = 0;$/;"	f	class:LabelHeapFile	file:
 tempfilecount	tripleheap/TripleHeapfile.java	/^  private static int tempfilecount = 0;$/;"	f	class:TripleHeapfile	file:
 test1	tests/BMTest.java	/^  protected boolean test1 () {$/;"	m	class:BMDriver
 test1	tests/BTTest.java	/^  void test1(int n) $/;"	m	class:BTDriver
@@ -6361,7 +6361,7 @@ toString()	javadoc/global/PageId.html	/^<A NAME="toString()"><!-- --><\/A><H3>$/
 toString()	javadoc/global/SelectType.html	/^<A NAME="toString()"><!-- --><\/A><H3>$/;"	a
 toString()	javadoc/global/TupleOrder.html	/^<A NAME="toString()"><!-- --><\/A><H3>$/;"	a
 tot_t_proc	iterator/SpoofIbuf.java	/^  private  int    tot_t_proc;$/;"	f	class:SpoofIbuf	file:
-tot_t_proc	tripleiterator/TripleSpoofIbuf.java	/^	private  int    tot_t_proc;$/;"	f	class:TripleSpoofIbuf	file:
+tot_t_proc	iterator/TripleSpoofIbuf.java	/^	private  int    tot_t_proc;$/;"	f	class:TripleSpoofIbuf	file:
 total	tests/QueryCheck.java	/^  private int      total;        \/\/ total number of correct answers$/;"	f	class:QueryCheck	file:
 trace	btree/BTreeFile.java	/^  private static DataOutputStream trace;$/;"	f	class:BTreeFile	file:
 trace	btree/LabelBTreeFile.java	/^  private static DataOutputStream trace;$/;"	f	class:LabelBTreeFile	file:
@@ -6377,7 +6377,7 @@ trace_children	btree/TripleBTreeFile.java	/^  void trace_children(PageId id)$/;"
 treeFilename	btree/BTFileScan.java	/^  String treeFilename;     \/\/ B+ tree we're scanning $/;"	f	class:BTFileScan
 treeFilename	btree/LabelBTFileScan.java	/^  String treeFilename;     \/\/ B+ tree we're scanning $/;"	f	class:LabelBTFileScan
 treeFilename	btree/TripleBTFileScan.java	/^  String treeFilename;     \/\/ B+ tree we're scanning $/;"	f	class:TripleBTFileScan
-triple	tripleiterator/Triplepnode.java	/^  public Triple   triple;$/;"	f	class:Triplepnode
+triple	iterator/Triplepnode.java	/^  public Triple   triple;$/;"	f	class:Triplepnode
 tripleCopy	tripleheap/Triple.java	/^   public void tripleCopy(Triple fromTriple)$/;"	m	class:Triple
 tripleCopy(tripleheap.Triple)	javadoc/tripleheap/Triple.html	/^<A NAME="tripleCopy(tripleheap.Triple)"><!-- --><\/A><H3>$/;"	a
 tripleInit	tripleheap/Triple.java	/^   public void tripleInit(byte [] atriple, int offset,int length)$/;"	m	class:Triple
@@ -6387,7 +6387,7 @@ tripleSet	tripleheap/Triple.java	/^ public void tripleSet(byte [] record, int of
 tripleSet(byte[], int)	javadoc/tripleheap/Triple.html	/^<A NAME="tripleSet(byte[], int)"><!-- --><\/A><H3>$/;"	a
 triple_length	tripleheap/Triple.java	/^  private int triple_length;$/;"	f	class:Triple	file:
 triple_offset	tripleheap/Triple.java	/^  private int triple_offset;$/;"	f	class:Triple	file:
-triple_size	tripleiterator/TripleSort.java	/^  private int         triple_size;$/;"	f	class:TripleSort	file:
+triple_size	iterator/TripleSort.java	/^  private int         triple_size;$/;"	f	class:TripleSort	file:
 tripleheap	javadoc/constant-values.html	/^<A NAME="tripleheap"><!-- --><\/A>$/;"	a
 tripleheap	tripleheap/DataPageInfo.java	/^package tripleheap;$/;"	p
 tripleheap	tripleheap/FieldNumberOutOfBoundException.java	/^package tripleheap;$/;"	p
@@ -6418,24 +6418,24 @@ tripleheap.THFPage.USED_PTR	javadoc/constant-values.html	/^<A NAME="tripleheap.T
 tripleheap.Triple.max_size	javadoc/constant-values.html	/^<A NAME="tripleheap.Triple.max_size"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 tripleheap.TripleHeapfile.ORDINARY	javadoc/constant-values.html	/^<A NAME="tripleheap.TripleHeapfile.ORDINARY"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
 tripleheap.TripleHeapfile.TEMP	javadoc/constant-values.html	/^<A NAME="tripleheap.TripleHeapfile.TEMP"><!-- --><\/A><TD ALIGN="right"><FONT SIZE="-1">$/;"	a
-tripleiterator	tripleiterator/JoinLowMemory.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/LowMemException.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/NoOutputBuffer.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleIoBuf.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleIterator.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleIteratorBMException.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleOBuf.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleSort.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleSortException.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleSpoofIbuf.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleUtils.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TripleUtilsException.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/Triplepnode.java	/^package tripleiterator; $/;"	p
-tripleiterator	tripleiterator/TriplepnodePQ.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TriplepnodeSplayNode.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/TriplepnodeSplayPQ.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/UnknowAttrType.java	/^package tripleiterator;$/;"	p
-tripleiterator	tripleiterator/UnknownKeyTypeException.java	/^package tripleiterator;$/;"	p
+iterator	iterator/JoinLowMemory.java	/^package iterator;$/;"	p
+iterator	iterator/LowMemException.java	/^package iterator;$/;"	p
+iterator	iterator/NoOutputBuffer.java	/^package iterator;$/;"	p
+iterator	iterator/TripleIoBuf.java	/^package iterator;$/;"	p
+iterator	iterator/TripleIterator.java	/^package iterator;$/;"	p
+iterator	iterator/TripleIteratorBMException.java	/^package iterator;$/;"	p
+iterator	iterator/TripleOBuf.java	/^package iterator;$/;"	p
+iterator	iterator/TripleSort.java	/^package iterator;$/;"	p
+iterator	iterator/TripleSortException.java	/^package iterator;$/;"	p
+iterator	iterator/TripleSpoofIbuf.java	/^package iterator;$/;"	p
+iterator	iterator/TripleUtils.java	/^package iterator;$/;"	p
+iterator	iterator/TripleUtilsException.java	/^package iterator;$/;"	p
+iterator	iterator/Triplepnode.java	/^package iterator; $/;"	p
+iterator	iterator/TriplepnodePQ.java	/^package iterator;$/;"	p
+iterator	iterator/TriplepnodeSplayNode.java	/^package iterator;$/;"	p
+iterator	iterator/TriplepnodeSplayPQ.java	/^package iterator;$/;"	p
+iterator	iterator/UnknowAttrType.java	/^package iterator;$/;"	p
+iterator	iterator/UnknownKeyTypeException.java	/^package iterator;$/;"	p
 triples	tests/BatchInsert.java	/^	public static ArrayList<byte[]> triples = new ArrayList<byte[]>();$/;"	f	class:BatchInsert
 tsort	diskmgr/Stream.java	/^	public TripleSort tsort = null;$/;"	f	class:Stream
 tuple	catalog/AttrCatalog.java	/^  Tuple tuple;$/;"	f	class:AttrCatalog
@@ -6484,7 +6484,7 @@ unpinPage	diskmgr/DB.java	/^  private void unpinPage(PageId pageno, boolean dirt
 unpinPage	heap/Heapfile.java	/^  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:Heapfile	file:
 unpinPage	heap/Scan.java	/^  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:Scan	file:
 unpinPage	labelheap/LScan.java	/^  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:LScan	file:
-unpinPage	labelheap/LabelHeapfile.java	/^	  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:LabelHeapfile	file:
+unpinPage	labelheap/LabelHeapFile.java	/^	  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:LabelHeapFile	file:
 unpinPage	tripleheap/TScan.java	/^  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:TScan	file:
 unpinPage	tripleheap/TripleHeapfile.java	/^  private void unpinPage(PageId pageno, boolean dirty)$/;"	m	class:TripleHeapfile	file:
 unpinPage(global.PageId, boolean)	javadoc/bufmgr/BufMgr.html	/^<A NAME="unpinPage(global.PageId, boolean)"><!-- --><\/A><H3>$/;"	a
@@ -6494,14 +6494,14 @@ updateHeader	btree/BTreeFile.java	/^  private void  updateHeader(PageId newRoot)
 updateHeader	btree/LabelBTreeFile.java	/^  private void  updateHeader(PageId newRoot)$/;"	m	class:LabelBTreeFile	file:
 updateHeader	btree/TripleBTreeFile.java	/^  private void  updateHeader(PageId newRoot)$/;"	m	class:TripleBTreeFile	file:
 updateRecord	heap/Heapfile.java	/^  public boolean updateRecord(RID rid, Tuple newtuple) $/;"	m	class:Heapfile
-updateRecord	labelheap/LabelHeapfile.java	/^	  public boolean updateRecord(LID lid, Label newtuple) $/;"	m	class:LabelHeapfile
+updateRecord	labelheap/LabelHeapFile.java	/^	  public boolean updateRecord(LID lid, Label newtuple) $/;"	m	class:LabelHeapFile
 updateRecord	tripleheap/TripleHeapfile.java	/^  public boolean updateRecord(TID rid, Triple newTriple) $/;"	m	class:TripleHeapfile
-updateRecord(global.LID, labelheap.Label)	javadoc/labelheap/LabelHeapfile.html	/^<A NAME="updateRecord(global.LID, labelheap.Label)"><!-- --><\/A><H3>$/;"	a
+updateRecord(global.LID, labelheap.Label)	javadoc/labelheap/LabelHeapFile.html	/^<A NAME="updateRecord(global.LID, labelheap.Label)"><!-- --><\/A><H3>$/;"	a
 updateRecord(global.RID, heap.Tuple)	javadoc/heap/Heapfile.html	/^<A NAME="updateRecord(global.RID, heap.Tuple)"><!-- --><\/A><H3>$/;"	a
 updateTriple(global.TID, tripleheap.Triple)	javadoc/tripleheap/TripleHeapfile.html	/^<A NAME="updateTriple(global.TID, tripleheap.Triple)"><!-- --><\/A><H3>$/;"	a
 useBM	basicpatterniterator/BPSort.java	/^  private boolean useBM = true; \/\/ flag for whether to use buffer manager$/;"	f	class:BPSort	file:
 useBM	iterator/Sort.java	/^  private boolean useBM = true; \/\/ flag for whether to use buffer manager$/;"	f	class:Sort	file:
-useBM	tripleiterator/TripleSort.java	/^  private boolean useBM = true; \/\/ flag for whether to use buffer manager$/;"	f	class:TripleSort	file:
+useBM	iterator/TripleSort.java	/^  private boolean useBM = true; \/\/ flag for whether to use buffer manager$/;"	f	class:TripleSort	file:
 usedPtr	heap/HFPage.java	/^  private    short     usedPtr;   $/;"	f	class:HFPage	file:
 usedPtr	labelheap/LHFPage.java	/^  private    short     usedPtr;   $/;"	f	class:LHFPage	file:
 usedPtr	tripleheap/THFPage.java	/^  private    short     usedPtr;   $/;"	f	class:THFPage	file:
@@ -6694,7 +6694,7 @@ windowTitle	javadoc/labelheap/LHFException.html	/^function windowTitle()$/;"	f
 windowTitle	javadoc/labelheap/LHFPage.html	/^function windowTitle()$/;"	f
 windowTitle	javadoc/labelheap/LScan.html	/^function windowTitle()$/;"	f
 windowTitle	javadoc/labelheap/Label.html	/^function windowTitle()$/;"	f
-windowTitle	javadoc/labelheap/LabelHeapfile.html	/^function windowTitle()$/;"	f
+windowTitle	javadoc/labelheap/LabelHeapFile.html	/^function windowTitle()$/;"	f
 windowTitle	javadoc/labelheap/SpaceNotAvailableException.html	/^function windowTitle()$/;"	f
 windowTitle	javadoc/labelheap/package-summary.html	/^function windowTitle()$/;"	f
 windowTitle	javadoc/labelheap/package-tree.html	/^function windowTitle()$/;"	f

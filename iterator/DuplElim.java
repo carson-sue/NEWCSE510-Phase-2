@@ -29,9 +29,9 @@ public class DuplElim extends Iterator
   
   /**
    *Constructor to set up some information.
-   *@param in[]  Array containing field types of R.
+   *@param in  Array containing field types of R.
    *@param len_in # of columns in R.
-   *@param s_sizes[] store the length of string appeared in tuple
+   *@param s_sizes store the length of string appeared in tuple
    *@param am input relation iterator, access method for left input to join,
    *@param amt_of_mem the page numbers required IN PAGES
    *@exception IOException some I/O fault

@@ -1,0 +1,2 @@
+:Jorunn_Danielsen :knows :Eirik_Newth		0.5232176791516268
+:Jorunn_Danielsen :knows :Eirik_Newth		0.4232176791516268

@@ -6,8 +6,6 @@ import global.*;
 import java.io.*;
 import tripleheap.*;
 import labelheap.*;
-import tripleiterator.*;
-import basicpattern.*;
 
 
 public class QueryProgram {
@@ -120,17 +118,6 @@ public class QueryProgram {
 				s.closeStream();
 			}
 
-
-			//BASIC Pattern TEST
-			/*s = sysdef.JavabaseDB.openStream(dbname, indexoption, Subject, Predicate, Object, confidence);
-				BasicPattern bp = null;
-				while((bp = s.getNextBasicPatternFromTriple(tid))!=null)
-				{
-					System.out.print("Getting next BP: ");
-					bp.print();
-				}
-				s.closeStream();
-			 */
 		}
 		else
 		{

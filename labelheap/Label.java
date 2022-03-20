@@ -1,8 +1,10 @@
+/*File Label.java*/
 package labelheap;
 
 import java.io.*;
 import java.lang.*;
 import global.*;
+
 
 public class Label implements GlobalConst{
 
@@ -140,10 +142,7 @@ public class Label implements GlobalConst{
 	      return label_length;
 	   }
 
-	  public String getLabelKey()
-	  {
-		  return (new String(data));
-	  }
+
 	/** get the length of a tuple, call this method if you did 
 	  *  call setHdr () before
 	  * @return     size of this tuple in bytes
@@ -464,6 +463,11 @@ public class Label implements GlobalConst{
 	  * @param type  the types in the tuple
 	  * @Exception IOException I/O exception
 	  */
+		// come back here &&&&&&&&&
+	 public String getLabelKey() {
+		 return (new String(data));
+	 }
+
 	 public void print(AttrType type[])
 	    throws IOException 
 	 {
@@ -536,5 +540,7 @@ public class Label implements GlobalConst{
 	   {
 	      return 0;
 	   }
+
+
 	}
 

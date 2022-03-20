@@ -39,20 +39,7 @@ public class PID{
       pageNo = pid.pageNo;
       slotNo = pid.slotNo;
     }
-  
-  /** Write the pid into a byte array at offset
-   * @param ary the specified byte array
-   * @param offset the offset of byte array to write 
-   * @exception java.io.IOException I/O errors
-   */ 
-  public void writeToByteArray(byte [] ary, int offset)
-    throws java.io.IOException
-    {
-      Convert.setIntValue ( slotNo, offset, ary);
-      Convert.setIntValue ( pageNo.pid, offset+4, ary);
-    }
-  
-  
+
   /** Compares two PID object, i.e, this to the pid
    * @param pid PID object to be compared to
    * @return true is they are equal
@@ -67,12 +54,21 @@ public class PID{
       return false;
   }
   
-  /** Returns corresponding LID
-   * @return LID
-   */
+
   public LID returnLID() {
-     
+     // create a LID object
      LID lid = new LID(pageNo,slotNo);  
      return lid;
+  }
+  /** Write the pid into a byte array at offset
+   * @param ary the specified byte array
+   * @param offset the offset of byte array to write
+   * @exception java.io.IOException I/O errors
+   */
+  public void writeToByteArray(byte [] ary, int offset)
+          throws java.io.IOException
+  {
+    Convert.setIntValue ( slotNo, offset, ary);
+    Convert.setIntValue ( pageNo.pid, offset+4, ary);
   }
 }

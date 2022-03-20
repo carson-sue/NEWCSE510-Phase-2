@@ -11,8 +11,8 @@ PROGS = together
 
 all: $(PROGS)
 
-lhf:LabelHeapfile.java
-	$(JAVAC) LabelHeapfile.java
+lhf:LabelHeapFile.java
+	$(JAVAC) LabelHeapFile.java
 
 lhp:LHFPage.java
 	$(JAVAC) HFPage.java

@@ -27,8 +27,8 @@ public class EID{
    */
   public EID (LID lid)
     {
-      pageNo = lid.pageNo;
-      slotNo = lid.slotNo;
+      this.pageNo = lid.pageNo;
+      this.slotNo = lid.slotNo;
     }
   
   /**
@@ -38,6 +38,20 @@ public class EID{
     {
       pageNo = eid.pageNo;
       slotNo = eid.slotNo;
+    }
+
+    public LID returnLID() {
+
+      LID lid = new LID(pageNo,slotNo);
+      return lid;
+    }
+    public boolean equals(EID eid) {
+
+      if ((this.pageNo.pid==eid.pageNo.pid)
+              &&(this.slotNo==eid.slotNo))
+        return true;
+      else
+        return false;
     }
   
   /** Write the eid into a byte array at offset
@@ -58,23 +72,12 @@ public class EID{
    * @return true is they are equal
    *         false if not.
    */
-  public boolean equals(EID eid) {
-    
-    if ((this.pageNo.pid==eid.pageNo.pid)
-	&&(this.slotNo==eid.slotNo))
-      return true;
-    else
-      return false;
-  }
+
 
   
   /** Returns corresponding LID
    * @return LID
    */
-  public LID returnLID() {
-     
-     LID lid = new LID(pageNo,slotNo);  
-     return lid;
-  }
+
   
 }
