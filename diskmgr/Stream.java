@@ -8,66 +8,62 @@ import iterator.*;
 
 
 public class Stream{
-	public static SystemDefs sysdef = null;
-	public static String dbName;
-	public static int sortoption = 1;    //Index option
-	public static EID entityobjectid = new EID();
-	public static EID entitysubjectid = new EID();
-	public static EID entitypredicateid = new EID();
-	public static TripleHeapfile Result_HF = null;
+	private static String dbName;
+	private static int sortoption = 1;    //Index option
+	private static EID entityobjectid = new EID();
+	private static EID entitysubjectid = new EID();
+	private static EID entitypredicateid = new EID();
+	private static TripleHeapfile Result_HF = null;
 	static boolean subject_null = false;
 	static boolean object_null = false;
 	static boolean predicate_null = false;
 	static boolean confidence_null = false;
-	boolean exists = false;
-	public TScan Titer = null;
-	public TripleSort tsort = null;
-	public int SORT_TRIPLE_NUM_PAGES = 16;
-	boolean scan_entire_heapfile = false;
-	public String _subjectFilter;
-	public String _predicateFilter;
-	public String _objectFilter;
-	public double _confidenceFilter;
-	public boolean scan_on_BT = false;
-	public Triple scan_on_BT_triple = null;
-	
+	private TScan Titer = null;
+	private TripleSort tsort = null;
+	private int SORT_TRIPLE_NUM_PAGES = 16;
+	private boolean scan_entire_heapfile = false;
+	private String _subjectFilter;
+	private String _predicateFilter;
+	private String _objectFilter;
+	private double _confidenceFilter;
+	private boolean scan_on_BT = false;
+	private Triple scan_on_BT_triple = null;
+
 	public TripleOrder get_sort_order()
 	{
 		TripleOrder sort_order = null;
-		
+
 		switch(sortoption)
 		{
-		case 1:	
-			sort_order = new TripleOrder(TripleOrder.SubjectPredicateObjectConfidence);
-			break;
+			case 1:
+				sort_order = new TripleOrder(TripleOrder.SubjectPredicateObjectConfidence);
+				break;
 
-		case 2:	
-			sort_order = new TripleOrder(TripleOrder.PredicateSubjectObjectConfidence);
-			break;
+			case 2:
+				sort_order = new TripleOrder(TripleOrder.PredicateSubjectObjectConfidence);
+				break;
 
-		case 3:	
-			sort_order = new TripleOrder(TripleOrder.SubjectConfidence);
-			break;
+			case 3:
+				sort_order = new TripleOrder(TripleOrder.SubjectConfidence);
+				break;
 
-		case 4:	
-			sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
-			break;
+			case 4:
+				sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
+				break;
 
-		case 5:	
-			sort_order = new TripleOrder(TripleOrder.ObjectConfidence);
-			break;
+			case 5:
+				sort_order = new TripleOrder(TripleOrder.ObjectConfidence);
+				break;
 
-		case 6:	
-			sort_order = new TripleOrder(TripleOrder.Confidence);
-			break;
+			case 6:
+				sort_order = new TripleOrder(TripleOrder.Confidence);
+				break;
 		}
 		return sort_order;
 	}
-	
-	
-	
+
 	//Retrieves next triple in stream
-	public Triple getNext(TID tid) throws Exception
+	public Triple getNext() throws Exception
 	{
 		try
 		{
@@ -84,7 +80,7 @@ public class Stream{
 			else
 			{
 				while((triple = tsort.get_next()) != null)
-				{	
+				{
 					if(scan_entire_heapfile == false)
 					{
 						return triple;
@@ -93,17 +89,17 @@ public class Stream{
 					{
 						boolean result = true;
 						double confidence = triple.getConfidence();
-						Label subject = SystemDefs.JavabaseDB.getEntityHandle().getRecord(triple.getSubjectID().returnLID());
-						Label object = SystemDefs.JavabaseDB.getEntityHandle().getRecord(triple.getObjectID().returnLID());
-						Label predicate = SystemDefs.JavabaseDB.getPredicateHandle().getRecord(triple.getPredicateID().returnLID());
-							
+						Label subject = SystemDefs.JavabaseDB.getEntityHF().getRecord(triple.getSubjectID().returnLID());
+						Label object = SystemDefs.JavabaseDB.getEntityHF().getRecord(triple.getObjectID().returnLID());
+						Label predicate = SystemDefs.JavabaseDB.getPredHF().getRecord(triple.getPredicateID().returnLID());
+
 						if(!subject_null)
 						{
-							result = result & (_subjectFilter.compareTo(subject.getLabelKey()) == 0);	
+							result = result & (_subjectFilter.compareTo(subject.getLabelKey()) == 0);
 						}
 						if(!object_null)
 						{
-							result = result & (_objectFilter.compareTo(object.getLabelKey()) == 0 );	
+							result = result & (_objectFilter.compareTo(object.getLabelKey()) == 0 );
 						}
 						if(!predicate_null)
 						{
@@ -113,11 +109,11 @@ public class Stream{
 						{
 							result = result & (confidence >= _confidenceFilter);
 						}
-						if(result)	
+						if(result)
 						{
 							return triple;
 						}
-					}		
+					}
 				}
 			}
 		}
@@ -129,72 +125,6 @@ public class Stream{
 	}
 
 
-	//Retrieves next triple in stream
-		public Triple getNextWTSort(TID tid) throws Exception
-		{
-			try
-			{
-				TID rid = new TID();
-				Triple triple = null;
-				if(scan_on_BT)
-				{
-					if(scan_on_BT_triple!=null)
-					{
-						Triple temp = new Triple(scan_on_BT_triple);
-						scan_on_BT_triple = null;
-						return temp;
-					}
-				}
-				else
-				{
-					while((triple = Titer.getNext(rid)) != null)
-					{	
-						if(scan_entire_heapfile == false)
-						{
-							return triple;
-						}
-						else
-						{
-							boolean result = true;
-							double confidence = triple.getConfidence();
-							Label subject = SystemDefs.JavabaseDB.getEntityHandle().getRecord(triple.getSubjectID().returnLID());
-							Label object = SystemDefs.JavabaseDB.getEntityHandle().getRecord(triple.getObjectID().returnLID());
-							Label predicate = SystemDefs.JavabaseDB.getPredicateHandle().getRecord(triple.getPredicateID().returnLID());
-								
-							if(!subject_null)
-							{
-								result = result & (_subjectFilter.compareTo(subject.getLabelKey()) == 0);	
-							}
-							if(!object_null)
-							{
-								result = result & (_objectFilter.compareTo(object.getLabelKey()) == 0 );	
-							}
-							if(!predicate_null)
-							{
-								result = result & (_predicateFilter.compareTo(predicate.getLabelKey())==0);
-							}
-							if(!confidence_null)
-							{
-								result = result & (confidence >= _confidenceFilter);
-							}
-							if(result)	
-							{
-								return triple;
-							}
-						}		
-					}
-				}
-			}
-			catch(Exception e)
-			{
-				System.out.println("Error in Stream get next\n"+e);
-			}
-			return null;
-		}
-
-		
-
-	
 	//Closes the stream
 	public void closeStream()
 	{
@@ -204,24 +134,24 @@ public class Stream{
 			{
 				Titer.closescan();
 			}
-			if(Result_HF != null && Result_HF != SystemDefs.JavabaseDB.getTrpHandle())
+			if(Result_HF != null && Result_HF != SystemDefs.JavabaseDB.getQuadHF())
 			{
 				Result_HF.deleteFile();
 			}
 			if(tsort!=null)
 			{
 				tsort.close(); //Close the stream iterator
-			}	
+			}
 		}
 		catch(Exception e)
 		{
 			System.out.println("Error closing Stream"+e);
 		}
 	}
-	
+
 	//Constructor
-	public Stream(String rdfdbname, int orderType, String subjectFilter,String predicateFilter, String objectFilter, double confidenceFilter) 
-	throws Exception
+	public Stream(String rdfdbname, int orderType, String subjectFilter,String predicateFilter, String objectFilter, double confidenceFilter)
+			throws Exception
 	{
 		sortoption = orderType;
 		dbName = rdfdbname;
@@ -242,9 +172,9 @@ public class Stream{
 		{
 			confidence_null = true;
 		}
-		
+
 		String indexoption = rdfdbname.substring(rdfdbname.lastIndexOf('_') + 1);
-		
+
 		if(!subject_null && !predicate_null && !object_null && !confidence_null)
 		{
 			ScanBTReeIndex(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
@@ -273,87 +203,25 @@ public class Stream{
 				ScanBTSubjectIndex(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
 			}
 			else
-			{	
+			{
 				scan_entire_heapfile = true;
 				ScanEntireHeapFile(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
 			}
-			
+
 			//Sort the results
 			Titer = new TScan(Result_HF);
 			TripleOrder sort_order = get_sort_order();
-			try 
+			try
 			{
 				tsort = new TripleSort(Titer, sort_order , SORT_TRIPLE_NUM_PAGES);
 			}
-			catch (Exception e) 
+			catch (Exception e)
 			{
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public Stream(String rdfdbname, String subjectFilter,String predicateFilter, String objectFilter, double confidenceFilter) 
-			throws Exception
-			{
-				dbName = rdfdbname;
-
-				if(subjectFilter.compareToIgnoreCase("null") == 0)
-				{
-					subject_null = true;
-				}
-				if(predicateFilter.compareToIgnoreCase("null") == 0)
-				{
-					predicate_null = true;
-				}
-				if(objectFilter.compareToIgnoreCase("null") == 0)
-				{
-					object_null = true;
-				}
-				if(confidenceFilter == -99.0)
-				{
-					confidence_null = true;
-				}
-				
-				String indexoption = rdfdbname.substring(rdfdbname.lastIndexOf('_') + 1);
-				
-				if(!subject_null && !predicate_null && !object_null)
-				{
-					ScanBTReeIndex(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					scan_on_BT = true;
-				}
-				else
-				{
-					if(Integer.parseInt(indexoption) == 1 && !confidence_null)
-					{
-						ScanBTConfidenceIndex(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					}
-					else if(Integer.parseInt(indexoption) == 2 && !subject_null && !confidence_null)
-					{
-						streamBySubjectConfidence(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					}
-					else if(Integer.parseInt(indexoption) == 3 && !object_null && !confidence_null)
-					{
-						streamByObjectConfidence(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					}
-					else if(Integer.parseInt(indexoption) == 4 && !predicate_null && !confidence_null)
-					{
-						streamByPredicateConfidence(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					}
-					else if(Integer.parseInt(indexoption) == 5 && !subject_null)
-					{
-						ScanBTSubjectIndex(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					}
-					else
-					{	
-						scan_entire_heapfile = true;
-						ScanEntireHeapFile(subjectFilter,predicateFilter,objectFilter,confidenceFilter);
-					}
-					
-					Titer = new TScan(Result_HF);
-				}
-			}
-
-	
 	public static LID GetEID(String filter) throws GetFileEntryException, PinPageException, ConstructPageException
 	{
 		LID eid = null;
@@ -381,7 +249,7 @@ public class Stream{
 		{
 			ex.printStackTrace();
 		}
-		
+
 		return eid;
 	}
 
@@ -403,7 +271,7 @@ public class Stream{
 			if(entry!=null)
 			{
 				//return already existing EID ( convert lid to EID)
-				predicateid =  ((LabelLeafData)entry.data).getData();	
+				predicateid =  ((LabelLeafData)entry.data).getData();
 			}
 			else
 			{
@@ -419,10 +287,10 @@ public class Stream{
 		}
 		return predicateid;
 	}
-	
 
-	public boolean ScanBTReeIndex(String Subject,String Predicate,String Object,double Confidence) 
-	throws Exception
+
+	public boolean ScanBTReeIndex(String Subject,String Predicate,String Object,double Confidence)
+			throws Exception
 	{
 		if(GetEID(Subject) != null)
 		{
@@ -433,18 +301,18 @@ public class Stream{
 			System.out.println("No triple found");
 			return false;
 		}
-		
+
 		///Get the object key from the Entity BTREE file
 		if(GetEID(Object)!=null)
 		{
-			entityobjectid = GetEID(Object).returnEID();
+			EID entityobjectid = GetEID(Object).returnEID();
 		}
 		else
 		{
 			System.out.println("No triple found");
 			return false;
 		}
-		
+
 		if(GetPredicate(Predicate) != null)
 		{
 			entitypredicateid = GetPredicate(Predicate).returnEID();
@@ -454,29 +322,29 @@ public class Stream{
 			//System.out.println("No triple found");
 			return false;
 		}
-		
+
 		///Get the entity key from the Predicate BTREE file
 		//Compute the composite key for the Triple BTREE search
-		String key =  entitysubjectid.slotNo + ":" +entitysubjectid.pageNo.pid + ":" + entitypredicateid.slotNo + ":" + entitypredicateid.pageNo.pid + ":" 
+		String key =  entitysubjectid.slotNo + ":" +entitysubjectid.pageNo.pid + ":" + entitypredicateid.slotNo + ":" + entitypredicateid.pageNo.pid + ":"
 				+ entityobjectid.slotNo + ":" + entityobjectid.pageNo.pid;
 		KeyClass low_key = new StringKey(key);
 		KeyClass high_key = new StringKey(key);
 		KeyDataEntry entry = null;
 		Label subject = null, object = null, predicate = null;
-		
+
 		//Start Scanning BTree to check if  predicate already present
-		TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getTrpHandle();
-		TripleBTreeFile Triple_Btree = SystemDefs.JavabaseDB.getTriple_BTree();
-		LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHandle();
-		LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredicateHandle();
-		
+		TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getQuadHF();
+		TripleBTreeFile Triple_Btree = SystemDefs.JavabaseDB.getQuadBT();
+		LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHF();
+		LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredHF();
+
 		TripleBTFileScan scan = Triple_Btree.new_scan(low_key,high_key);
 		entry = scan.get_next();
 		if(entry != null)
 		{
 			if(key.compareTo(((StringKey)(entry.key)).getKey()) == 0)
 			{
-				//return already existing TID 
+				//return already existing TID
 				TID tripleid = ((TripleLeafData)(entry.data)).getData();
 				Triple record = Triple_HF.getRecord(tripleid);
 				double orig_confidence = record.getConfidence();
@@ -492,42 +360,42 @@ public class Stream{
 	}
 
 	private void ScanBTConfidenceIndex(String subjectFilter,String predicateFilter, String objectFilter, double confidenceFilter)
-	throws Exception
+			throws Exception
 	{
 		boolean result = true;
 		KeyDataEntry entry1 = null;
 		TID tripleid = null;
 		Label subject = null, object = null, predicate = null;
 		Triple record = null;
-		
-		TripleBTreeFile Entity_TTree = SystemDefs.JavabaseDB.getTriple_BTreeIndex();
-		TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getTrpHandle();
-		LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHandle();
-		LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredicateHandle();
-		
-		 java.util.Date date= new java.util.Date();
+
+		TripleBTreeFile Entity_TTree = SystemDefs.JavabaseDB.getIndexBT();
+		TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getQuadHF();
+		LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHF();
+		LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredHF();
+
+		java.util.Date date= new java.util.Date();
 		Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
 
 		KeyClass low_key1 = new StringKey(Double.toString(confidenceFilter));
 		TripleBTFileScan scan = Entity_TTree.new_scan(low_key1,null);
-		
+
 		while((entry1 = scan.get_next())!= null)
 		{
 			result = true;
-			
+
 			tripleid =  ((TripleLeafData)entry1.data).getData();
 			record = Triple_HF.getRecord(tripleid);
 			subject = Entity_HF.getRecord(record.getSubjectID().returnLID());
 			object = Entity_HF.getRecord(record.getObjectID().returnLID());
 			predicate = Predicate_HF.getRecord(record.getPredicateID().returnLID());
-			
+
 			if(!subject_null)
 			{
-				result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);	
+				result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);
 			}
 			if(!object_null)
 			{
-				result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );	
+				result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );
 			}
 			if(!predicate_null)
 			{
@@ -548,28 +416,28 @@ public class Stream{
 		Entity_TTree.close();
 	}
 
-	
+
 	private void streamBySubjectConfidence(String subjectFilter,String predicateFilter,String objectFilter,double confidenceFilter)
 	{
 		try
 		{
-			TripleBTreeFile Triple_BTreeIndex = SystemDefs.JavabaseDB.getTriple_BTreeIndex();
-			
-			TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getTrpHandle();
-			LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHandle();
-			LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredicateHandle();
-			 java.util.Date date= new java.util.Date();
-				Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
-			
+			TripleBTreeFile Triple_BTreeIndex = SystemDefs.JavabaseDB.getIndexBT();
+
+			TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getQuadHF();
+			LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHF();
+			LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredHF();
+			java.util.Date date= new java.util.Date();
+			Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
+
 			KeyClass low_key = new StringKey(subjectFilter+":"+confidenceFilter);
 			KeyDataEntry entry = null;
 			double orig_confidence = 0;
 			Triple record = null;
 			Label subject = null, object = null, predicate = null;
 			boolean result = true;
-			
+
 			TripleBTFileScan scan = Triple_BTreeIndex.new_scan(low_key,null);
-			
+
 			TID tid = null;
 			while((entry = scan.get_next())!= null)
 			{
@@ -583,14 +451,14 @@ public class Stream{
 				PID predid = record.getPredicateID();
 				predicate = Predicate_HF.getRecord(predid.returnLID());
 				result = true;
-				
+
 				if(!subject_null)
 				{
-					result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);	
+					result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);
 				}
 				if(!object_null)
 				{
-					result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );	
+					result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );
 				}
 				if(!predicate_null)
 				{
@@ -602,11 +470,11 @@ public class Stream{
 				}
 				if(subjectFilter.compareTo(subject.getLabelKey()) != 0)
 				{
-					//System.out.println("Found next subject hence stopping");				
+					//System.out.println("Found next subject hence stopping");
 					break;
 				}
 				else if(result)
-				{	
+				{
 					//System.out.println("Subject::" + subject.getLabelKey()+ "\tPredicate::"+predicate.getLabelKey() + "\tObject::"+object.getLabelKey() );
 					Result_HF.insertTriple(record.returnTripleByteArray());
 				}
@@ -628,14 +496,14 @@ public class Stream{
 	{
 		try
 		{
-			TripleBTreeFile Triple_BTreeIndex = SystemDefs.JavabaseDB.getTriple_BTreeIndex();
-			TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getTrpHandle();
-			LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHandle();
-			LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredicateHandle();
-			
-			 java.util.Date date= new java.util.Date();
-				Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
-			
+			TripleBTreeFile Triple_BTreeIndex = SystemDefs.JavabaseDB.getIndexBT();
+			TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getQuadHF();
+			LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHF();
+			LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredHF();
+
+			java.util.Date date= new java.util.Date();
+			Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
+
 			KeyClass low_key = new StringKey(objectFilter+":"+confidenceFilter);
 			KeyDataEntry entry = null;
 
@@ -650,7 +518,7 @@ public class Stream{
 			while((entry = scan.get_next())!= null)
 			{
 				tid =  ((TripleLeafData)entry.data).getData();
-				
+
 				record = Triple_HF.getRecord(tid);
 				orig_confidence = record.getConfidence();
 				subjid = record.getSubjectID();
@@ -659,16 +527,16 @@ public class Stream{
 				object = Entity_HF.getRecord(objid.returnLID());
 				predid = record.getPredicateID();
 				predicate = Predicate_HF.getRecord(predid.returnLID());
-				
+
 				result = true;
-				
+
 				if(!subject_null)
 				{
-					result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);	
+					result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);
 				}
 				if(!object_null)
 				{
-					result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );	
+					result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );
 				}
 				if(!predicate_null)
 				{
@@ -680,12 +548,12 @@ public class Stream{
 				}
 				if(objectFilter.compareTo(object.getLabelKey()) != 0)
 				{
-					//System.out.println("Found next object hence stopping");				
+					//System.out.println("Found next object hence stopping");
 					break;
 				}
 				else if(result)
 				{
-					//System.out.println("Inserting "+object.getLabelKey()+confidenceFilter);	
+					//System.out.println("Inserting "+object.getLabelKey()+confidenceFilter);
 					Result_HF.insertTriple(record.returnTripleByteArray());
 				}
 			}
@@ -705,14 +573,14 @@ public class Stream{
 	{
 		try
 		{
-			TripleBTreeFile Triple_BTreeIndex = SystemDefs.JavabaseDB.getTriple_BTreeIndex(); 
-			TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getTrpHandle();
-			LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHandle();
-			LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredicateHandle();
-			 java.util.Date date= new java.util.Date();
-				Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
+			TripleBTreeFile Triple_BTreeIndex = SystemDefs.JavabaseDB.getIndexBT();
+			TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getQuadHF();
+			LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHF();
+			LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredHF();
+			java.util.Date date= new java.util.Date();
+			Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
 
-			
+
 			KeyClass low_key = new StringKey(predicateFilter+":"+confidenceFilter);
 			TripleBTFileScan scan = Triple_BTreeIndex.new_scan(low_key,null);
 			KeyDataEntry entry = null;
@@ -723,7 +591,7 @@ public class Stream{
 			Triple record = null;
 			double orig_confidence = 0;
 			boolean result = true;
-			
+
 			while((entry = scan.get_next())!= null)
 			{
 				tid =  ((TripleLeafData)entry.data).getData();
@@ -736,16 +604,16 @@ public class Stream{
 				object = Entity_HF.getRecord(objid.returnLID());
 				predid = record.getPredicateID();
 				predicate = Predicate_HF.getRecord(predid.returnLID());
-				
+
 				result = true;
-				
+
 				if(!subject_null)
 				{
-					result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);	
+					result = result & (subjectFilter.compareTo(subject.getLabelKey()) == 0);
 				}
 				if(!object_null)
 				{
-					result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );	
+					result = result & (objectFilter.compareTo(object.getLabelKey()) == 0 );
 				}
 				if(!predicate_null)
 				{
@@ -757,12 +625,12 @@ public class Stream{
 				}
 				if(predicateFilter.compareTo(predicate.getLabelKey()) != 0)
 				{
-					//System.out.println("Found next predicate hence stopping");				
+					//System.out.println("Found next predicate hence stopping");
 					break;
 				}
 				else if(result)
 				{
-					//System.out.println("Inserting "+object.getLabelKey()+confidenceFilter);	
+					//System.out.println("Inserting "+object.getLabelKey()+confidenceFilter);
 					Result_HF.insertTriple(record.returnTripleByteArray());
 				}
 			}
@@ -777,17 +645,18 @@ public class Stream{
 		}
 	}
 
-	
-	public static void ScanBTSubjectIndex(String subjectFilter,String predicateFilter, String objectFilter, double confidenceFilter) 
-	throws Exception
+
+	public static void ScanBTSubjectIndex(String subjectFilter,String predicateFilter, String objectFilter, double confidenceFilter)
+			throws Exception
 	{
-		TripleBTreeFile Entity_TTree = SystemDefs.JavabaseDB.getTriple_BTreeIndex(); 
-		TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getTrpHandle();
-		LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHandle();
-		LabelHeapFile Predicate_HF = sysdef.JavabaseDB.getPredicateHandle();
-		 java.util.Date date= new java.util.Date();
-			Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
-		
+		TripleBTreeFile Entity_TTree = SystemDefs.JavabaseDB.getIndexBT();
+		TripleHeapfile Triple_HF = SystemDefs.JavabaseDB.getQuadHF();
+		LabelHeapFile Entity_HF = SystemDefs.JavabaseDB.getEntityHF();
+		//LabelHeapfile Predicate_HF = sysdef.JavabaseDB.getPredicateHandle();
+		LabelHeapFile Predicate_HF = SystemDefs.JavabaseDB.getPredHF();
+		java.util.Date date= new java.util.Date();
+		Result_HF = new TripleHeapfile(Long.toString(date.getTime()));
+
 		TID tripleid = null;
 		KeyClass low_key = new StringKey(subjectFilter);
 		KeyClass high_key = new StringKey(subjectFilter);
@@ -805,11 +674,11 @@ public class Stream{
 				boolean result = true;
 				tripleid =  ((TripleLeafData)entryconf.data).getData();
 				record = Triple_HF.getRecord(tripleid);
-				
+
 				subject = Entity_HF.getRecord(record.getSubjectID().returnLID());
-                object = Entity_HF.getRecord(record.getObjectID().returnLID());
-                predicate = Predicate_HF.getRecord(record.getPredicateID().returnLID());
-                 
+				object = Entity_HF.getRecord(record.getObjectID().returnLID());
+				predicate = Predicate_HF.getRecord(record.getPredicateID().returnLID());
+
 				if(!object_null)
 				{
 					result = result & (object.getLabelKey().compareTo(objectFilter)==0);
@@ -817,7 +686,7 @@ public class Stream{
 				if(!predicate_null)
 				{
 					result = result & (predicate.getLabelKey().compareTo(predicateFilter)==0);
-				} 
+				}
 				//System.out.println(subject.getLabelKey()+" "+predicate.getLabelKey()+" "+object.getLabelKey()+" "+record.getConfidence());
 				if(confidenceFilter <= record.getConfidence())
 				{
@@ -848,7 +717,7 @@ public class Stream{
 			_predicateFilter = predicateFilter;
 			_objectFilter =  objectFilter;
 			_confidenceFilter = confidenceFilter;
-			Result_HF = SystemDefs.JavabaseDB.getTrpHandle();
+			Result_HF = SystemDefs.JavabaseDB.getQuadHF();
 		}
 		catch(Exception e)
 		{
