@@ -60,9 +60,10 @@ public class QueryProgram {
 	public static void main(String[] args)
 	throws Exception 
 	{
+		System.out.println(args.length);
 		if(args.length == 7 )   //Check if the args are DATABASENAME INDEXOPTION SUBJECTFILTER PREDICATEFILTER OBJECTFILTER CONFIDENCEFILTER NUMBUF
 		{
-			dbname = new String("/tmp/" + args[0]); 
+			dbname = new String(args[0]); 
 			indexoption = Integer.parseInt(args[1]);
 			Subject = new String(args[2]);
 			Predicate = new String(args[3]);
@@ -105,12 +106,12 @@ public class QueryProgram {
 			Stream s = SystemDefs.JavabaseDB.openStream(dbname, indexoption, Subject, Predicate, Object, confidence);
 			Triple t = null;
 			TID tid = null;
-			while((t = s.getNext(tid))!=null)
+			while(s.getNext()!=null)
 			{
 				double confidence = t.getConfidence();
-				Label subject = SystemDefs.JavabaseDB.getEntityHandle().getRecord(t.getSubjectID().returnLID());
-				Label object = SystemDefs.JavabaseDB.getEntityHandle().getRecord(t.getObjectID().returnLID());
-				Label predicate = SystemDefs.JavabaseDB.getPredicateHandle().getRecord(t.getPredicateID().returnLID());
+				Label subject = SystemDefs.JavabaseDB.getEntityHF().getRecord(t.getSubjectID().returnLID());
+				Label object = SystemDefs.JavabaseDB.getEntityHF().getRecord(t.getObjectID().returnLID());
+				Label predicate = SystemDefs.JavabaseDB.getPredHF().getRecord(t.getPredicateID().returnLID());
 				System.out.printf("%20s %20s %80s %.17f\n",subject.getLabelKey(),predicate.getLabelKey(),object.getLabelKey(),confidence);
 			}
 			if(s!=null)

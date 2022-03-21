@@ -1,10 +1,12 @@
 package tests;
+import btree.KeyDataEntry;
+import btree.TripleBTFileScan;
+import btree.TripleBTreeFile;
 import diskmgr.*;
 import global.*;
 import java.io.*;
 import tripleheap.*;
 import java.lang.*;
-import java.util.ArrayList;
 
 import tests.utils.readData;
 import tests.utils.DataStructures.InfoGraph;
@@ -19,7 +21,6 @@ public class BatchInsert{
 
 	public static void main(String[] args) throws Exception {
 		String dataFileName = null;
-		int batch_size = 50;
 		int indexOption = 0;
 		if(args.length == 3){
 			dataFileName = args[0];
@@ -58,8 +59,6 @@ public class BatchInsert{
 		EID oid = null;
 		double confidence = 0.0;
 		boolean flag = false;
-		int i =0;
-		ArrayList<byte[]> tripleptrArray  =  new ArrayList<>();
 		while((ig = rd.readNextrecord()) != null){
 //			System.out.println("before inserting subject : "+ ig.subject);
 			sid = sysdef.JavabaseDB.insertEntity(ig.subject);
@@ -77,11 +76,7 @@ public class BatchInsert{
 			t.setPredicateID(pid);
 			t.setObjectID(oid);
 			t.setConfidence(confidence);
-			tripleptrArray.add(t.getTripleByteArray());
-			if(i%1==0)
-				sysdef.JavabaseDB.insertTriple(tripleptrArray);
-				tripleptrArray.clear();
-			i++;
+			sysdef.JavabaseDB.insertQuadruple(t.getTripleByteArray());
 		}
 
 		if(flag == false){
@@ -90,21 +85,49 @@ public class BatchInsert{
 
 		switch (indexOption){
 			case 1 :
-				System.out.println("");
+				System.out.println("index on object, predicate, subject and confidence");
 			case 2:
-				System.out.println("");
+				System.out.println("index on subject, predicate, object and confidence");
 			case 3 :
-				System.out.println("");
+				System.out.println("index on subject and confidence");
 			case 4:
-				System.out.println("");
+				System.out.println("index on predicate and confidence");
 			case 5:
-				System.out.println("");
+				System.out.println("index on object and confidence");
+			case 6:
+				System.out.println("index on confidence");
 		}
 
 		sysdef.JavabaseDB.createIndex(indexOption);
+
+
+
+
 		DBTools.db_stats(sysdef);
 		sysdef.close();
+
 		System.out.println("Total Page Writes "+ PCounter.wcounter);
 		System.out.println("Total Page Reads "+ PCounter.rcounter);
+
+
+
+		sysdef = new SystemDefs(dbname,0,1000,"Clock",indexOption);
+
+		TripleBTreeFile Triple_BTreeIndex = new TripleBTreeFile(sysdef.JavabaseDB.name+"/Triple_BTreeIndex");
+		TripleBTFileScan scan = Triple_BTreeIndex.new_scan(null, null);
+
+		KeyDataEntry entry;
+
+		int cnt = 0;
+		while((entry = scan.get_next()) != null){
+			cnt++;
+			System.out.println("key : "+entry.key);
+		}
+
+		scan.DestroyBTreeFileScan();
+		Triple_BTreeIndex.close();
+		sysdef.close();
+
+
 	}
 }

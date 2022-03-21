@@ -17,7 +17,7 @@ public class rdfDB implements GlobalConst {
 	private static final int bits_per_page = MAX_SPACE * 8;
 	private RandomAccessFile fp;
 	private int num_pages;
-	private String name;
+	public String name;
 	private int type;
 	private TripleHeapfile quadHF; 	  		//Triples Heap file to store triples
 	private TripleBTreeFile quadBT; 		//BTree Predicate file on Predicate Heap file
@@ -595,10 +595,80 @@ public class rdfDB implements GlobalConst {
 	}
 
 	public void createIndex1()
-	{
-		//Unclustered BTree on confidence using sorted Heap File
+    {
+            //Unclustered BTree Index file on subject, predicate, object and confidence
+            try
+            {
+                    //destroy existing index first
+                    if(indexBT != null)
+                    {
+                            indexBT.close();
+                            indexBT.destroyFile();
+                            destroyIndex(name+"/indexBT");
+                    }
+
+                    //create new
+                    int keytype = AttrType.attrString;
+                    indexBT = new TripleBTreeFile(name+"/indexBT",keytype,255,1);
+                    indexBT.close();
+
+                    //scan sorted heap file and insert into btree index
+                    indexBT = new TripleBTreeFile(name+"/indexBT");
+                    quadHF = new TripleHeapfile(name+"/tripleHF");
+                    entityHF = new LabelHeapFile(name+"/entityHF");
+					predHF = new LabelHeapFile(name+"/predicateHF");
+                    TScan am = new TScan(quadHF);
+
+                    Triple triple = null;
+                    TID tid = new TID();
+                    double confidence = 0.0;
+                    while((triple = am.getNext(tid)) != null)
+                    {
+                            confidence = triple.getConfidence();
+                            String temp = Double.toString(confidence);
+                            Label subject = entityHF.getRecord(triple.getSubjectID().returnLID());
+							Label predicate = predHF.getRecord(triple.getPredicateID().returnLID());
+							Label object = entityHF.getRecord(triple.getObjectID().returnLID());
+
+                            //System.out.println("Subject--> "+subject.getLabelKey());
+
+							List<Integer> types = new ArrayList<Integer>();
+							types.add(AttrType.attrString);
+							types.add(AttrType.attrString);
+							types.add(AttrType.attrString);
+							types.add(AttrType.attrDouble);
+                            KeyClass key = new StringKey(subject.getLabelKey()+":"+predicate.getLabelKey()+":"+object.getLabelKey()+":"+temp, types);
+                            //System.out.println("Inserting into Btree key"+ subject.getLabelKey() + ":" + temp + " tid "+tid);
+                            indexBT.insert(key,tid);
+                    }
+                    /*
+                    TripleBTFileScan scan = indexBT.new_scan(null,null);
+                    KeyDataEntry entry = null;
+                    while((entry = scan.get_next())!= null)
+                    {
+                            System.out.println("Key found : " + ((StringKey)(entry.key)).getKey());
+                    }
+                    scan.DestroyBTreeFileScan();
+                    */
+                    am.closescan();
+                    indexBT.close();
+            }
+            catch(Exception e)
+            {
+                    System.err.println ("* Error creating Index for option2 " + e);
+                    e.printStackTrace();
+                    Runtime.getRuntime().exit(1);
+            }
+
+    }
+
+	public void createIndex2()
+    {
+            //Unclustered BTree on confidence using sorted Heap File
+		//Unclustered BTree Index file on subject, predicate, object and confidence
 		try
 		{
+			//destroy existing index first
 			if(indexBT != null)
 			{
 				indexBT.close();
@@ -606,88 +676,193 @@ public class rdfDB implements GlobalConst {
 				destroyIndex(name+"/indexBT");
 			}
 
-			int keyType = AttrType.attrString;
-			indexBT = new TripleBTreeFile(name+"/indexBT",keyType,255,1);
+			//create new
+			int keytype = AttrType.attrString;
+			indexBT = new TripleBTreeFile(name+"/indexBT",keytype,255,1);
 			indexBT.close();
 
+			//scan sorted heap file and insert into btree index
 			indexBT = new TripleBTreeFile(name+"/indexBT");
-			quadHF = new TripleHeapfile(name+"/quadHF");
-			TScan scan = new TScan(quadHF);
-			Triple quad = null;
-			TID qid = new TID();
+			quadHF = new TripleHeapfile(name+"/tripleHF");
+			entityHF = new LabelHeapFile(name+"/entityHF");
+			predHF = new LabelHeapFile(name+"/predicateHF");
+			TScan am = new TScan(quadHF);
+
+			Triple triple = null;
+			TID tid = new TID();
 			double confidence = 0.0;
-			while((quad = scan.getNext(qid)) != null)
+			while((triple = am.getNext(tid)) != null)
 			{
-				confidence = quad.getConfidence();
+				confidence = triple.getConfidence();
 				String temp = Double.toString(confidence);
+				Label subject = entityHF.getRecord(triple.getSubjectID().returnLID());
+				Label predicate = predHF.getRecord(triple.getPredicateID().returnLID());
+				Label object = entityHF.getRecord(triple.getObjectID().returnLID());
+
+				//System.out.println("Subject--> "+subject.getLabelKey());
+
 				List<Integer> types = new ArrayList<Integer>();
+				types.add(AttrType.attrString);
+				types.add(AttrType.attrString);
+				types.add(AttrType.attrString);
 				types.add(AttrType.attrDouble);
-				KeyClass key = new StringKey(temp, types);
-				indexBT.insert(key,qid);
+				KeyClass key = new StringKey(object.getLabelKey()+":"+predicate.getLabelKey()+":"+subject.getLabelKey()+":"+temp, types);
+				//System.out.println("Inserting into Btree key"+ subject.getLabelKey() + ":" + temp + " tid "+tid);
+				indexBT.insert(key,tid);
 			}
-			scan.closescan();
+                    /*
+                    TripleBTFileScan scan = indexBT.new_scan(null,null);
+                    KeyDataEntry entry = null;
+                    while((entry = scan.get_next())!= null)
+                    {
+                            System.out.println("Key found : " + ((StringKey)(entry.key)).getKey());
+                    }
+                    scan.DestroyBTreeFileScan();
+                    */
+			am.closescan();
 			indexBT.close();
 		}
 		catch(Exception e)
 		{
-			System.err.println ("*** Error creating Index for option1 " + e);
+			System.err.println ("* Error creating Index for option2 " + e);
 			e.printStackTrace();
 			Runtime.getRuntime().exit(1);
 		}
 
-	}
+    }
 
-
-	public void createIndex2()
-	{
-		//Unclustered BTree Index file on subject and confidence
+    public void createIndex3()
+    {
+            //Unclustered BTree Index file on object and confidence
 		try
 		{
+			//destroy existing index first
 			if(indexBT != null)
 			{
 				indexBT.close();
 				indexBT.destroyFile();
 				destroyIndex(name+"/indexBT");
 			}
-			int keyType = AttrType.attrString;
-			indexBT = new TripleBTreeFile(name+"/indexBT",keyType,255,1);
+
+			//create new
+			int keytype = AttrType.attrString;
+			indexBT = new TripleBTreeFile(name+"/indexBT",keytype,255,1);
 			indexBT.close();
 
+			//scan sorted heap file and insert into btree index
 			indexBT = new TripleBTreeFile(name+"/indexBT");
-			quadHF = new TripleHeapfile(name+"/quadHF");
+			quadHF = new TripleHeapfile(name+"/tripleHF");
 			entityHF = new LabelHeapFile(name+"/entityHF");
-			TScan scan = new TScan(quadHF);
-			Triple quad = null;
-			TID qid = new TID();
+			predHF = new LabelHeapFile(name+"/predicateHF");
+			TScan am = new TScan(quadHF);
+
+			Triple triple = null;
+			TID tid = new TID();
 			double confidence = 0.0;
-			while((quad = scan.getNext(qid)) != null)
+			while((triple = am.getNext(tid)) != null)
 			{
-				confidence = quad.getConfidence();
+				confidence = triple.getConfidence();
 				String temp = Double.toString(confidence);
-				Label subject = entityHF.getRecord(quad.getSubjectID().returnLID());
+				Label subject = entityHF.getRecord(triple.getSubjectID().returnLID());
+				Label object = entityHF.getRecord(triple.getObjectID().returnLID());
+
+				//System.out.println("Subject--> "+subject.getLabelKey());
+
 				List<Integer> types = new ArrayList<Integer>();
 				types.add(AttrType.attrString);
 				types.add(AttrType.attrDouble);
 				KeyClass key = new StringKey(subject.getLabelKey()+":"+temp, types);
-				indexBT.insert(key,qid);
+				//System.out.println("Inserting into Btree key"+ subject.getLabelKey() + ":" + temp + " tid "+tid);
+				indexBT.insert(key,tid);
 			}
-			scan.closescan();
+                    /*
+                    TripleBTFileScan scan = indexBT.new_scan(null,null);
+                    KeyDataEntry entry = null;
+                    while((entry = scan.get_next())!= null)
+                    {
+                            System.out.println("Key found : " + ((StringKey)(entry.key)).getKey());
+                    }
+                    scan.DestroyBTreeFileScan();
+                    */
+			am.closescan();
 			indexBT.close();
 		}
 		catch(Exception e)
 		{
-			System.err.println ("*** Error creating Index for option2 " + e);
+			System.err.println ("* Error creating Index for option2 " + e);
 			e.printStackTrace();
 			Runtime.getRuntime().exit(1);
 		}
 
+
 	}
 
-	public void createIndex3()
-	{
-		//Unclustered BTree Index file on object and confidence
+    public void createIndex4()
+    {
+            //Unclustered BTree Index file on predicate and confidence
+            try
+            {
+                    //destroy existing index first
+                    if(indexBT != null)
+                    {
+                            indexBT.close();
+                            indexBT.destroyFile();
+                            destroyIndex(name+"/indexBT");
+                    }
+
+                    //create new
+                    int keytype = AttrType.attrString;
+                    indexBT = new TripleBTreeFile(name+"/indexBT",keytype,255,1);
+                    indexBT.close();
+
+                    //scan sorted heap file and insert into btree index
+                    indexBT = new TripleBTreeFile(name+"/indexBT");
+                    quadHF = new TripleHeapfile(name+"/tripleHF");
+                    predHF = new LabelHeapFile(name+"/predicateHF");
+                    TScan am = new TScan(quadHF);
+                    Triple triple = null;
+                    TID tid = new TID();
+                    double confidence = 0.0;
+                    while((triple = am.getNext(tid)) != null)
+                    {
+                            confidence = triple.getConfidence();
+                            String temp = Double.toString(confidence);
+                            Label predicate = predHF.getRecord(triple.getPredicateID().returnLID());
+                            //System.out.println("Subject--> "+subject.getLabelKey());
+							List<Integer> types = new ArrayList<Integer>();
+							types.add(AttrType.attrString);
+							types.add(AttrType.attrDouble);
+                            KeyClass key = new StringKey(predicate.getLabelKey()+":"+temp, types);
+                            //System.out.println("Inserting into Btree key"+ predicate.getLabelKey() + ":" + temp + " tid "+tid);
+                            indexBT.insert(key,tid);
+                    }
+                    /*
+                    TripleBTFileScan scan = indexBT.new_scan(null,null);
+                    KeyDataEntry entry = null;
+                    while((entry = scan.get_next())!= null)
+                    {
+                            System.out.println("Key found : " + ((StringKey)(entry.key)).getKey());
+                    }
+                    scan.DestroyBTreeFileScan();
+                    */
+                    am.closescan();
+                    indexBT.close();
+            }
+            catch(Exception e)
+            {
+                    System.err.println ("* Error creating Index for option2 " + e);
+                    e.printStackTrace();
+                    Runtime.getRuntime().exit(1);
+            }
+
+
+    }
+
+    public void createIndex6()
+    {
 		try
 		{
+			//destroy existing index first
 			if(indexBT != null)
 			{
 				indexBT.close();
@@ -695,125 +870,109 @@ public class rdfDB implements GlobalConst {
 				destroyIndex(name+"/indexBT");
 			}
 
-			int keyType = AttrType.attrString;
-			indexBT = new TripleBTreeFile(name+"/indexBT",keyType,255,1);
+			//create new
+			int keytype = AttrType.attrString;
+			indexBT = new TripleBTreeFile(name+"/indexBT",keytype,255,1);
 			indexBT.close();
 
+			//scan sorted heap file and insert into btree index
 			indexBT = new TripleBTreeFile(name+"/indexBT");
-			quadHF = new TripleHeapfile(name+"/quadHF");
-			entityHF = new LabelHeapFile(name+"/entityHF");
-			TScan scan = new TScan(quadHF);
-			Triple quad = null;
-			TID qid = new TID();
+			quadHF = new TripleHeapfile(name+"/tripleHF");
+			predHF = new LabelHeapFile(name+"/predicateHF");
+			TScan am = new TScan(quadHF);
+			Triple triple = null;
+			TID tid = new TID();
 			double confidence = 0.0;
-			while((quad = scan.getNext(qid)) != null)
+			while((triple = am.getNext(tid)) != null)
 			{
-				confidence = quad.getConfidence();
+				confidence = triple.getConfidence();
 				String temp = Double.toString(confidence);
-				Label object = entityHF.getRecord(quad.getObjectID().returnLID());
+				Label object = entityHF.getRecord(triple.getObjectID().returnLID());
+				//System.out.println("Subject--> "+subject.getLabelKey());
 				List<Integer> types = new ArrayList<Integer>();
-				types.add(AttrType.attrString);
 				types.add(AttrType.attrDouble);
-				KeyClass key = new StringKey(object.getLabelKey()+":"+temp, types);
-
-				indexBT.insert(key,qid);
+				KeyClass key = new StringKey(temp, types);
+				//System.out.println("Inserting into Btree key"+ predicate.getLabelKey() + ":" + temp + " tid "+tid);
+				indexBT.insert(key,tid);
 			}
-			scan.closescan();
+                    /*
+                    TripleBTFileScan scan = indexBT.new_scan(null,null);
+                    KeyDataEntry entry = null;
+                    while((entry = scan.get_next())!= null)
+                    {
+                            System.out.println("Key found : " + ((StringKey)(entry.key)).getKey());
+                    }
+                    scan.DestroyBTreeFileScan();
+                    */
+			am.closescan();
 			indexBT.close();
 		}
 		catch(Exception e)
 		{
-			System.err.println ("*** Error creating Index for option2 " + e);
+			System.err.println ("* Error creating Index for option2 " + e);
 			e.printStackTrace();
 			Runtime.getRuntime().exit(1);
 		}
-
-	}
-
-	public void createIndex4()
-	{
-		//Unclustered BTree Index file on predicate and confidence
-		try
-		{
-			if(indexBT != null)
-			{
-				indexBT.close();
-				indexBT.destroyFile();
-				destroyIndex(name+"/indexBT");
-			}
-			int keyType = AttrType.attrString;
-			indexBT = new TripleBTreeFile(name+"/indexBT",keyType,255,1);
-			indexBT.close();
-
-			indexBT = new TripleBTreeFile(name+"/indexBT");
-			quadHF = new TripleHeapfile(name+"/quadHF");
-			predHF = new LabelHeapFile(name+"/predHF");
-			TScan scan = new TScan(quadHF);
-			Triple quad = null;
-			TID qid = new TID();
-			double confidence = 0.0;
-			while((quad = scan.getNext(qid)) != null)
-			{
-				confidence = quad.getConfidence();
-				String temp = Double.toString(confidence);
-				Label predicate = predHF.getRecord(quad.getPredicateID().returnLID());
-				List<Integer> types = new ArrayList<Integer>();
-				types.add(AttrType.attrString);
-				types.add(AttrType.attrDouble);
-				KeyClass key = new StringKey(predicate.getLabelKey()+":"+temp, types);
-				indexBT.insert(key,qid);
-			}
-			scan.closescan();
-			indexBT.close();
-		}
-		catch(Exception e)
-		{
-			System.err.println ("*** Error creating Index for option2 " + e);
-			e.printStackTrace();
-			Runtime.getRuntime().exit(1);
-		}
-
 
 	}
 
 	public void createIndex5()
 	{
-		//Unclustered BTree Index file on subject
 		try
 		{
+			//destroy existing index first
 			if(indexBT != null)
 			{
 				indexBT.close();
 				indexBT.destroyFile();
 				destroyIndex(name+"/indexBT");
 			}
-			int keyType = AttrType.attrString;
-			indexBT = new TripleBTreeFile(name+"/indexBT",keyType,255,1);
 
-			quadHF = new TripleHeapfile(name+"/quadHF");
-			entityHF = new LabelHeapFile(name+"/entityHF");
-			TScan scan = new TScan(quadHF);
+			//create new
+			int keytype = AttrType.attrString;
+			indexBT = new TripleBTreeFile(name+"/indexBT",keytype,255,1);
+			indexBT.close();
+
+			//scan sorted heap file and insert into btree index
+			indexBT = new TripleBTreeFile(name+"/indexBT");
+			quadHF = new TripleHeapfile(name+"/tripleHF");
+			predHF = new LabelHeapFile(name+"/predicateHF");
+			TScan am = new TScan(quadHF);
 			Triple triple = null;
 			TID tid = new TID();
-
-			while((triple = scan.getNext(tid)) != null)
+			double confidence = 0.0;
+			while((triple = am.getNext(tid)) != null)
 			{
-				Label subject = entityHF.getRecord(triple.getSubjectID().returnLID());
+				confidence = triple.getConfidence();
+				String temp = Double.toString(confidence);
+				Label object = entityHF.getRecord(triple.getObjectID().returnLID());
+				//System.out.println("Subject--> "+subject.getLabelKey());
 				List<Integer> types = new ArrayList<Integer>();
 				types.add(AttrType.attrString);
-				KeyClass key = new StringKey(subject.getLabelKey(), types);
-
+				types.add(AttrType.attrDouble);
+				KeyClass key = new StringKey(object.getLabelKey()+":"+temp, types);
+				//System.out.println("Inserting into Btree key"+ predicate.getLabelKey() + ":" + temp + " tid "+tid);
 				indexBT.insert(key,tid);
 			}
-			scan.closescan();
+                    /*
+                    TripleBTFileScan scan = indexBT.new_scan(null,null);
+                    KeyDataEntry entry = null;
+                    while((entry = scan.get_next())!= null)
+                    {
+                            System.out.println("Key found : " + ((StringKey)(entry.key)).getKey());
+                    }
+                    scan.DestroyBTreeFileScan();
+                    */
+			am.closescan();
 			indexBT.close();
 		}
 		catch(Exception e)
 		{
-			System.err.println ("*** Error creating Index for option5 " + e);
+			System.err.println ("* Error creating Index for option2 " + e);
 			e.printStackTrace();
 			Runtime.getRuntime().exit(1);
 		}
+
 	}
 
 	private void destroyIndex(String filename)
