@@ -1,11 +1,13 @@
-package labelheap;
+/* File HFPage.java */
+
+package quadrupleheap;
 
 import java.io.*;
 import java.lang.*;
 
 import global.*;
 import diskmgr.*;
-import quadrupleheap.*;
+
 
 
  /**
@@ -21,9 +23,8 @@ interface ConstSlot{
  * The design assumes that records are kept compacted when
  * deletions are performed. 
  */
-//We keep the same format for the RDF database
 
-public class LHFPage extends Page 
+public class THFPage extends Page 
   implements ConstSlot, GlobalConst{
   
   
@@ -47,8 +48,6 @@ public class LHFPage extends Page
   /**
    * number of slots in use
    */
-  //Each record in the heap file is associated with the <QID,slotno>
-  //slotCnt helps to check at which slot should the record be inserted
   private    short     slotCnt;  
   
   /**
@@ -85,7 +84,7 @@ public class LHFPage extends Page
    * Default constructor
    */
   
-  public LHFPage ()   {  }
+  public THFPage ()   {  }
   
   /**
    * Constructor of class HFPage
@@ -93,7 +92,7 @@ public class LHFPage extends Page
    * @param  page  the given page in Page type
    */
   
-  public LHFPage(Page page)
+  public THFPage(Page page)
     {
       data = page.getpage();
     }
@@ -104,7 +103,7 @@ public class LHFPage extends Page
    * @param  apage   a page in buffer pool
    */
   
-  public void openHFpage(Page apage)
+  public void openTHFpage(Page apage)
     {
       data = apage.getpage();
     }
@@ -146,7 +145,7 @@ public class LHFPage extends Page
    * @return byte array
    */
   
-  public byte [] getHFpageArray()
+  public byte [] getTHFpageArray()
     {
       return data;
     }  
@@ -329,19 +328,16 @@ public class LHFPage extends Page
   
   
   /**
-   * inserts a new record onto the page, returns LID of this record 
+   * inserts a new record onto the page, returns RID of this record 
    * @param	record 	a record to be inserted
-   * @return	LID of record, null if sufficient space does not exist
+   * @return	RID of record, null if sufficient space does not exist
    * @exception IOException I/O errors
-   * in C++ Status insertRecord(char *recPtr, int recLen, LID& LID)
+   * in C++ Status insertRecord(char *recPtr, int recLen, RID& rid)
    */
-  
-  //This function does not change as the RecordID still remains the identifier of the
-  //record in the file.
-  public LID insertRecord ( byte [] record)		
+  public QID insertRecord ( byte [] record)		
     throws IOException
     {
-      LID lid = new LID();
+      QID rid = new QID();
       
       int recLen = record.length;
       int spaceNeeded = recLen + SIZE_OF_SLOT;
@@ -393,9 +389,9 @@ public class LHFPage extends Page
 	// insert data onto the data page
 	System.arraycopy (record, 0, data, usedPtr, recLen);
 	curPage.pid = Convert.getIntValue (CUR_PAGE, data);
-	lid.pageNo.pid = curPage.pid;
-	lid.slotNo = i;
-	return   lid ;
+	rid.pageNo.pid = curPage.pid;
+	rid.slotNo = i;
+	return   rid ;
       }
     } 
   
@@ -406,11 +402,11 @@ public class LHFPage extends Page
    * @exception IOException I/O errors
    * in C++ Status deleteRecord(const RID& rid)
    */
-  public void deleteRecord ( LID lid )
+  public void deleteRecord ( QID rid )
     throws IOException,  
 	   InvalidSlotNumberException
     {
-      int slotNo = lid.slotNo;
+      int slotNo = rid.slotNo;
       short recLen = getSlotLength (slotNo);
       slotCnt = Convert.getShortValue (SLOT_CNT, data);
       
@@ -463,16 +459,17 @@ public class LHFPage extends Page
     }
   
   /**
-   * @return LID of first record on page, null if page contains no records.  
+   * @return RID of first record on page, null if page contains no records.  
    * @exception  IOException I/O errors
    * in C++ Status firstRecord(RID& firstRid)
    * 
    */ 
-  public LID firstRecord() 
+  public QID firstRecord() 
     throws IOException
     {
-      LID lid = new LID();
+      QID rid = new QID();
       // find the first non-empty slot
+      
       
       slotCnt = Convert.getShortValue (SLOT_CNT, data);
       
@@ -490,11 +487,11 @@ public class LHFPage extends Page
       
       // found a non-empty slot
       
-      lid.slotNo = i;
+      rid.slotNo = i;
       curPage.pid= Convert.getIntValue(CUR_PAGE, data);
-      lid.pageNo.pid = curPage.pid;
+      rid.pageNo.pid = curPage.pid;
       
-      return lid;
+      return rid;
     }
   
   /**
@@ -504,10 +501,10 @@ public class LHFPage extends Page
    * @exception  IOException I/O errors
    * in C++ Status nextRecord (RID curRid, RID& nextRid)
    */
-  public LID nextRecord (LID curRid) 
+  public QID nextRecord (QID curRid) 
     throws IOException 
     {
-      LID lid = new LID();
+      QID rid = new QID();
       slotCnt = Convert.getShortValue (SLOT_CNT, data);
       
       int i=curRid.slotNo;
@@ -526,11 +523,11 @@ public class LHFPage extends Page
       
       // found a non-empty slot
       
-      lid.slotNo = i;
+      rid.slotNo = i;
       curPage.pid = Convert.getIntValue(CUR_PAGE, data);
-      lid.pageNo.pid = curPage.pid;
+      rid.pageNo.pid = curPage.pid;
       
-      return lid;
+      return rid;
     }
   
   /**
@@ -543,8 +540,7 @@ public class LHFPage extends Page
    * @exception  	IOException I/O errors
    * @see 	Tuple
    */
-  //This function is modified to return a Label instead of a tuple.
-  public Label getRecord ( LID lid ) 
+  public Quadruple getRecord ( QID rid ) 
     throws IOException,  
 	   InvalidSlotNumberException
     {
@@ -552,9 +548,9 @@ public class LHFPage extends Page
       short offset;
       byte []record;
       PageId pageNo = new PageId();
-      pageNo.pid= lid.pageNo.pid;
+      pageNo.pid= rid.pageNo.pid;
       curPage.pid = Convert.getIntValue (CUR_PAGE, data);
-      int slotNo = lid.slotNo;
+      int slotNo = rid.slotNo;
       
       // length of record being returned
       recLen = getSlotLength (slotNo);
@@ -565,8 +561,8 @@ public class LHFPage extends Page
 	  offset = getSlotOffset (slotNo);
 	  record = new byte[recLen];
 	  System.arraycopy(data, offset, record, 0, recLen);
-	  Label label = new Label(record, 0, recLen);
-	  return label;
+	  Quadruple tuple = new Quadruple(record, 0, recLen);
+	  return tuple;
 	}
       
       else {
@@ -586,18 +582,17 @@ public class LHFPage extends Page
    * @exception   IOException I/O errors
    * @see 	Tuple
    */  
-  //This function is modified to return Label instead of Tuple
-  public Label returnRecord ( LID lid )
+  public Quadruple returnRecord ( QID rid )
     throws IOException, 
 	   InvalidSlotNumberException
     {
       short recLen;
       short offset;
       PageId pageNo = new PageId();
-      pageNo.pid = lid.pageNo.pid;
+      pageNo.pid = rid.pageNo.pid;
       
       curPage.pid = Convert.getIntValue (CUR_PAGE, data);
-      int slotNo = lid.slotNo;
+      int slotNo = rid.slotNo;
       
       // length of record being returned
       recLen = getSlotLength (slotNo);
@@ -608,8 +603,8 @@ public class LHFPage extends Page
 	{
 	  
 	  offset = getSlotOffset (slotNo);
-	  Label label = new Label(data, offset, recLen);
-	  return label;
+	  Quadruple tuple = new Quadruple(data, offset, recLen);
+	  return tuple;
 	}
       
       else {   

@@ -4,7 +4,7 @@ import diskmgr.*;
 import global.*;
 
 import java.io.*;
-import tripleheap.*;
+import quadrupleheap.*;
 import labelheap.*;
 
 
@@ -16,10 +16,10 @@ public class QueryProgram {
 	static String Predicate = null;
 	static String Confidence = null;
 	static int indexoption = 1;    //Index option
-	static EID entityobjectid = new EID();
-	static EID entitysubjectid = new EID();
+	static EID entityobjecqid = new EID();
+	static EID entitysubjecqid = new EID();
 	static EID entitypredicateid = new EID();
-	static TripleHeapfile UNSORTED_TRIPLES = null;
+	static QuadrupleHeapfile UNSORTED_TRIPLES = null;
 	boolean exists = false;
 	public static double confidence = -99.0;
 	public static int num_of_buf = 200;
@@ -103,14 +103,13 @@ public class QueryProgram {
 			}
 
 			Stream s = SystemDefs.JavabaseDB.openStream(dbname, indexoption, Subject, Predicate, Object, confidence);
-			Triple t = null;
-			TID tid = null;
-			while((t = s.getNext(tid))!=null)
+			Quadruple t = null;
+			while(s.getNext()!=null)
 			{
 				double confidence = t.getConfidence();
-				Label subject = SystemDefs.JavabaseDB.getEntityHandle().getRecord(t.getSubjectID().returnLID());
-				Label object = SystemDefs.JavabaseDB.getEntityHandle().getRecord(t.getObjectID().returnLID());
-				Label predicate = SystemDefs.JavabaseDB.getPredicateHandle().getRecord(t.getPredicateID().returnLID());
+				Label subject = SystemDefs.JavabaseDB.getEntityHF().getRecord(t.getSubjectID().returnLID());
+				Label object = SystemDefs.JavabaseDB.getEntityHF().getRecord(t.getObjectID().returnLID());
+				Label predicate = SystemDefs.JavabaseDB.getPredHF().getRecord(t.getPredicateID().returnLID());
 				System.out.printf("%20s %20s %80s %.17f\n",subject.getLabelKey(),predicate.getLabelKey(),object.getLabelKey(),confidence);
 			}
 			if(s!=null)

@@ -2,7 +2,7 @@ package tests;
 
 import global.*;
 import java.io.*;
-import tripleheap.*;
+import quadrupleheap.*;
 import java.lang.*;
 import labelheap.*;
 import iterator.*;
@@ -35,8 +35,8 @@ public class RDFSortTest
 
 		EID sid = null, oid = null;
 		PID pid = null;
-		Triple t = null;
-		TID tid = null;
+		Quadruple t = null;
+		QID qid = null;
 		SystemDefs sysdef = null;
 		int counter = 0;
 
@@ -56,22 +56,22 @@ public class RDFSortTest
 		try
 		{
 			TScan am = new TScan(sysdef.JavabaseDB.getTrpHandle());
-			TripleOrder sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
-			TripleSort tsort = new TripleSort(am, sort_order , 200);
+			QuadrupleOrder sort_order = new QuadrupleOrder(QuadrupleOrder.PredicateConfidence);
+			QuadrupleSort tsort = new QuadrupleSort(am, sort_order , 200);
 			int count = 0;
-			Triple triple = null;
-			while((triple = tsort.get_next()) != null)
+			Quadruple quadruple = null;
+			while((quadruple = tsort.get_next()) != null)
 			{
-				System.out.println("Confidence--> "+triple.getConfidence());
-				//System.out.println(triple.getSubjectID());
+				System.out.println("Confidence--> "+quadruple.getConfidence());
+				//System.out.println(quadruple.getSubjectID());
 				LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
-				Label subject = l1.getRecord(triple.getSubjectID().returnLID());
+				Label subject = l1.getRecord(quadruple.getSubjectID().returnLID());
 				System.out.println("Subject--> "+subject.getLabelKey());
 				LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
-				Label predicate = l2.getRecord(triple.getPredicateID().returnLID());
+				Label predicate = l2.getRecord(quadruple.getPredicateID().returnLID());
 				System.out.println("Predicate--> "+predicate.getLabelKey());
 				LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
-				Label object = l3.getRecord(triple.getObjectID().returnLID());
+				Label object = l3.getRecord(quadruple.getObjectID().returnLID());
 				System.out.println("Object--> "+object.getLabelKey());
 				System.out.println("*****************************");
 				count++;

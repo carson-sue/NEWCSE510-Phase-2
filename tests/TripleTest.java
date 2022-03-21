@@ -8,12 +8,12 @@
 //import heap.*;
 //import iterator.*;
 //import index.*;
-//import tripleheap.*;
+//import quadrupleheap.*;
 //
 //class TRIPLEDriver extends TestDriver implements GlobalConst {
 //
 //	public TRIPLEDriver() {
-//		super("tripletest");
+//		super("quadrupletest");
 //	}
 //
 //	public boolean runTests ()  {
@@ -84,23 +84,23 @@
 //
 //		boolean status = OK;
 //
-//		// create a triple of appropriate size
-//		Triple t = new Triple();
+//		// create a quadruple of appropriate size
+//		Quadruple t = new Quadruple();
 //		int size = t.size();
 //
 //		// Create unsorted data file "test1.in"
-//		TID             tid;
-//		TripleHeapfile        f = null;
+//		QID             qid;
+//		QuadrupleHeapfile        f = null;
 //		try
 //		{
-//			f = new TripleHeapfile("test1.in");
+//			f = new QuadrupleHeapfile("test1.in");
 //		}
 //		catch (Exception e) {
 //			status = FAIL;
 //			e.printStackTrace();
 //		}
 //
-//		t = new Triple();
+//		t = new Quadruple();
 //		try {
 //			t.setConfidence(1.5);
 //		} catch (IOException e1) {
@@ -109,7 +109,7 @@
 //		}
 //
 //		try {
-//			tid = f.insertTriple(t.returnTripleByteArray());
+//			qid = f.insertQuadruple(t.returnQuadrupleByteArray());
 //		}
 //		catch (Exception e) {
 //			status = FAIL;
@@ -123,25 +123,25 @@
 //
 //	protected String testName()
 //	{
-//		return "Triple";
+//		return "Quadruple";
 //	}
 //}
 //
-//public class TripleTest
+//public class QuadrupleTest
 //{
 //	public static void main(String argv[])
 //	{
-//		boolean triplestatus;
+//		boolean quadruplestatus;
 //
-//		TRIPLEDriver tripleDriver = new TRIPLEDriver();
+//		TRIPLEDriver quadrupleDriver = new TRIPLEDriver();
 //
-//		triplestatus = tripleDriver.runTests();
+//		quadruplestatus = quadrupleDriver.runTests();
 //
-//		if (triplestatus != true) {
-//			System.out.println("Error ocurred during triple tests");
+//		if (quadruplestatus != true) {
+//			System.out.println("Error ocurred during quadruple tests");
 //		}
 //		else {
-//			System.out.println("Triple tests completed successfully");
+//			System.out.println("Quadruple tests completed successfully");
 //		}
 //	}
 //}

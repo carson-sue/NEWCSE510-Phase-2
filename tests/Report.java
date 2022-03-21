@@ -3,7 +3,7 @@ package tests;
 import global.*;
 
 import java.io.*;
-import tripleheap.*;
+import quadrupleheap.*;
 import java.lang.*;
 import labelheap.*;
 
@@ -35,8 +35,8 @@ public class Report
 
 		EID sid = null, oid = null;
 		PID pid = null;
-		Triple t = null;
-		TID tid = null;
+		Quadruple t = null;
+		QID qid = null;
 		SystemDefs sysdef = null;
 		int counter = 0;
 
@@ -55,7 +55,7 @@ public class Report
 
 		try
 		{
-			TripleHeapfile thf = SystemDefs.JavabaseDB.getTrpHandle();
+			QuadrupleHeapfile thf = SystemDefs.JavabaseDB.getTrpHandle();
 			LabelHeapFile elhf = SystemDefs.JavabaseDB.getEntityHandle();
 			LabelHeapFile plhf = SystemDefs.JavabaseDB.getPredicateHandle();
 			System.out.println("\n\n\n******************** Report - RDF DB Statistics ******************");
@@ -63,16 +63,16 @@ public class Report
 			System.out.println(" DB Size 			: " + dbfile.length() + " bytes");
 			System.out.println(" Page Size 			: " + SystemDefs.JavabaseDB.db_page_size() + " bytes");
 			System.out.println(" Number of Pages in DB 		: " + SystemDefs.JavabaseDB.db_num_pages());
-			System.out.println(" Triple Size 			: " + GlobalConst.RDF_TRIPLE_SIZE + " bytes");
+			System.out.println(" Quadruple Size 			: " + GlobalConst.RDF_TRIPLE_SIZE + " bytes");
 			System.out.println(" Total Entities 		: " + SystemDefs.JavabaseDB.getEntityCnt());
 			System.out.println(" Total Subjects 		: " + SystemDefs.JavabaseDB.getSubjectCnt());
 			System.out.println(" Total Predicates 		: " + SystemDefs.JavabaseDB.getPredicateCnt());
 			System.out.println(" Total Objects 			: " + SystemDefs.JavabaseDB.getObjectCnt());
-			System.out.println(" Total Triples			: " + SystemDefs.JavabaseDB. getTripleCnt());
+			System.out.println(" Total Quadruples			: " + SystemDefs.JavabaseDB. getQuadrupleCnt());
 			System.out.println(" Page Replacement Policy 	: Clock");
 			System.out.println("\n --------- Heap Files ---------");
-			System.out.println(" Triple File Name		: " + dbname + "/tripleHF");
-			System.out.println(" Triple File Record Count	: " + thf.getRecCnt());
+			System.out.println(" Quadruple File Name		: " + dbname + "/quadrupleHF");
+			System.out.println(" Quadruple File Record Count	: " + thf.getRecCnt());
 			System.out.println(" Entity File Name		: " + dbname + "/entityHF");
 			System.out.println(" Entity File Record Count	: " + elhf.getRecCnt());
 			System.out.println(" Predicate File Name		: " + dbname + "/predicateHF");

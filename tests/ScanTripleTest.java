@@ -5,12 +5,12 @@ import global.*;
 
 import java.io.*;
 
-import tripleheap.*;
+import quadrupleheap.*;
 import java.lang.*;
 import labelheap.*;
 //import iterator.*;
 
-public class ScanTripleTest
+public class ScanQuadrupleTest
 {
 	public static void main(String[] args)
 	{
@@ -38,8 +38,8 @@ public class ScanTripleTest
 
 		EID sid = null, oid = null;
 		PID pid = null;
-		Triple t = null;
-		TID tid = null;
+		Quadruple t = null;
+		QID qid = null;
 		SystemDefs sysdef = null;
 		int counter = 0;
 
@@ -60,11 +60,11 @@ public class ScanTripleTest
 		{
 			
 			TScan am = new TScan(sysdef.JavabaseDB.getTrpHandle());
-			TID t1 = new TID();
-			Triple t2 = null;
+			QID t1 = new QID();
+			Quadruple t2 = null;
 			while((t2 = am.getNext(t1))!= null)
 			{
-				//Triple t2 = am.getNext(t1);
+				//Quadruple t2 = am.getNext(t1);
 				System.out.println(t2.getConfidence());
 				System.out.println(t2.getSubjectID());
 				LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();

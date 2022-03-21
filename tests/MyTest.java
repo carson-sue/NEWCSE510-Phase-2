@@ -4,8 +4,8 @@
 //import global.*;
 //
 //import java.io.*;
-//import tripleheap.*;
-//import iterator.TripleSort;
+//import quadrupleheap.*;
+//import iterator.QuadrupleSort;
 //
 //import java.lang.*;
 //import java.util.ArrayList;
@@ -20,34 +20,34 @@
 //
 //    public static ArrayList<String> entities = new ArrayList<String>();
 //    public static ArrayList<String> predicates = new ArrayList<String>();
-//    public static ArrayList<byte[]> triples = new ArrayList<byte[]>();
+//    public static ArrayList<byte[]> quadruples = new ArrayList<byte[]>();
 //    public static SystemDefs sysdef = null;
 //    public static boolean existingdb = false;
 //
-//    private static void print_triple(Triple triple)
+//    private static void print_quadruple(Quadruple quadruple)
 //            throws InvalidSlotNumberException, InvalidLabelSizeException, LHFException, LHFDiskMgrException, LHFBufMgrException, Exception
 //    {
-//        //System.out.println(triple.getSubjectID());
+//        //System.out.println(quadruple.getSubjectID());
 //        LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
-//        Label subject = l1.getRecord(triple.getSubjectID().returnLID());
+//        Label subject = l1.getRecord(quadruple.getSubjectID().returnLID());
 //        LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
-//        Label predicate = l2.getRecord(triple.getPredicateID().returnLID());
+//        Label predicate = l2.getRecord(quadruple.getPredicateID().returnLID());
 //        LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
-//        Label object = l3.getRecord(triple.getObjectID().returnLID());
-//        System.out.println(subject.getLabelKey() + ":" + predicate.getLabelKey() + ":" + object.getLabelKey() + "("+ triple.getConfidence()+")");
+//        Label object = l3.getRecord(quadruple.getObjectID().returnLID());
+//        System.out.println(subject.getLabelKey() + ":" + predicate.getLabelKey() + ":" + object.getLabelKey() + "("+ quadruple.getConfidence()+")");
 //    }
 //
 //
 //    public static void db_stats()
 //    {
 //        int reccnt = sysdef.JavabaseDB.getPredicateCnt();
-//        int triplecnt = sysdef.JavabaseDB.getTripleCnt();
+//        int quadruplecnt = sysdef.JavabaseDB.getQuadrupleCnt();
 //        int subjectcnt = sysdef.JavabaseDB.getSubjectCnt();
 //        int objectcnt = sysdef.JavabaseDB.getObjectCnt();
 //        int entitycnt = sysdef.JavabaseDB.getEntityCnt();
 //
 //        System.out.println("Total Predicate Cnt "+ reccnt );
-//        System.out.println("Total Triple Count "+ triplecnt);
+//        System.out.println("Total Quadruple Count "+ quadruplecnt);
 //        System.out.println("Total Subject Count "+ subjectcnt);
 //        System.out.println("Total Object Count "+ objectcnt);
 //        System.out.println("Total Entity Count "+ entitycnt);
@@ -58,7 +58,7 @@
 //
 //        int i = 0;
 //        boolean success = false;
-//        int reccnt = 0,triplecnt = 0,subjectcnt = 0,objectcnt = 0,entitycnt = 0;
+//        int reccnt = 0,quadruplecnt = 0,subjectcnt = 0,objectcnt = 0,entitycnt = 0;
 //        //NOTE: Enable the code below to test for entity deletion
 //
 //		/*System.out.println("Deleting first 10 entities ");
@@ -72,13 +72,13 @@
 //		  System.out.println("After deletion");
 //
 //		  reccnt = sysdef.JavabaseDB.getPredicateCnt();
-//		  triplecnt = sysdef.JavabaseDB.getTripleCnt();
+//		  quadruplecnt = sysdef.JavabaseDB.getQuadrupleCnt();
 //		  subjectcnt = sysdef.JavabaseDB.getSubjectCnt();
 //		  objectcnt = sysdef.JavabaseDB.getObjectCnt();
 //		  entitycnt = sysdef.JavabaseDB.getEntityCnt();
 //
 //		  System.out.println("Total Predicate Cnt "+ reccnt + "\n");
-//		  System.out.println("Total Triple Count "+ triplecnt +"\n");
+//		  System.out.println("Total Quadruple Count "+ quadruplecnt +"\n");
 //		  System.out.println("Total Subject Count "+ subjectcnt +"\n");
 //		  System.out.println("Total Object Count "+ objectcnt +"\n");
 //		  System.out.println("Total Entity Count "+ entitycnt +"\n");*/
@@ -96,37 +96,37 @@
 //		  System.out.println("After deletion");
 //
 //		  reccnt = sysdef.JavabaseDB.getPredicateCnt();
-//		  triplecnt = sysdef.JavabaseDB.getTripleCnt();
+//		  quadruplecnt = sysdef.JavabaseDB.getQuadrupleCnt();
 //		  subjectcnt = sysdef.JavabaseDB.getSubjectCnt();
 //		  objectcnt = sysdef.JavabaseDB.getObjectCnt();
 //		  entitycnt = sysdef.JavabaseDB.getEntityCnt();
 //
 //		  System.out.println("Total Predicate Cnt "+ reccnt + "\n");
-//		  System.out.println("Total Triple Count "+ triplecnt +"\n");
+//		  System.out.println("Total Quadruple Count "+ quadruplecnt +"\n");
 //		  System.out.println("Total Subject Count "+ subjectcnt +"\n");
 //		  System.out.println("Total Object Count "+ objectcnt +"\n");
 //		  System.out.println("Total Entity Count "+ entitycnt +"\n");*/
 //
-//        //NOTE: Enable the code below to test for triple deletion
+//        //NOTE: Enable the code below to test for quadruple deletion
 //
-//        System.out.println("Deleting first 10 triples ");
+//        System.out.println("Deleting first 10 quadruples ");
 //
 //		/*for(i = 0; i < 10; i++)
 //		  {
-//		  success = sysdef.JavabaseDB.deleteTriple(triples.get(i));
-//		  System.out.println("Result of deleting triple " + triples.get(i) + " : " + success);
+//		  success = sysdef.JavabaseDB.deleteQuadruple(quadruples.get(i));
+//		  System.out.println("Result of deleting quadruple " + quadruples.get(i) + " : " + success);
 //
 //		  }
 //		  System.out.println("After deletion");
 //
 //		  reccnt = sysdef.JavabaseDB.getPredicateCnt();
-//		  triplecnt = sysdef.JavabaseDB.getTripleCnt();
+//		  quadruplecnt = sysdef.JavabaseDB.getQuadrupleCnt();
 //		  subjectcnt = sysdef.JavabaseDB.getSubjectCnt();
 //		  objectcnt = sysdef.JavabaseDB.getObjectCnt();
 //		  entitycnt = sysdef.JavabaseDB.getEntityCnt();
 //
 //		  System.out.println("Total Predicate Cnt "+ reccnt + "\n");
-//		  System.out.println("Total Triple Count "+ triplecnt +"\n");
+//		  System.out.println("Total Quadruple Count "+ quadruplecnt +"\n");
 //		  System.out.println("Total Subject Count "+ subjectcnt +"\n");
 //		  System.out.println("Total Object Count "+ objectcnt +"\n");
 //		  System.out.println("Total Entity Count "+ entitycnt +"\n");*/
@@ -143,25 +143,25 @@
 //        //sysdef.JavabaseDB.createIndex5();
 //    }
 //
-//    public static TID insertTriple(byte[] triplePtr)
+//    public static QID insertQuadruple(byte[] quadruplePtr)
 //            throws Exception
 //    {
-//        TID tid = null;
+//        QID qid = null;
 //        try
 //        {
 //            //Open Temp heap file
-//            TripleHeapfile Triple_HF = sysdef.JavabaseDB.getTrpHandle();
-//            tid= Triple_HF.insertTriple(triplePtr);
+//            QuadrupleHeapfile Quadruple_HF = sysdef.JavabaseDB.getTrpHandle();
+//            qid= Quadruple_HF.insertQuadruple(quadruplePtr);
 //
-//            //System.out.println("Inserting tid : " + tid);
+//            //System.out.println("Inserting qid : " + qid);
 //        }
 //        catch(Exception e)
 //        {
-//            System.err.println ("*** Error inserting triple record " + e);
+//            System.err.println ("*** Error inserting quadruple record " + e);
 //            e.printStackTrace();
 //            Runtime.getRuntime().exit(1);
 //        }
-//        return tid;
+//        return qid;
 //    }
 //
 //    public static void main(String[] args) throws Exception {
@@ -218,8 +218,8 @@
 //
 //        EID sid = null, oid = null;
 //        PID pid = null;
-//        Triple t = null;
-//        TID tid = null;
+//        Quadruple t = null;
+//        QID qid = null;
 //
 //
 //        File dbfile = new File(dbname); //Check if database already exsist
@@ -249,7 +249,7 @@
 //
 //
 //
-//            ///   creating Triple
+//            ///   creating Quadruple
 //            AttrType [] Stypes = new AttrType[4];
 //            Stypes[0] = new AttrType (AttrType.attrString);
 //            Stypes[1] = new AttrType (AttrType.attrString);
@@ -261,7 +261,7 @@
 //            Ssizes[0] = 100; //first elt. is 30
 //            Ssizes[1] = 100;
 //            Ssizes[2] = 100;
-//            Triple q = new Triple();
+//            Quadruple q = new Quadruple();
 //            try {
 //                q.setHdr((short)4,Stypes, Ssizes);
 //            }
@@ -275,17 +275,17 @@
 //            int size = q.size();
 //
 //            // inserting the quadraple into file "sailors"
-//            TID             qid;
-//            TripleHeapfile        f = null;
+//            QID             qid;
+//            QuadrupleHeapfile        f = null;
 //            try {
-//                f = new TripleHeapfile("graph.in");
+//                f = new QuadrupleHeapfile("graph.in");
 //            }
 //            catch (Exception e) {
 //                // System.err.println("*** error in Heapfile constructor ***");
 //                status = FAIL;
 //                e.printStackTrace();
 //            }
-//            q = new Triple();
+//            q = new Quadruple();
 //            try {
 //                q.setHdr((short) 4,  Stypes, Ssizes);
 //            }
@@ -311,7 +311,7 @@
 //                    }
 //                    try
 //                    {
-//                        qid = insertTriple(q.getTripleByteArray());
+//                        qid = insertQuadruple(q.getQuadrupleByteArray());
 //                    }
 //                    catch (Exception e) {
 //                        e.printStackTrace();
@@ -325,14 +325,14 @@
 //                try
 //                {
 //                    TScan am = new TScan(sysdef.JavabaseDB.getTrpHandle());
-//                    TID t1 = new TID();
-//                    Triple t2 = null;
+//                    QID t1 = new QID();
+//                    Quadruple t2 = null;
 //                    while((t2 = am.getNext(t1))!= null)
 //                    {
 //                        System.out.print("##############Scanning earlier records and deleting########");
-//                        print_triple(t2);
-//                        insertTriple(t2.getTripleByteArray());
-//                        sysdef.JavabaseDB.deleteTriple(t2.getTripleByteArray());
+//                        print_quadruple(t2);
+//                        insertQuadruple(t2.getQuadrupleByteArray());
+//                        sysdef.JavabaseDB.deleteQuadruple(t2.getQuadrupleByteArray());
 //                    }
 //                }
 //                catch(Exception e)
@@ -378,36 +378,36 @@
 //        {
 //            //sysdef = new SystemDefs(dbname,0,800,"Clock",indexoption);
 //            System.out.println("*** Opening existing database ***");
-//            TScan am = new TScan(sysdef.JavabaseDB.getTEMP_Triple_HF());
-//            TripleOrder sort_order = null;
+//            TScan am = new TScan(sysdef.JavabaseDB.getTEMP_Quadruple_HF());
+//            QuadrupleOrder sort_order = null;
 //            if(indexoption ==1) //SORT ON CONFIDENCE
 //            {
-//                sort_order = new TripleOrder(TripleOrder.Confidence);
+//                sort_order = new QuadrupleOrder(QuadrupleOrder.Confidence);
 //            }
 //            else if(indexoption == 2)
 //            {
-//                sort_order = new TripleOrder(TripleOrder.SubjectConfidence);
+//                sort_order = new QuadrupleOrder(QuadrupleOrder.SubjectConfidence);
 //            }
 //            else if(indexoption == 3)
 //            {
-//                sort_order = new TripleOrder(TripleOrder.ObjectConfidence);
+//                sort_order = new QuadrupleOrder(QuadrupleOrder.ObjectConfidence);
 //            }
 //            else if(indexoption == 4)
 //            {
-//                sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
+//                sort_order = new QuadrupleOrder(QuadrupleOrder.PredicateConfidence);
 //            }
 //            else if(indexoption == 5)
 //            {
-//                sort_order = new TripleOrder(TripleOrder.SubjectPredicateObjectConfidence);
+//                sort_order = new QuadrupleOrder(QuadrupleOrder.SubjectPredicateObjectConfidence);
 //            }
 //
-//            TripleSort tsort = new TripleSort(am, sort_order , 200);
+//            QuadrupleSort tsort = new QuadrupleSort(am, sort_order , 200);
 //
-//            Triple triple = null;
-//            while((triple = tsort.get_next()) != null)
+//            Quadruple quadruple = null;
+//            while((quadruple = tsort.get_next()) != null)
 //            {
-//                print_triple(triple);
-//                sysdef.JavabaseDB.insertTriple(triple.getTripleByteArray());
+//                print_quadruple(quadruple);
+//                sysdef.JavabaseDB.insertQuadruple(quadruple.getQuadrupleByteArray());
 //                System.out.println("*****************************");
 //            }
 //            tsort.close();
