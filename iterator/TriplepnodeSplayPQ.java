@@ -28,7 +28,7 @@ public class TriplepnodeSplayPQ extends TriplepnodePQ
 	{
 		root = null;
 		count = 0;
-		sort_order = new TripleOrder(TripleOrder.SubjectPredicateObjectConfidence); //XXX TODO AJAY:Check TripleOrder
+		sort_order = new TripleOrder(TripleOrder.SPOC);
 	}
 
 	/**

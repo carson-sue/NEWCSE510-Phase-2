@@ -60,9 +60,10 @@ public class QueryProgram {
 	public static void main(String[] args)
 	throws Exception 
 	{
+		System.out.println(args.length);
 		if(args.length == 7 )   //Check if the args are DATABASENAME INDEXOPTION SUBJECTFILTER PREDICATEFILTER OBJECTFILTER CONFIDENCEFILTER NUMBUF
 		{
-			dbname = new String("/tmp/" + args[0]); 
+			dbname = new String(args[0]); 
 			indexoption = Integer.parseInt(args[1]);
 			Subject = new String(args[2]);
 			Predicate = new String(args[3]);

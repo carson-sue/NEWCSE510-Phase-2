@@ -10,7 +10,7 @@ import iterator.*;
 public class Stream{
 	public static SystemDefs sysdef = null;
 	public static String dbName;
-	public static int sortoption = 1;    //Index option
+	public static int sortoption = 1;    //Default index orderType
 	public static EID entityobjectid = new EID();
 	public static EID entitysubjectid = new EID();
 	public static EID entitypredicateid = new EID();
@@ -38,27 +38,27 @@ public class Stream{
 		switch(sortoption)
 		{
 		case 1:	
-			sort_order = new TripleOrder(TripleOrder.SubjectPredicateObjectConfidence);
+			sort_order = new TripleOrder(TripleOrder.SPOC);
 			break;
 
 		case 2:	
-			sort_order = new TripleOrder(TripleOrder.PredicateSubjectObjectConfidence);
+			sort_order = new TripleOrder(TripleOrder.PSOC);
 			break;
 
 		case 3:	
-			sort_order = new TripleOrder(TripleOrder.SubjectConfidence);
+			sort_order = new TripleOrder(TripleOrder.SC);
 			break;
 
 		case 4:	
-			sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
+			sort_order = new TripleOrder(TripleOrder.PC);
 			break;
 
 		case 5:	
-			sort_order = new TripleOrder(TripleOrder.ObjectConfidence);
+			sort_order = new TripleOrder(TripleOrder.OC);
 			break;
 
 		case 6:	
-			sort_order = new TripleOrder(TripleOrder.Confidence);
+			sort_order = new TripleOrder(TripleOrder.C);
 			break;
 		}
 		return sort_order;

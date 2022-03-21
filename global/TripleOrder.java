@@ -6,13 +6,12 @@ package global;
  */
 
 public class TripleOrder {
-	//come back here &&&&&&&
-	public static final int SubjectPredicateObjectConfidence = 1;
-	public static final int PredicateSubjectObjectConfidence = 2;
-	public static final int SubjectConfidence = 3;
-	public static final int PredicateConfidence = 4;
-	public static final int ObjectConfidence = 5;
-	public static final int Confidence = 6;
+	public static final int SPOC = 1;
+	public static final int PSOC = 2;
+	public static final int SC = 3;
+	public static final int PC = 4;
+	public static final int OC = 5;
+	public static final int C = 6;
 
 	public int tripleOrder;
 
@@ -40,17 +39,17 @@ public class TripleOrder {
 	{
 		switch (tripleOrder) 
 		{
-			case SubjectPredicateObjectConfidence:
+			case SPOC:
 				return "SubjectPredicateObjectConfidence";
-			case PredicateSubjectObjectConfidence:
+			case PSOC:
 				return "PredicateSubjectObjectConfidence";
-			case SubjectConfidence:
+			case SC:
 				return "SubjectConfidence";
-			case PredicateConfidence:
+			case PC:
 				return "PredicateConfidence";
-			case ObjectConfidence:
+			case OC:
 				return "ObjectConfidence";
-			case Confidence:
+			case C:
 				return "Confidence";
 		}
 		return ("Unexpected TripleOrder " + tripleOrder);

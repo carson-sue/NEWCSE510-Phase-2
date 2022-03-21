@@ -5,6 +5,7 @@ import java.io.*;
 import tripleheap.*;
 import java.lang.*;
 import java.util.ArrayList;
+import labelheap.*;
 
 import tests.utils.readData;
 import tests.utils.DataStructures.InfoGraph;
@@ -14,6 +15,18 @@ public class BatchInsert{
 
 	public static SystemDefs sysdef = null;
 
+	private static void print_triple(Triple triple) 
+	throws InvalidLabelSizeException, LHFException, LHFDiskMgrException, LHFBufMgrException, Exception 
+	{
+		//System.out.println(triple.getSubjectID());
+		LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
+		Label subject = l1.getRecord(triple.getSubjectID().returnLID());
+		LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
+		Label predicate = l2.getRecord(triple.getPredicateID().returnLID());
+		LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
+		Label object = l3.getRecord(triple.getObjectID().returnLID());
+		System.out.println(subject.getLabelKey() + ":" + predicate.getLabelKey() + ":" + object.getLabelKey() + "("+ triple.getConfidence()+")");
+	}
 
 
 
@@ -61,7 +74,7 @@ public class BatchInsert{
 		while((ig = rd.readNextrecord()) != null){
 //			System.out.println("before inserting subject : "+ ig.subject);
 			sid = sysdef.JavabaseDB.insertEntity(ig.subject);
-			System.out.println("subject count : "+sysdef.JavabaseDB.getSubjectCnt());
+			//System.out.println("subject count : "+sysdef.JavabaseDB.getSubjectCnt());
 //			LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
 //			Label subject = l1.getRecord(sid.returnLID());
 //			System.out.println("inserted subject :"+subject.getLabelKey());
@@ -76,6 +89,7 @@ public class BatchInsert{
 			t.setObjectID(oid);
 			t.setConfidence(confidence);
 			sysdef.JavabaseDB.insertTriple(t.getTripleByteArray());
+			print_triple(t);
 			i++;
 		}
 

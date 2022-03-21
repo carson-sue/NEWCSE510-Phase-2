@@ -82,5 +82,13 @@ TFTest:TripleTest.java
 tftest: TFTest
         $(JAVA) tests.TFTest
 
+# test query program
+QueryProgram:QueryProgram.java
+        $(JAVAC) TestDriver.java QueryProgram.java
+
+queryprogram: QueryProgram
+        $(JAVA) tests.QueryProgram
+
+
 clean:
 	rm -f *.class *~ 

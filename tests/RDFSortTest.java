@@ -56,7 +56,7 @@ public class RDFSortTest
 		try
 		{
 			TScan am = new TScan(sysdef.JavabaseDB.getTrpHandle());
-			TripleOrder sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
+			TripleOrder sort_order = new TripleOrder(TripleOrder.PC);
 			TripleSort tsort = new TripleSort(am, sort_order , 200);
 			int count = 0;
 			Triple triple = null;
