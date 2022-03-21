@@ -718,62 +718,64 @@ public class rdfDB extends DB implements GlobalConst {
         return success;
 	}
 
-	public TID insertTriple(byte[] triplePtr)
+	public TID insertTriple(ArrayList<byte[]> triplePtrArray)
 	throws Exception
 	{
+
 		  TID tripleid;
           TID tid = null;
           try
           {
-                  //Open Triple BTree Index file
-                  Triple_BTree = new TripleBTreeFile(curr_dbname+"/tripleBT");
+			  Triple_BTree = new TripleBTreeFile(curr_dbname + "/tripleBT");
+			  for (byte[] triplePtr : triplePtrArray) {
+				  //Open Triple BTree Index file
 
-                  //TripleBT.printAllLeafPages(Triple_BTree.getHeaderPage());
-                  int sub_slotNo = Convert.getIntValue(0,triplePtr);
-                  int sub_pageNo = Convert.getIntValue(4,triplePtr);
-                  int pred_slotNo = Convert.getIntValue(8,triplePtr); 
-                  int pred_pageNo = Convert.getIntValue(12,triplePtr);
-                  int obj_slotNo = Convert.getIntValue(16,triplePtr);
-                  int obj_pageNo = Convert.getIntValue(20,triplePtr);
-                  double confidence =Convert.getDoubleValue(24,triplePtr);
-                  String key = new String(Integer.toString(sub_slotNo) +':'+ Integer.toString(sub_pageNo) +':'+ Integer.toString(pred_slotNo) + ':' + Integer.toString(pred_pageNo) +':' + Integer.toString(obj_slotNo) +':'+ Integer.toString(obj_pageNo));
-                  KeyClass low_key = new StringKey(key);
-                  KeyClass high_key = new StringKey(key);
-                  KeyDataEntry entry = null;
 
-                  //Start Scaning Btree to check if  predicate already present
-                  TripleBTFileScan scan = Triple_BTree.new_scan(low_key,high_key);
-                  entry = scan.get_next();
-                  if(entry != null)
-                  {
-                          //System.out.println("Duplicate Triple found : " + ((StringKey)(entry.key)).getKey());
-                          if(key.compareTo(((StringKey)(entry.key)).getKey()) == 0)
-                          {
-                                  //return already existing TID 
-                                  tripleid = ((TripleLeafData)(entry.data)).getData();
-                                  Triple record = Triple_HF.getRecord(tripleid);
-                                  double orig_confidence = record.getConfidence();
-                                  if(orig_confidence > confidence)
-                                  {
-                                          Triple newRecord = new Triple(triplePtr,0,32);
-                                          Triple_HF.updateRecord(tripleid,newRecord);
-                                  }       
-                                  scan.DestroyBTreeFileScan();
-                                  Triple_BTree.close();
-                                  return tripleid;
-                          }
-                  }
+				  //TripleBT.printAllLeafPages(Triple_BTree.getHeaderPage());
+				  int sub_slotNo = Convert.getIntValue(0, triplePtr);
+				  int sub_pageNo = Convert.getIntValue(4, triplePtr);
+				  int pred_slotNo = Convert.getIntValue(8, triplePtr);
+				  int pred_pageNo = Convert.getIntValue(12, triplePtr);
+				  int obj_slotNo = Convert.getIntValue(16, triplePtr);
+				  int obj_pageNo = Convert.getIntValue(20, triplePtr);
+				  double confidence = Convert.getDoubleValue(24, triplePtr);
+				  String key = new String(Integer.toString(sub_slotNo) + ':' + Integer.toString(sub_pageNo) + ':' + Integer.toString(pred_slotNo) + ':' + Integer.toString(pred_pageNo) + ':' + Integer.toString(obj_slotNo) + ':' + Integer.toString(obj_pageNo));
+				  KeyClass low_key = new StringKey(key);
+				  KeyClass high_key = new StringKey(key);
+				  KeyDataEntry entry = null;
 
-                  //insert into triple heap file
-                  //System.out.println("("+triplePtr+")");
-                  tid= Triple_HF.insertTriple(triplePtr);
+				  //Start Scaning Btree to check if  predicate already present
+				  TripleBTFileScan scan = Triple_BTree.new_scan(low_key, high_key);
+				  entry = scan.get_next();
+				  if (entry != null) {
+					  //System.out.println("Duplicate Triple found : " + ((StringKey)(entry.key)).getKey());
+					  if (key.compareTo(((StringKey) (entry.key)).getKey()) == 0) {
+						  //return already existing TID
+						  tripleid = ((TripleLeafData) (entry.data)).getData();
+						  Triple record = Triple_HF.getRecord(tripleid);
+						  double orig_confidence = record.getConfidence();
+						  if (orig_confidence > confidence) {
+							  Triple newRecord = new Triple(triplePtr, 0, 32);
+							  Triple_HF.updateRecord(tripleid, newRecord);
+						  }
+						  scan.DestroyBTreeFileScan();
+//						  Triple_BTree.close();
+//						  return tripleid;
+					  }
+				  }
 
-                  //System.out.println("Inserting triple key : "+ key + "tid : " + tid);
-                  //insert into triple btree
-                  Triple_BTree.insert(low_key,tid); 
-  
-                  scan.DestroyBTreeFileScan();
-                  Triple_BTree.close();
+				  //insert into triple heap file
+				  //System.out.println("("+triplePtr+")");
+				  tid = Triple_HF.insertTriple(triplePtr);
+
+				  //System.out.println("Inserting triple key : "+ key + "tid : " + tid);
+				  //insert into triple btree
+				  Triple_BTree.insert(low_key, tid);
+
+				  scan.DestroyBTreeFileScan();
+
+			  }
+			  Triple_BTree.close();
           }
           catch(Exception e)
           {

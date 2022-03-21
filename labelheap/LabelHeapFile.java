@@ -2,7 +2,6 @@ package labelheap;
 
 import java.io.*;
 import diskmgr.*;
-import bufmgr.*;
 import global.*;
 
 /**  This heapfile implementation is directory-based. We maintain a

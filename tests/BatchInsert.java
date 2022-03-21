@@ -19,6 +19,7 @@ public class BatchInsert{
 
 	public static void main(String[] args) throws Exception {
 		String dataFileName = null;
+		int batch_size = 50;
 		int indexOption = 0;
 		if(args.length == 3){
 			dataFileName = args[0];
@@ -58,10 +59,11 @@ public class BatchInsert{
 		double confidence = 0.0;
 		boolean flag = false;
 		int i =0;
+		ArrayList<byte[]> tripleptrArray  =  new ArrayList<>();
 		while((ig = rd.readNextrecord()) != null){
 //			System.out.println("before inserting subject : "+ ig.subject);
 			sid = sysdef.JavabaseDB.insertEntity(ig.subject);
-			System.out.println("subject count : "+sysdef.JavabaseDB.getSubjectCnt());
+//			System.out.println("subject count : "+sysdef.JavabaseDB.getSubjectCnt());
 //			LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
 //			Label subject = l1.getRecord(sid.returnLID());
 //			System.out.println("inserted subject :"+subject.getLabelKey());
@@ -75,7 +77,10 @@ public class BatchInsert{
 			t.setPredicateID(pid);
 			t.setObjectID(oid);
 			t.setConfidence(confidence);
-			sysdef.JavabaseDB.insertTriple(t.getTripleByteArray());
+			tripleptrArray.add(t.getTripleByteArray());
+			if(i%1==0)
+				sysdef.JavabaseDB.insertTriple(tripleptrArray);
+				tripleptrArray.clear();
 			i++;
 		}
 
