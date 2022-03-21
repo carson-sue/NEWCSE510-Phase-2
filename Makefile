@@ -39,8 +39,6 @@ db:
 	make -C iterator
 	make -C labelheap
 	make -C tripleheap
-	make -C basicpattern
-	make -C basicpatterniterator
 	make -C iterator
 doc:
 	$(JAVADOC) $(DOCFILES)

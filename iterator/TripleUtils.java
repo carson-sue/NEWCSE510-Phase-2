@@ -146,8 +146,8 @@ public class TripleUtils
   public static int CompareTripleWithTriple(TripleOrder orderType, Triple t1, Triple t2)
   throws TripleUtilsException
   {
-	  LabelHeapFile Elhf = SystemDefs.JavabaseDB.getEntityHandle();
-	  LabelHeapFile Plhf = SystemDefs.JavabaseDB.getPredicateHandle();
+	  LabelHeapFile Elhf = SystemDefs.JavabaseDB.getEntityHF();
+	  LabelHeapFile Plhf = SystemDefs.JavabaseDB.getPredHF();
 	  int retVal = -2;
 
 	  switch (orderType.tripleOrder) 
