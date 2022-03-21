@@ -1,6 +1,5 @@
 package tests;
 
-import diskmgr.*;
 import global.*;
 
 import java.io.*;
@@ -59,7 +58,7 @@ public class ScanTripleTest
 		try
 		{
 			
-			TScan am = new TScan(sysdef.JavabaseDB.getTrpHandle());
+			TScan am = new TScan(sysdef.JavabaseDB.getQuadHF());
 			TID t1 = new TID();
 			Triple t2 = null;
 			while((t2 = am.getNext(t1))!= null)
@@ -67,13 +66,13 @@ public class ScanTripleTest
 				//Triple t2 = am.getNext(t1);
 				System.out.println(t2.getConfidence());
 				System.out.println(t2.getSubjectID());
-				LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapfile l1 = sysdef.JavabaseDB.getEntityHF();
 				Label subject = l1.getRecord(t2.getSubjectID().returnLID());
 				System.out.println(subject.getLabelKey());
-				LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
+				LabelHeapfile l2 = sysdef.JavabaseDB.getPredHF();
 				Label predicate = l2.getRecord(t2.getPredicateID().returnLID());
 				System.out.println(predicate.getLabelKey());
-				LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapfile l3 = sysdef.JavabaseDB.getEntityHF();
 				Label object = l3.getRecord(t2.getObjectID().returnLID());
 				System.out.println(object.getLength());
 				System.out.println(object.getLabelKey());

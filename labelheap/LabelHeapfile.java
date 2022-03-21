@@ -2,7 +2,6 @@ package labelheap;
 
 import java.io.*;
 import diskmgr.*;
-import bufmgr.*;
 import global.*;
 
 /**  This heapfile implementation is directory-based. We maintain a
@@ -40,7 +39,7 @@ interface  Filetype {
 	  
 	} // end of Filetype
 
-public class LabelHeapFile implements Filetype,  GlobalConst {
+public class LabelHeapfile implements Filetype,  GlobalConst {
 	  
 	  
 	  PageId      _firstDirPageId;   // page number of header page
@@ -213,7 +212,7 @@ public class LabelHeapFile implements Filetype,  GlobalConst {
 	   * @exception HFDiskMgrException exception thrown from diskmgr layer
 	   * @exception IOException I/O errors
 	   */
-	  public  LabelHeapFile(String name)
+	  public LabelHeapfile(String name)
 	    throws LHFException, 
 		   LHFBufMgrException,
 		   LHFDiskMgrException,

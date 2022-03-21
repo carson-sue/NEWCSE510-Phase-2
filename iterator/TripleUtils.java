@@ -12,7 +12,7 @@ import java.lang.*;
 public class TripleUtils
 {
   
-  private static int compareSubject(Triple t1, Triple t2, LabelHeapFile Elhf)
+  private static int compareSubject(Triple t1, Triple t2, LabelHeapfile Elhf)
   { 
 	try
 	{
@@ -44,7 +44,7 @@ public class TripleUtils
 	}
   }
    
-  private static int comparePredicate(Triple t1, Triple t2, LabelHeapFile Plhf)
+  private static int comparePredicate(Triple t1, Triple t2, LabelHeapfile Plhf)
   { 
 	try
 	{
@@ -76,7 +76,7 @@ public class TripleUtils
 	}
   }
     
-  private static int compareObject(Triple t1, Triple t2, LabelHeapFile Elhf)
+  private static int compareObject(Triple t1, Triple t2, LabelHeapfile Elhf)
   {
 	  try
 	  { 
@@ -146,8 +146,8 @@ public class TripleUtils
   public static int CompareTripleWithTriple(TripleOrder orderType, Triple t1, Triple t2)
   throws TripleUtilsException
   {
-	  LabelHeapFile Elhf = SystemDefs.JavabaseDB.getEntityHandle();
-	  LabelHeapFile Plhf = SystemDefs.JavabaseDB.getPredicateHandle();
+	  LabelHeapfile Elhf = SystemDefs.JavabaseDB.getEntityHF();
+	  LabelHeapfile Plhf = SystemDefs.JavabaseDB.getPredHF();
 	  int retVal = -2;
 
 	  switch (orderType.tripleOrder) 

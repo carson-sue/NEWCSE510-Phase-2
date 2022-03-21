@@ -55,9 +55,9 @@ public class Report
 
 		try
 		{
-			TripleHeapfile thf = SystemDefs.JavabaseDB.getTrpHandle();
-			LabelHeapFile elhf = SystemDefs.JavabaseDB.getEntityHandle();
-			LabelHeapFile plhf = SystemDefs.JavabaseDB.getPredicateHandle();
+			TripleHeapfile thf = SystemDefs.JavabaseDB.getQuadHF();
+			LabelHeapfile elhf = SystemDefs.JavabaseDB.getEntityHF();
+			LabelHeapfile plhf = SystemDefs.JavabaseDB.getPredHF();
 			System.out.println("\n\n\n******************** Report - RDF DB Statistics ******************");
 			System.out.println(" RDF Database Name		: " + dbname);
 			System.out.println(" DB Size 			: " + dbfile.length() + " bytes");
@@ -68,7 +68,7 @@ public class Report
 			System.out.println(" Total Subjects 		: " + SystemDefs.JavabaseDB.getSubjectCnt());
 			System.out.println(" Total Predicates 		: " + SystemDefs.JavabaseDB.getPredicateCnt());
 			System.out.println(" Total Objects 			: " + SystemDefs.JavabaseDB.getObjectCnt());
-			System.out.println(" Total Triples			: " + SystemDefs.JavabaseDB. getTripleCnt());
+			System.out.println(" Total Triples			: " + SystemDefs.JavabaseDB.getQuadrupleCnt());
 			System.out.println(" Page Replacement Policy 	: Clock");
 			System.out.println("\n --------- Heap Files ---------");
 			System.out.println(" Triple File Name		: " + dbname + "/tripleHF");

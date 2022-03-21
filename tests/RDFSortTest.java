@@ -55,7 +55,7 @@ public class RDFSortTest
 
 		try
 		{
-			TScan am = new TScan(sysdef.JavabaseDB.getTrpHandle());
+			TScan am = new TScan(sysdef.JavabaseDB.getQuadHF());
 			TripleOrder sort_order = new TripleOrder(TripleOrder.PredicateConfidence);
 			TripleSort tsort = new TripleSort(am, sort_order , 200);
 			int count = 0;
@@ -64,13 +64,13 @@ public class RDFSortTest
 			{
 				System.out.println("Confidence--> "+triple.getConfidence());
 				//System.out.println(triple.getSubjectID());
-				LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapfile l1 = sysdef.JavabaseDB.getEntityHF();
 				Label subject = l1.getRecord(triple.getSubjectID().returnLID());
 				System.out.println("Subject--> "+subject.getLabelKey());
-				LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
+				LabelHeapfile l2 = sysdef.JavabaseDB.getPredHF();
 				Label predicate = l2.getRecord(triple.getPredicateID().returnLID());
 				System.out.println("Predicate--> "+predicate.getLabelKey());
-				LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
+				LabelHeapfile l3 = sysdef.JavabaseDB.getEntityHF();
 				Label object = l3.getRecord(triple.getObjectID().returnLID());
 				System.out.println("Object--> "+object.getLabelKey());
 				System.out.println("*****************************");

@@ -4,7 +4,6 @@ import global.*;
 import java.io.*;
 import tripleheap.*;
 import java.lang.*;
-import java.util.ArrayList;
 
 import tests.utils.readData;
 import tests.utils.DataStructures.InfoGraph;
@@ -75,7 +74,7 @@ public class BatchInsert{
 			t.setPredicateID(pid);
 			t.setObjectID(oid);
 			t.setConfidence(confidence);
-			sysdef.JavabaseDB.insertTriple(t.getTripleByteArray());
+			sysdef.JavabaseDB.insertQuadruple(t.getTripleByteArray());
 			i++;
 		}
 

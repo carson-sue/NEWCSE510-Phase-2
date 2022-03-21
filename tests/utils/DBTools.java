@@ -2,14 +2,14 @@ package tests.utils;
 
 import global.*;
 import labelheap.Label;
-import labelheap.LabelHeapFile;
+import labelheap.LabelHeapfile;
 import tripleheap.Triple;
 
 public class DBTools {
     public static void db_stats(SystemDefs sysdef)
     {
         int reccnt = sysdef.JavabaseDB.getPredicateCnt();
-        int triplecnt = sysdef.JavabaseDB.getTripleCnt();
+        int triplecnt = sysdef.JavabaseDB.getQuadrupleCnt();
         int subjectcnt = sysdef.JavabaseDB.getSubjectCnt();
         int objectcnt = sysdef.JavabaseDB.getObjectCnt();
         int entitycnt = sysdef.JavabaseDB.getEntityCnt();
@@ -24,11 +24,11 @@ public class DBTools {
             throws  Exception
     {
         //System.out.println(triple.getSubjectID());
-        LabelHeapFile l1 = sysdef.JavabaseDB.getEntityHandle();
+        LabelHeapfile l1 = sysdef.JavabaseDB.getEntityHF();
         Label subject = l1.getRecord(triple.getSubjectID().returnLID());
-        LabelHeapFile l2 = sysdef.JavabaseDB.getPredicateHandle();
+        LabelHeapfile l2 = sysdef.JavabaseDB.getPredHF();
         Label predicate = l2.getRecord(triple.getPredicateID().returnLID());
-        LabelHeapFile l3 = sysdef.JavabaseDB.getEntityHandle();
+        LabelHeapfile l3 = sysdef.JavabaseDB.getEntityHF();
         Label object = l3.getRecord(triple.getObjectID().returnLID());
         System.out.println(subject.getLabelKey() + ":" + predicate.getLabelKey() + ":" + object.getLabelKey() + "("+ triple.getConfidence()+")");
     }

@@ -108,9 +108,9 @@ public class QueryProgram {
 			while((t = s.getNext(tid))!=null)
 			{
 				double confidence = t.getConfidence();
-				Label subject = SystemDefs.JavabaseDB.getEntityHandle().getRecord(t.getSubjectID().returnLID());
-				Label object = SystemDefs.JavabaseDB.getEntityHandle().getRecord(t.getObjectID().returnLID());
-				Label predicate = SystemDefs.JavabaseDB.getPredicateHandle().getRecord(t.getPredicateID().returnLID());
+				Label subject = SystemDefs.JavabaseDB.getEntityHF().getRecord(t.getSubjectID().returnLID());
+				Label object = SystemDefs.JavabaseDB.getEntityHF().getRecord(t.getObjectID().returnLID());
+				Label predicate = SystemDefs.JavabaseDB.getPredHF().getRecord(t.getPredicateID().returnLID());
 				System.out.printf("%20s %20s %80s %.17f\n",subject.getLabelKey(),predicate.getLabelKey(),object.getLabelKey(),confidence);
 			}
 			if(s!=null)
